@@ -23,8 +23,8 @@ adjusted change on BOTH the SA and NSA series and prints both, rather than
 crossing an NSA adjustment into an SA window. Report the version whose basis
 matches the effect (NSA) as primary, and show SA as a robustness check.
 
-Run from ~/Desktop/ln/:
-    python3 employment_by_sex_adjusted.py
+Run from anywhere (data defaults to <repo>/data):
+    python3 scripts/employment_by_sex_adjusted.py
 
 Requires: pandas
 """
@@ -34,6 +34,13 @@ import argparse
 import sys
 from pathlib import Path
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 SA = {
     "LNS12000000": ("Both sexes", "SA"),
@@ -114,10 +121,10 @@ def report(name, wide, baseline, latest):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("-d", "--dir", default=".")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR))
     ap.add_argument("--data")
     ap.add_argument("--baseline", default=BASELINE_DEFAULT)
-    ap.add_argument("-o", "--out", default="employment_by_sex_adjusted.csv")
+    ap.add_argument("-o", "--out", default=str(OUT_DIR / "employment_by_sex_adjusted.csv"))
     args = ap.parse_args()
 
     folder = Path(args.dir).expanduser()

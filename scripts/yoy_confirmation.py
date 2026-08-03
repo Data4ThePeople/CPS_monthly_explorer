@@ -19,10 +19,10 @@ Published effect on the EMPLOYED level (thousands, NSA, Dec-2025 basis),
 BLS Employment Situation release, March 6 2026, Table A:
     Both = -1,432    Men = -1,588    Women = +155
 
-Run from ~/Desktop/ln/:
-    python3 yoy_confirmation.py
+Run from anywhere (data defaults to <repo>/data):
+    python3 scripts/yoy_confirmation.py
 Optionally check another matched pair:
-    python3 yoy_confirmation.py --month 2026-05   (compares vs 2025-05)
+    python3 scripts/yoy_confirmation.py --month 2026-05   (compares vs 2025-05)
 
 Requires: pandas
 """
@@ -32,6 +32,13 @@ import argparse
 import sys
 from pathlib import Path
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 NSA = {
     "LNU02000000": "Both sexes",
@@ -72,7 +79,7 @@ def load_data(folder, series_ids, data_file):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("-d", "--dir", default=".")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR))
     ap.add_argument("--data")
     ap.add_argument("--month", default="2026-06",
                     help="end month YYYY-MM; compares against same month prior year")

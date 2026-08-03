@@ -25,8 +25,8 @@ The optional 4th dropdown (sex) appears only when a series exists that is
 identical to the current selection except sex -- same one-series rule.
 
 USAGE:
-  python3 build_ln_explorer.py -d ~/Desktop/ln
-  python3 build_ln_explorer.py -d ~/Desktop/ln --exclude indy occupation --out ln_explorer.html
+  python3 scripts/build_ln_explorer.py
+  python3 scripts/build_ln_explorer.py --exclude indy occupation --out ln_explorer.html
 
 Requires: pandas. Inputs: ln.series, ln.* mapping files, ln.data.1.AllData
 (.txt suffixes fine). Output: one HTML file, embed-ready.
@@ -38,6 +38,13 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 SKIP_FILES = {"ln.series", "ln.txt", "ln.contacts", "ln.footnote"}
 
@@ -133,7 +140,7 @@ def pick_one(cands: pd.DataFrame) -> pd.Series:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[1])
-    ap.add_argument("-d", "--dir", default=".")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR))
     ap.add_argument("--data", help="explicit path to ln.data file")
     ap.add_argument("--exclude", nargs="*", default=[],
                     help="dimension names to leave out of the picker "
@@ -143,7 +150,7 @@ def main():
     args = ap.parse_args()
     folder = Path(args.dir).expanduser()
     out_path = (Path(args.out).expanduser() if args.out
-                else folder / "ln_explorer.html")
+                else OUT_DIR / "ln_explorer.html")
 
     sp = find_file(folder, "ln.series")
     if sp is None:

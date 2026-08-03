@@ -11,8 +11,8 @@ showing the MONTHLY path, not just the endpoints. Flags:
   - a NSA cross-check of the same endpoints, so seasonal adjustment isn't
     doing the work.
 
-Run from ~/Desktop/ln/:
-    python3 pressure_test_men.py
+Run from anywhere (data defaults to <repo>/data):
+    python3 scripts/pressure_test_men.py
 
 Requires: pandas
 """
@@ -22,6 +22,13 @@ import argparse
 import sys
 from pathlib import Path
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 SA = {
     "LNS12000000": "Both sexes",
@@ -72,10 +79,10 @@ def sa_wide(df, mapping, baseline):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("-d", "--dir", default=".")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR))
     ap.add_argument("--data")
     ap.add_argument("--baseline", default="2023-12")
-    ap.add_argument("-o", "--out", default="men_monthly_path.csv")
+    ap.add_argument("-o", "--out", default=str(OUT_DIR / "men_monthly_path.csv"))
     args = ap.parse_args()
 
     folder = Path(args.dir).expanduser()

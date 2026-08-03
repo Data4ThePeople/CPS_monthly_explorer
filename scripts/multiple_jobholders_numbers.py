@@ -17,8 +17,8 @@ and the same for the RAW monthly series, so you can pick the comparison you
 actually want to make and quote a number you can defend from the data.
 
 USAGE:
-  python3 multiple_jobholders_numbers.py -d ~/Desktop/ln
-  python3 multiple_jobholders_numbers.py -d ~/Desktop/ln --series LNU02026625
+  python3 scripts/multiple_jobholders_numbers.py
+  python3 scripts/multiple_jobholders_numbers.py --series LNU02026625
 
 Requires: pandas. Reads ln.data.1.AllData (.txt suffix fine).
 """
@@ -28,6 +28,13 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 SERIES = "LNU02026625"
 REC_START, REC_END = "2007-12", "2009-12"  # NBER 2008-09 recession window
@@ -43,7 +50,7 @@ def find_data(folder):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[1])
-    ap.add_argument("-d", "--dir", default="~/Desktop/ln")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR))
     ap.add_argument("--series", default=SERIES)
     ap.add_argument("--rec-start", default=REC_START,
                     help="recession window start YYYY-MM (default 2007-12)")

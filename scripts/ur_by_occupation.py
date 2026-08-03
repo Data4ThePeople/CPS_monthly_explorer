@@ -17,8 +17,8 @@ What it does, end to end:
      small-multiples PNG chart.
 
 USAGE:
-  python ur_by_occupation.py -d ~/Desktop/ln
-  python ur_by_occupation.py -d ~/Desktop/ln --start-year 2015 --out ~/Desktop/ur_occ
+  python scripts/ur_by_occupation.py
+  python scripts/ur_by_occupation.py --start-year 2015 --out ~/Desktop/ur_occ
 
 Requires: pandas, matplotlib   (pip install pandas matplotlib)
 Folder must contain: ln.series, ln.lfst, ln.occupation (and ideally the
@@ -30,6 +30,13 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 SKIP_FILES = {"ln.series", "ln.txt", "ln.contacts", "ln.footnote"}
 
@@ -197,7 +204,7 @@ def shorten(label: str, n=38) -> str:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[1])
-    ap.add_argument("-d", "--dir", default=".",
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR),
                     help="folder with ln.series, mappings, and ln.data.*")
     ap.add_argument("--data", help="explicit path to the data file "
                                    "(default: auto-detect ln.data.* in -d)")
@@ -208,7 +215,7 @@ def main():
     args = ap.parse_args()
 
     folder = Path(args.dir).expanduser()
-    out = Path(args.out).expanduser() if args.out else folder / "ur_occ_output"
+    out = Path(args.out).expanduser() if args.out else OUT_DIR / "ur_occ_output"
     out.mkdir(parents=True, exist_ok=True)
 
     sel = select_series(folder)

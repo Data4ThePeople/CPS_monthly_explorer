@@ -7,8 +7,8 @@ Pulls CPS (LN) seasonally adjusted employment-level series for Both / Men / Wome
 (default: December 2023). Writes a tidy CSV you can drop straight into a chart,
 plus a short console summary of the men-vs-women split.
 
-Run from ~/Desktop/ln/  (or point --dir at it):
-    python3 pull_employment_by_sex.py
+Run from anywhere (data defaults to <repo>/data):
+    python3 scripts/pull_employment_by_sex.py
 
 Requires: pandas  (pip install --user pandas  if needed)
 BLS flat file expected: ln.data.1.AllData.txt  (tab-separated; auto-detected)
@@ -19,6 +19,13 @@ import argparse
 import sys
 from pathlib import Path
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 # ---- CPS seasonally adjusted employment level, 16+ -------------------------
 # LNS = seasonally adjusted; final digit 0=Both, 1=Men, 2=Women
@@ -66,11 +73,11 @@ def load_data(folder: Path, series_ids: set, data_file: str | None) -> pd.DataFr
 
 def main():
     ap = argparse.ArgumentParser(description="CPS employment growth by sex since a baseline month.")
-    ap.add_argument("-d", "--dir", default=".", help="folder with ln.data.* (default: current dir)")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR), help="folder with ln.data.* (default: <repo>/data)")
     ap.add_argument("--data", help="explicit path to the data file (default: auto-detect ln.data.*)")
     ap.add_argument("--baseline", default="2023-12", help="baseline month YYYY-MM (default 2023-12)")
     ap.add_argument("--nsa", action="store_true", help="use not-seasonally-adjusted series instead of SA")
-    ap.add_argument("-o", "--out", default="employment_by_sex.csv", help="output CSV path")
+    ap.add_argument("-o", "--out", default=str(OUT_DIR / "employment_by_sex.csv"), help="output CSV path")
     args = ap.parse_args()
 
     folder = Path(args.dir).expanduser()

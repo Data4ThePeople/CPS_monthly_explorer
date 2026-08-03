@@ -18,8 +18,8 @@ NFP piece -- it folds in education. This script also attempts to pull finer
 health-specific children if they exist in your catalog, and flags any series
 ID it cannot find so you know exactly what your file supports.
 
-Run from ~/Desktop/ln/:
-    python3 pull_industry_by_sex.py
+Run from anywhere (data defaults to <repo>/data):
+    python3 scripts/pull_industry_by_sex.py
 
 Requires: pandas
 """
@@ -29,6 +29,13 @@ import argparse
 import sys
 from pathlib import Path
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 # ---------------------------------------------------------------------------
 # CONFIRMED from your prior sum-check reconciliation (NSA, employed level):
@@ -150,10 +157,10 @@ def analyze_group(df, name, ids, baseline, brk, latest):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("-d", "--dir", default=".")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR))
     ap.add_argument("--data")
     ap.add_argument("--baseline", default=BASELINE_DEFAULT)
-    ap.add_argument("-o", "--out", default="industry_by_sex.csv")
+    ap.add_argument("-o", "--out", default=str(OUT_DIR / "industry_by_sex.csv"))
     args = ap.parse_args()
 
     folder = Path(args.dir).expanduser()

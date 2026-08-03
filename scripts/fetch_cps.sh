@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Download + unzip CPS basic monthly public-use CSVs.
 #   ./fetch_cps.sh 2023 2026
-# Files land in ./data/ as e.g. jun26pub.csv
+# Files land in <repo>/data/cps/ as e.g. jun26pub.csv, regardless of where you
+# run this from.
 #
 # Landing page (has the per-month links and the Data Dictionary_CSV):
 #   https://www.census.gov/data/datasets/time-series/demo/cps/cps-basic.html
@@ -16,7 +17,8 @@ END=${2:?usage: fetch_cps.sh START_YEAR END_YEAR}
 BASE="https://www2.census.gov/programs-surveys/cps/datasets"
 MONTHS=(jan feb mar apr may jun jul aug sep oct nov dec)
 
-mkdir -p data && cd data
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+mkdir -p "$REPO_ROOT/data/cps" && cd "$REPO_ROOT/data/cps"
 for y in $(seq "$START" "$END"); do
   yy=$(printf "%02d" $((y % 100)))
   for m in "${MONTHS[@]}"; do

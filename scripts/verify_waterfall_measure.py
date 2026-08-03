@@ -18,7 +18,8 @@ Usage: python3 verify_waterfall_measure.py
 
 import os
 
-LN_DIR = os.path.expanduser("~/Desktop/ln")
+LN_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      os.pardir, "data")
 DATA_FILE = os.path.join(LN_DIR, "ln.data.1.AllData.txt")
 
 # (label, population_series_id, laborforce_series_id)

@@ -15,25 +15,25 @@ https://download.bls.gov/pub/time.series/ln/
 
 USAGE (run from terminal):
 
-  python explore_ln.py -d ~/Desktop/ln dims
+  python scripts/explore_ln.py dims
       List every dimension and how many distinct codes are actually used.
 
-  python explore_ln.py -d ~/Desktop/ln values born
+  python scripts/explore_ln.py values born
       Show the codes/labels for one dimension and how many series use each.
 
-  python explore_ln.py -d ~/Desktop/ln profile --filter born=native
+  python scripts/explore_ln.py profile --filter born=native
       For all series matching the filter(s): which dimensions VARY (data
       exists at multiple values) vs. which are FIXED. This is the fastest
       way to see "given native-born, what can I slice by?"
 
-  python explore_ln.py -d ~/Desktop/ln cross sexs ages --filter born=native
+  python scripts/explore_ln.py cross sexs ages --filter born=native
       Series-count crosstab of two dimensions, under optional filters.
       Zeros/blanks = that intersection is not published.
 
-  python explore_ln.py -d ~/Desktop/ln find --filter born=native --filter sexs=men --title "labor force" --limit 40
+  python scripts/explore_ln.py find --filter born=native --filter sexs=men --title "labor force" --limit 40
       List actual series IDs + titles + date ranges matching filters.
 
-  python explore_ln.py -d ~/Desktop/ln series LNU02073395
+  python scripts/explore_ln.py series LNU02073395
       Fully decode a single series ID across every dimension.
 
 FILTER SYNTAX:  --filter dim=value   (repeatable)
@@ -51,6 +51,13 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 pd.set_option("display.max_rows", 1000)
 pd.set_option("display.max_columns", 100)
@@ -308,7 +315,7 @@ def main():
         description="Explore the BLS LN (CPS) series catalog.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__.split("USAGE")[1] if "USAGE" in __doc__ else "")
-    p.add_argument("-d", "--dir", default=".",
+    p.add_argument("-d", "--dir", default=str(DATA_DIR),
                    help="folder containing ln.series and ln.* mapping files "
                         "(default: current directory)")
     sub = p.add_subparsers(dest="cmd", required=True)

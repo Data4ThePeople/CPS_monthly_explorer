@@ -10,11 +10,12 @@ then check the data file for a recent (2026) observation so we know the series
 is populated, not just catalogued.
 
 Usage:
-    python3 find_white_by_age.py                 # dumps all White x age x measure
-    python3 find_white_by_age.py participation    # filter measures containing "participation"
-    python3 find_white_by_age.py "not in labor"   # filter measures containing that text
+    python3 scripts/find_white_by_age.py                 # dumps all White x age x measure
+    python3 scripts/find_white_by_age.py participation    # filter measures containing "participation"
+    python3 scripts/find_white_by_age.py "not in labor"   # filter measures containing that text
 
-Point LN_DIR at your ln folder (default ~/Desktop/ln).
+Reads the flat files from <repo>/data, resolved relative to this script,
+so it runs from any working directory.
 
 NOTE: this script makes NO assumptions about exact column names beyond the
 standard BLS layout. It prints the catalog's own column header first so we can
@@ -26,7 +27,8 @@ import os
 import sys
 import glob
 
-LN_DIR = os.path.expanduser("~/Desktop/ln")
+LN_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      os.pardir, "data")
 SERIES_FILE = os.path.join(LN_DIR, "ln.series")
 DATA_FILE = os.path.join(LN_DIR, "ln.data.1.AllData.txt")
 
@@ -47,7 +49,7 @@ if not os.path.exists(SERIES_FILE):
             "\n".join("  " + os.path.basename(p) for p in glob.glob(os.path.join(LN_DIR, "ln.*"))))
 
 if not os.path.exists(DATA_FILE):
-    die(f"Cannot find {DATA_FILE}. Edit LN_DIR at the top of this script.")
+    die(f"Cannot find {DATA_FILE}. Expected the BLS flat files in <repo>/data.")
 
 
 def load_tsv(path):

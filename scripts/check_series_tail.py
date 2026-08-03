@@ -7,17 +7,19 @@ Prints the last N monthly observations so you can see whether the chart's
 final point is a real value or a partial/preliminary/artifact print.
 
 Usage:
-    python3 check_series_tail.py
-    python3 check_series_tail.py LNS11000003 24
-    python3 check_series_tail.py LNU02026625 36
+    python3 scripts/check_series_tail.py
+    python3 scripts/check_series_tail.py LNS11000003 24
+    python3 scripts/check_series_tail.py LNU02026625 36
 
-Point LN_DIR at wherever your flat files live (default ~/Desktop/ln).
+Reads the flat files from <repo>/data, resolved relative to this script,
+so it runs from any working directory.
 """
 
 import os
 import sys
 
-LN_DIR = os.path.expanduser("~/Desktop/ln")
+LN_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      os.pardir, "data")
 DATA_FILE = os.path.join(LN_DIR, "ln.data.1.AllData.txt")
 
 series_id = sys.argv[1].strip() if len(sys.argv) > 1 else "LNS11000003"
@@ -25,7 +27,7 @@ n_tail = int(sys.argv[2]) if len(sys.argv) > 2 else 18
 
 if not os.path.exists(DATA_FILE):
     sys.exit(f"Cannot find {DATA_FILE}\n"
-             f"Edit LN_DIR at the top of this script to point at your ln folder.")
+             f"Expected the BLS flat files in <repo>/data.")
 
 # The AllData file is tab-delimited with columns:
 #   series_id   year   period   value   footnote_codes

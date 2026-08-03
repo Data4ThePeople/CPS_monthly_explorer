@@ -3,7 +3,7 @@
 Prime-age (25-54) labor force participation rate by education x sex,
 from CPS basic monthly public-use FIXED-WIDTH (.dat) files.
 
-    python cps_extract.py data/ --dicts dicts/ -o prime_age_lfpr.csv
+    python scripts/cps_extract.py data/ --dicts dicts/ -o prime_age_lfpr.csv
 
 Column positions are read from the Census data dictionary CSVs, never
 hardcoded. The layout changed in June 2024 (telework variables PTTLWK/
@@ -43,6 +43,13 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 WEIGHT_SCALE = 10_000.0
 
@@ -213,7 +220,7 @@ def main():
     ap.add_argument("datadir", type=Path)
     ap.add_argument("--dicts", type=Path, required=True,
                     help="directory of Census data dictionary CSVs, one per layout era")
-    ap.add_argument("-o", "--out", type=Path, default=Path("prime_age_lfpr.csv"))
+    ap.add_argument("-o", "--out", type=Path, default=OUT_DIR / "prime_age_lfpr.csv")
     args = ap.parse_args()
 
     sys.stderr.write("Loading dictionaries:\n")

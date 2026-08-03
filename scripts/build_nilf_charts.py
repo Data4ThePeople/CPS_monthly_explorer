@@ -3,7 +3,7 @@
 build_nilf_charts.py -- Build the four charts for the "It's Time to Move On
 From the Unemployment Rate" post, straight from the local BLS LN (CPS) files.
 
-Reads ln.series + ln.data.* from a folder (default ~/Desktop/ln, .txt suffixes
+Reads ln.series + ln.data.* from a folder (default <repo>/data, .txt suffixes
 fine) and writes four PNGs in Data 4 The People house format:
 
   1_nilf_pool.png        Not in labor force: total 16+, 65+, and prime-age 25-54
@@ -17,9 +17,9 @@ Nothing is summed or averaged across series. Each chart footnotes its series
 IDs so the numbers can be checked at bls.gov / FRED.
 
 USAGE:
-  python3 build_nilf_charts.py -d ~/Desktop/ln
-  python3 build_nilf_charts.py -d ~/Desktop/ln --sa        # prefer seas.-adj.
-  python3 build_nilf_charts.py -d ~/Desktop/ln --out ~/Desktop/charts
+  python3 scripts/build_nilf_charts.py
+  python3 scripts/build_nilf_charts.py --sa        # prefer seas.-adj.
+  python3 scripts/build_nilf_charts.py --out ~/Desktop/charts
 
 The series IDs below are the standard CPS/LN codes. If any is absent in your
 files (some are SA-only or NSA-only), the script says so and skips that line
@@ -33,6 +33,13 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 # ---- D4TP house palette ----
 TEAL, CORAL, PAPER, GOLD = "#085041", "#712B13", "#FBFAF7", "#B8860B"
@@ -157,7 +164,7 @@ def since(g, year):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[1])
-    ap.add_argument("-d", "--dir", default="~/Desktop/ln")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR))
     ap.add_argument("--out", default=None)
     ap.add_argument("--sa", action="store_true",
                     help="prefer seasonally adjusted where available")
@@ -166,7 +173,7 @@ def main():
     args = ap.parse_args()
 
     folder = Path(args.dir).expanduser()
-    out = Path(args.out).expanduser() if args.out else folder / "post_charts"
+    out = Path(args.out).expanduser() if args.out else OUT_DIR / "post_charts"
     out.mkdir(parents=True, exist_ok=True)
 
     avail_meta = load_series_meta(folder)

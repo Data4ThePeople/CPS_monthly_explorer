@@ -29,8 +29,8 @@ OUTPUT:
     you can eyeball whether it's rounding, a real mismatch, or a data gap
 
 USAGE:
-  python3 audit_alldata_sums.py -d ~/Desktop/ln
-  python3 audit_alldata_sums.py -d ~/Desktop/ln --tol 3   # thousands tolerance
+  python3 scripts/audit_alldata_sums.py
+  python3 scripts/audit_alldata_sums.py --tol 3   # thousands tolerance
 
 Requires: pandas. Reads ln.series + mapping files + ln.data.1.AllData
 (.txt suffixes fine).
@@ -50,6 +50,13 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 SKIP = {"ln.series", "ln.txt", "ln.contacts", "ln.footnote"}
 
@@ -105,7 +112,7 @@ def match_lookup(lk, col):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[1])
-    ap.add_argument("-d", "--dir", default="~/Desktop/ln")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR))
     ap.add_argument("--data", help="explicit path to ln.data file")
     ap.add_argument("--tol", type=float, default=2.0,
                     help="tolerance in thousands for Men+Women vs Both "
@@ -114,7 +121,7 @@ def main():
     args = ap.parse_args()
 
     folder = Path(args.dir).expanduser()
-    out = Path(args.out).expanduser() if args.out else folder
+    out = Path(args.out).expanduser() if args.out else OUT_DIR
     out.mkdir(parents=True, exist_ok=True)
 
     sp = find_file(folder, "ln.series")

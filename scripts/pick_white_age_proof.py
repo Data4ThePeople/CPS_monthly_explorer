@@ -13,7 +13,7 @@ by requiring the title to be the plain "..., White" form (no extra qualifier
 after White, no 'Men'/'Women').
 
 Usage:
-    python3 pick_white_age_proof.py
+    python3 scripts/pick_white_age_proof.py
 
 Prints a short list of verified series_ids to feed into check_series_tail.py.
 """
@@ -22,7 +22,8 @@ import os
 import re
 import glob
 
-LN_DIR = os.path.expanduser("~/Desktop/ln")
+LN_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      os.pardir, "data")
 SERIES_FILE = os.path.join(LN_DIR, "ln.series")
 DATA_FILE = os.path.join(LN_DIR, "ln.data.1.AllData.txt")
 

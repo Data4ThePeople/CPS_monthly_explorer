@@ -5,21 +5,22 @@ visible, so we can see the true column layout and why a rate is reading as an
 integer.
 
 Usage:
-    python3 inspect_raw_lines.py                 # LNS11300003, last 6 lines
-    python3 inspect_raw_lines.py LNS11300003 8
+    python3 scripts/inspect_raw_lines.py                 # LNS11300003, last 6 lines
+    python3 scripts/inspect_raw_lines.py LNS11300003 8
 """
 
 import os
 import sys
 
-LN_DIR = os.path.expanduser("~/Desktop/ln")
+LN_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      os.pardir, "data")
 DATA_FILE = os.path.join(LN_DIR, "ln.data.1.AllData.txt")
 
 series_id = sys.argv[1].strip() if len(sys.argv) > 1 else "LNS11300003"
 n_tail = int(sys.argv[2]) if len(sys.argv) > 2 else 6
 
 if not os.path.exists(DATA_FILE):
-    sys.exit(f"Cannot find {DATA_FILE}. Edit LN_DIR at the top of this script.")
+    sys.exit(f"Cannot find {DATA_FILE}. Expected the BLS flat files in <repo>/data.")
 
 # First, show the header line exactly as stored
 print("=== HEADER LINE (raw, tabs shown as [TAB]) ===")

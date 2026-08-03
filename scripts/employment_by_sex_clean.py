@@ -18,8 +18,8 @@ basis, so no subtraction is needed and no sign traps arise. The BLS
 population-control table is cited in the PROSE to explain the seam, but it
 never enters the math here.
 
-Run from ~/Desktop/ln/:
-    python3 employment_by_sex_clean.py
+Run from anywhere (data defaults to <repo>/data):
+    python3 scripts/employment_by_sex_clean.py
 
 Requires: pandas
 """
@@ -29,6 +29,13 @@ import argparse
 import sys
 from pathlib import Path
 import pandas as pd
+
+# --- Repo layout -------------------------------------------------------------
+# <repo>/scripts/<this file>, <repo>/data (BLS flat files), <repo>/output
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = REPO_ROOT / "data"
+OUT_DIR = REPO_ROOT / "output"
+
 
 SA = {
     "LNS12000000": "Both sexes",
@@ -92,9 +99,9 @@ def segment(w, start, end, title):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("-d", "--dir", default=".")
+    ap.add_argument("-d", "--dir", default=str(DATA_DIR))
     ap.add_argument("--data")
-    ap.add_argument("-o", "--out", default="employment_by_sex_clean.csv")
+    ap.add_argument("-o", "--out", default=str(OUT_DIR / "employment_by_sex_clean.csv"))
     args = ap.parse_args()
 
     folder = Path(args.dir).expanduser()

@@ -9,7 +9,7 @@ Also grabs the same for 16+ per race, so we can compute prime-age SHARE per race
 if wanted.
 
 Usage:
-    python3 find_primeage_by_race.py
+    python3 scripts/find_primeage_by_race.py
 
 Prints verified series_ids (with data check) to feed into check_series_tail.py.
 """
@@ -18,7 +18,8 @@ import os
 import re
 import glob
 
-LN_DIR = os.path.expanduser("~/Desktop/ln")
+LN_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                      os.pardir, "data")
 SERIES_FILE = os.path.join(LN_DIR, "ln.series")
 DATA_FILE = os.path.join(LN_DIR, "ln.data.1.AllData.txt")
 
