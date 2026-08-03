@@ -1,0 +1,15 @@
+race_code	race_text
+00	All Races
+01	White
+03	Black or African American
+04	Asian
+05	American Indian or Alaska Native
+06	Native Hawaiian or Other Pacific Islander
+07	Two or more races
+10	Asian - Asian Indian
+15	Asian - Chinese
+25	Asian - Filipino
+26	Asian - Japanese
+27	Asian - Korean
+28	Asian - Vietnamese
+30	Asian - Other Asian

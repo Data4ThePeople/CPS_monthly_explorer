@@ -1,0 +1,12 @@
+footnote_code	footnote_text
+1	Data affected by changes in population controls.
+10	Data for Q4 2025 were not produced. Data for October 2025 were not collected due to the federal government shutdown.
+11	Annual estimates for 2025 are 11-month averages that exclude October. Data for October 2025 were not collected due to the federal government shutdown.
+12	January 2026 estimates were revised to incorporate updated population controls. For more information, see www.bls.gov/cps/documentation.htm#pop.
+2	Constructed on the 2002 Census Industry Classification from data originally coded on earlier classifications. Official series was not revised.
+3	2000 forward coded on the 2002 Census Occupation Classification. 1983-99 constructed from data originally coded on earlier classifications.
+4	2000 forward coded on the 2002 Census Industry Classification. 1983-99 constructed from data originally coded on earlier classifications.
+7	Data do not meet publication criteria.
+8	This series id code has been discontinued; data are available using the database tool at www.bls.gov/webapps/legacy/cpsatab8.htm.
+9	Data unavailable due to the 2025 lapse in appropriations.
+C	Corrected

@@ -1,0 +1,14 @@
+tlwk_code	tlwk_text	display_level	selectable	sort_sequence
+00	N/A
+01	Persons who teleworked or worked at home for pay
+02	Persons who teleworked or worked at home for pay, Teleworked some hours
+03	Persons who teleworked or worked at home for pay, Teleworked all hours
+04	Persons who did not telework or work at home for pay
+05	Teleworked, Up to 8 hours
+06	Teleworked, 9 to 16 hours
+07	Teleworked, 17 to 24 hours
+08	Teleworked, 25 to 32 hours
+09	Teleworked, 33 to 39 hours
+10	Teleworked, 40 hours or more
+11	Teleworked, 40 hours
+12	Teleworked, 41 hours or more

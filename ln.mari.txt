@@ -1,0 +1,12 @@
+mari_code	mari_text
+00	N/A
+01	Never married
+02	Married, spouse present
+03	Civilian spouse present
+05	Separated (including married, spouse absent)
+06	Widowed
+07	Divorced
+08	Widowed and divorced
+09	Widowed, divorced, and separated (including married, spouse absent)
+10	Married (codes 2 and 5)
+11	Never married, widowed, divorced, and separated (including married, spouse absent)

@@ -1,0 +1,71 @@
+=== race codes available ===
+  00 = All Races
+  01 = White
+  03 = Black or African American
+  04 = Asian
+  05 = American Indian or Alaska Native
+  06 = Native Hawaiian or Other Pacific Islander
+  07 = Two or more races
+  10 = Asian - Asian Indian
+  15 = Asian - Chinese
+  25 = Asian - Filipino
+  26 = Asian - Japanese
+  27 = Asian - Korean
+  28 = Asian - Vietnamese
+  30 = Asian - Other Asian
+
+=== Population series by race, for 25-54 and 16+ (Both Sexes) ===
+
+--- 25 to 54 years ---
+  LNU00000060    SA=U last=2026-M06=130139  All Races
+       (Unadj) Population Level - 25-54 yrs.
+  [none]  American Indian or Alaska Native
+  LNU00032249    SA=U last=2026-M06=11741   Asian
+       (Unadj) Population Level - 25-54 yrs., Asian
+  [none]  Asian - Asian Indian
+  [none]  Asian - Chinese
+  [none]  Asian - Filipino
+  [none]  Asian - Japanese
+  [none]  Asian - Korean
+  [none]  Asian - Other Asian
+  [none]  Asian - Vietnamese
+  LNU00000066    SA=U last=2026-M06=17967   Black or African American
+       (Unadj) Population Level - 25-54 yrs., Black or African American
+  [none]  Native Hawaiian or Other Pacific Islander
+  [none]  Two or more races
+  LNU00000063    SA=U last=2026-M06=92104   White
+       (Unadj) Population Level - 25-54 yrs., White
+
+--- 16 years and over ---
+  LNU00000000    SA=U last=2026-M06=275166  All Races
+       (Unadj) Population Level
+  LNU00035243    SA=U last=2026-M06=4397    American Indian or Alaska Native
+       (unadj) Population - American Indian or Alaska Native
+  LNU00032183    SA=U last=2026-M06=20811   Asian
+       (Unadj) Population Level - Asian
+  LNU00092157    SA=U last=2026-M06=5399    Asian - Asian Indian
+       (unadj) Population - Asian Indian
+  LNU00092158    SA=U last=2026-M06=4599    Asian - Chinese
+       (unadj) Population - Chinese
+  LNU00092159    SA=U last=2026-M06=3003    Asian - Filipino
+       (unadj) Population - Filipino
+  LNU00092160    SA=U last=2026-M06=947     Asian - Japanese
+       (unadj) Population - Japanese
+  LNU00092161    SA=U last=2026-M06=1353    Asian - Korean
+       (unadj) Population - Korean
+  LNU00092163    SA=U last=2026-M06=3748    Asian - Other Asian
+       (unadj) Population - Other Asian
+  LNU00092162    SA=U last=2026-M06=1764    Asian - Vietnamese
+       (unadj) Population - Vietnamese
+  LNU00000006    SA=U last=2026-M06=35477   Black or African American
+       (Unadj) Population Level - Black or African American
+  LNU00035553    SA=U last=2026-M06=1597    Native Hawaiian or Other Pacific Islander
+       (unadj) Population - Native Hawaiian or Other Pacific Islander
+  LNU00092154    SA=U last=2026-M06=10387   Two or more races
+       (unadj) Population - Two or more races
+  LNU00000003    SA=U last=2026-M06=202497  White
+       (Unadj) Population Level - White
+
+Pull the 25-54 series for each non-White group that GREW, plus White (LNU00000063),
+then compare the Jan-2026 code-12 steps. Do the non-White prime-age GAINS
+sum to ~+3,984 (a clean transfer) or much less (not a clean transfer)?
