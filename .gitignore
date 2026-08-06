@@ -10,6 +10,11 @@ data/cps/
 *.dat
 *pub.csv
 
+# --- v2 API pipeline --------------------------------------------------------
+# Cached API responses are re-fetchable; the API key must never be committed.
+v2/cache/
+.env
+
 # --- Python -----------------------------------------------------------------
 .venv/
 __pycache__/

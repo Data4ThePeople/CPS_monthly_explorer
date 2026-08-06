@@ -12,10 +12,25 @@ scripts enforce it rather than assume it.
 ```
 .
 ├── data/       Raw BLS flat files (ln.series, ln.data.*, ln.<dimension> maps)
-├── scripts/    Analysis + build scripts (Python 3, one bash fetcher)
-├── output/     Everything generated: CSVs, PNGs, HTML, console captures
+├── scripts/    Legacy analysis + build scripts (flat-file based; kept as reference)
+├── output/     Legacy outputs: CSVs, PNGs, HTML, console captures
+├── v2/         API-backed pipeline — the maintained analysis scripts
 └── README.md
 ```
+
+## v2: the API-backed pipeline
+
+The analysis scripts have been ported to `v2/`, which pulls data from the
+BLS Public Data API v2 instead of the 389 MB flat file (key in a gitignored
+`.env` as `BLS_API_KEY`, responses cached under `v2/cache/`, zero large
+downloads) and fixes the bugs catalogued in `REVIEW_FINDINGS.md` along the
+way. See `v2/README.md`. **Prefer the v2 scripts for any new analysis.**
+
+`scripts/` remains the flat-file pipeline: still required for the
+catalog-driven tools (`explore_ln.py`, `build_ln_explorer*.py`,
+`audit_alldata_sums.py`) because the API has no catalog endpoint, and kept
+otherwise as reference. The rest of this README describes that legacy
+pipeline.
 
 Scripts resolve `data/` and `output/` **relative to the repo root**, so they run
 correctly from any working directory:
@@ -95,8 +110,8 @@ CPS basic monthly microdata (separate dataset, only needed by `cps_extract.py`):
 - `build_ln_explorer.py` and `build_ln_explorer_themed.py` are near-duplicates
   and write to the same output path, so whichever runs last wins. Worth merging
   behind a `--theme` flag.
-- Dependencies are `pandas` and `matplotlib`; neither is currently installed in
-  `.venv`.
+- Dependencies for both pipelines are pinned loosely in `requirements.txt`
+  (`requests`, `pandas`, `matplotlib`): `pip install -r requirements.txt`.
 
 ## Data caveats
 
