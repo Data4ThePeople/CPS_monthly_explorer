@@ -1,4 +1,4 @@
-# v2 — API-backed analysis pipeline
+ # v2 — API-backed analysis pipeline
 
 The next generation of this repo's analysis scripts. Instead of streaming the
 389 MB `ln.data.1.AllData` flat file, these pull exactly the series they need
@@ -6,10 +6,23 @@ from the **BLS Public Data API v2** and cache them locally — zero large
 downloads, and each script fixes the bugs catalogued for its legacy
 counterpart in `../REVIEW_FINDINGS.md`.
 
-The legacy pipeline in `../scripts/` is kept untouched as reference; the
-catalog-driven tools there (`explore_ln.py`, the explorer builders, the
-sum audit) still need the flat files, because the API has no catalog/search
-endpoint.
+The legacy pipeline in `../scripts/` is kept untouched as reference.
+`explore_ln.py` and the sum audit there still need the 389 MB
+`ln.data.1.AllData`. The explorer no longer does — `build_explorer.py` below
+gets its values from the API and needs only the 15 MB `ln.series` catalog,
+because the API has no catalog/search endpoint.
+
+## Monthly refresh — run this on release morning
+
+```
+./v2/refresh.sh --publish
+```
+
+One command: checks whether BLS has actually published a new month, refreshes
+the catalog, rebuilds the explorer, commits, pushes, deploys GitHub Pages, and
+verifies the live file byte-for-byte. Drop `--publish` to build without
+shipping. See [Refreshing the explorer](#refreshing-the-explorer) for what it
+guards against and why a plain rebuild is not enough.
 
 ## Setup
 
@@ -35,7 +48,8 @@ Every script runs from any working directory: `python v2/<script>.py`.
   (two calendar months back). `--refresh` on any script forces a refetch.
 - Budget: the registered API tier allows 500 queries/day, 50 series/query,
   20 years/query. Fetching the **entire registry cold costs ~4 queries**
-  (one 30-series batch x four 20-year windows, 1948-present). Warm cache
+  (one 30-series batch x four 20-year windows, 1948-present). The explorer is
+  the expensive one: its 2,151 series cost **~176 queries** cold. Warm cache
   costs **0** — every run prints
   `[bls_client] API queries this run: N (cache hits: M series)` so you can
   see it.
@@ -47,6 +61,9 @@ Every script runs from any working directory: `python v2/<script>.py`.
 | `bls_client.py` | API client, per-series cache, `.env` loader, output-path helper. `python v2/bls_client.py LNS12000000` smoke-tests it. |
 | `series_registry.py` | Single source of truth: all 30 curated series IDs, the Jan-2026 break / Oct-2025 gap constants, the published population-control effect, and the helpers that enforce them. |
 | `crosscheck_legacy.py` | Verifies v2 CSVs match the shipped legacy `../output/*.csv` month-for-month. |
+| `build_explorer.py` | Builds the interactive explorer HTML. Catalog from `../data/ln.series`, values from the API. `--dry-run` prices the fetch before spending quota. |
+| `explorer_template.html` | The themed page the explorer is rendered into; `__DATA__` is replaced with the payload. Edit here to change the look without touching Python. |
+| `refresh.sh` | Monthly refresh: probe → catalog → rebuild → publish → verify. See above. |
 
 Analyses (legacy provenance and the main fixes applied):
 
@@ -61,6 +78,40 @@ Analyses (legacy provenance and the main fixes applied):
 | `verify_waterfall.py` | `verify_waterfall_measure.py` | Compares the six chart values numerically (PASS/FAIL, nonzero exit) instead of by eyeball; prints the -140k residual. |
 
 Outputs land in `v2/output/` (tracked in git, like the legacy `output/`).
+
+## Refreshing the explorer
+
+`v2/output/ln_explorer.html` is what the public embed serves:
+
+<https://data4thepeople.github.io/CPS_monthly_explorer/v2/output/ln_explorer.html>
+
+**A plain `build_explorer.py` rerun on release morning silently produces last
+month's data.** The cache calls a series fresh while it holds data through
+today minus two months, so on the August release morning a cache ending in
+June still looks current and nothing is refetched — no error, no warning.
+`--refresh` is mandatory, and `refresh.sh` is the reason this is hard to get
+wrong. It:
+
+1. **Probes before spending.** Compares the cached vs. live month on
+   `LNS12000000` and stops if BLS has not posted yet (the API often trails the
+   8:30am press release). `--force` overrides.
+2. **Validates the catalog before replacing it.** Downloads `ln.series` to a
+   temp file and checks line count and header, so a truncated response cannot
+   leave you without a working catalog.
+3. **Refuses to publish a stale build.** Re-reads the generated HTML and
+   confirms its latest month matches what the API served.
+4. **Deploys the way that works.** Push-triggered Pages builds on this repo
+   hang; the script always triggers the build explicitly
+   (`gh api -X POST repos/Data4ThePeople/CPS_monthly_explorer/pages/builds`),
+   then polls the live URL and byte-compares it against the local file.
+
+Save the catalog as `data/ln.series.txt` — `.gitignore` ignores that exact
+name, and the 15 MB file must not be committed. `.nojekyll` at the repo root
+is required for Pages to serve this repo at all.
+
+Methodology prose for the public page lives in `../METHODOLOGY.md`; the
+figures in it (2,151 series, 68,630 catalog rows, ~176 queries) come from a
+build and should be re-checked when they change.
 
 ## Conventions (enforced, not assumed)
 
