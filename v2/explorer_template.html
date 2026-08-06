@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CPS Explorer &mdash; Data 4 The People</title>
+<style>
+:root{--teal:#0a3d33;--coral:#712B13;--paper:#f2e9d0;--gold:#9a7b2e;
+--ink:#2b2317;--line:#cdbb96;--parch:#efe4c6;--parch2:#e7d8b3}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);
+background:
+ radial-gradient(120% 80% at 20% 0%, #f4ecd6 0%, #efe4c6 55%, #e7d6ac 100%),
+ repeating-linear-gradient(0deg, rgba(120,90,40,0.020) 0 2px, transparent 2px 4px);
+background-blend-mode:multiply;
+font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:20px 16px 28px}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);
+text-transform:uppercase;font-weight:700;font-family:Georgia,serif}
+h1{font-family:Georgia,'Times New Roman',serif;color:var(--teal);
+font-size:clamp(20px,3.6vw,29px);margin:.2em 0 .1em;line-height:1.18;
+font-weight:700;letter-spacing:.01em}
+h1::first-letter{color:var(--coral)}
+.sub{color:#6b5d3f;font-size:13px;margin-bottom:14px;font-style:italic;font-family:Georgia,serif}
+.controls{display:flex;flex-wrap:wrap;gap:10px 14px;margin-bottom:14px}
+.ctrl{display:flex;flex-direction:column;gap:3px;min-width:150px;flex:1}
+.ctrl label{font-size:11px;font-weight:700;letter-spacing:.12em;
+text-transform:uppercase;color:var(--gold);font-family:Georgia,serif}
+select{appearance:none;-webkit-appearance:none;color:var(--ink);
+background-color:#f7efd9;
+border:1.5px solid var(--gold);border-radius:7px;padding:9px 30px 9px 11px;
+font-size:14px;width:100%;font-family:Georgia,serif;
+box-shadow:inset 0 1px 0 rgba(255,255,255,0.5),0 1px 2px rgba(90,70,30,0.12);
+background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%239a7b2e'/></svg>");
+background-repeat:no-repeat;background-position:right 11px center}
+select:focus{outline:3px solid rgba(154,123,46,.35)}
+#sexWrap.hidden{display:none}
+.chartbox{background:linear-gradient(180deg,#faf3df 0%,#f4ead0 100%);
+border:1px solid var(--gold);border-radius:10px;
+padding:12px 10px 6px;position:relative;
+box-shadow:0 1px 0 rgba(255,255,255,0.6) inset,0 2px 10px rgba(90,70,30,0.12)}
+.chartbox::before{content:"";position:absolute;inset:5px;border:1px solid rgba(154,123,46,0.4);border-radius:7px;pointer-events:none}
+svg text{font:11px Georgia,"Times New Roman",serif;fill:#6b5d3f}
+.tip{position:absolute;pointer-events:none;background:#2b2317;color:#f2e9d0;
+padding:6px 9px;border-radius:5px;font-size:12px;line-height:1.35;
+white-space:nowrap;transform:translate(-50%,-115%);display:none;z-index:5;
+font-family:Georgia,serif;border:1px solid var(--gold)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#5b6763;
+margin:8px 2px 2px}
+.legend span::before{content:"";display:inline-block;width:18px;height:3px;
+margin-right:5px;vertical-align:middle;border-radius:2px}
+.lg-raw::before{background:var(--teal);opacity:.35}
+.lg-ma::before{background:var(--teal)}
+.lg-sa::before{background:var(--teal)}
+.footer{margin-top:12px;font-size:12px;color:#5b6763;display:flex;
+flex-wrap:wrap;gap:8px 16px;align-items:center}
+.chip{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+background:var(--teal);color:#f2e9d0;padding:2px 8px;border-radius:4px;
+font-size:12px;letter-spacing:.03em}
+.badge{border:1px solid var(--gold);color:var(--gold);border-radius:5px;
+padding:1px 7px;font-size:11px;font-weight:700}
+.src{color:var(--gold);font-size:11.5px;margin-top:8px}
+@media(max-width:560px){
+ .wrap{padding:14px 11px 22px}
+ .ctrl{min-width:100%;flex:1 1 100%}
+ .controls{gap:8px}
+ h1{font-size:20px}
+ .sub{font-size:12px}
+ select{font-size:16px;padding:10px 30px 10px 11px}
+ .chartbox{padding:8px 4px 4px}
+ .footer{font-size:11px;gap:6px 10px}
+ .chip{font-size:11px}
+ .src{font-size:10.5px}
+ svg text{font-size:10px}
+ .tip{font-size:13px;padding:7px 10px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><div class="wrap">
+<div class="eyebrow">Data 4 The People &middot; CPS Monthly Explorer</div>
+<h1 id="title">&nbsp;</h1>
+<div class="sub" id="subtitle">&nbsp;</div>
+<div class="controls">
+ <div class="ctrl"><label for="dimSel">Dimension</label>
+  <select id="dimSel" aria-label="Choose dimension"></select></div>
+ <div class="ctrl"><label for="valSel">Group</label>
+  <select id="valSel" aria-label="Choose group"></select></div>
+ <div class="ctrl"><label for="lfsSel">Measure</label>
+  <select id="lfsSel" aria-label="Choose measure"></select></div>
+ <div class="ctrl hidden" id="sexWrap"><label for="sexSel">Sex</label>
+  <select id="sexSel" aria-label="Choose sex"></select></div>
+</div>
+<div class="chartbox"><svg id="chart" role="img"
+ aria-label="Time series chart"></svg><div class="tip" id="tip"></div></div>
+<div class="legend" id="legend"></div>
+<div class="footer">
+ <span>Series&nbsp;<span class="chip" id="sid"></span></span>
+ <span class="badge" id="seas"></span>
+ <span id="range"></span>
+</div>
+<div class="src">Source: U.S. Bureau of Labor Statistics, Current Population
+Survey (LN database). One published BLS series per view &mdash; no values are
+combined or averaged. Chart: Data 4 The People.</div>
+</div>
+<script>
+const DB=__DATA__;
+const $=id=>document.getElementById(id);
+const dimSel=$("dimSel"),valSel=$("valSel"),lfsSel=$("lfsSel"),
+sexSel=$("sexSel"),sexWrap=$("sexWrap"),svg=$("chart"),tip=$("tip");
+const MO=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function opt(sel,items,keep){const old=keep?sel.value:null;sel.innerHTML="";
+ for(const[v,t]of items){const o=document.createElement("option");
+  o.value=v;o.textContent=t;sel.appendChild(o);}
+ if(old&&[...sel.options].some(o=>o.value===old))sel.value=old;}
+function dimObj(){return DB.dims.find(d=>d.key===dimSel.value);}
+function comboKey(){return dimSel.value+"|"+valSel.value;}
+function measureObj(){return (DB.combos[comboKey()]||{})[lfsSel.value];}
+function currentEntry(){
+ const m=measureObj();if(!m)return null;
+ let sid=m.i;
+ if(!sexWrap.classList.contains("hidden")&&sexSel.value&&m.x
+    &&m.x[sexSel.value])sid=m.x[sexSel.value];
+ return DB.series[sid];}
+function fillDims(){opt(dimSel,DB.dims.map(d=>[d.key,d.label]));}
+function fillVals(){opt(valSel,dimObj().values.map(v=>[v.code,v.label]),true);}
+function fillMeasures(){
+ const avail=DB.combos[comboKey()]||{};
+ opt(lfsSel,DB.measureOrder.filter(m=>avail[m])
+   .map(m=>[m,DB.measures[m]]),true);}
+function fillSex(){
+ if(dimSel.value==="sexs"){sexWrap.classList.add("hidden");return;}
+ const m=measureObj();
+ const found=m&&m.x?Object.keys(m.x):[];
+ if(!found.length){sexWrap.classList.add("hidden");return;}
+ sexWrap.classList.remove("hidden");
+ const items=[["",(DB.fixedDefaults.find(f=>f[0]==="sexs")||["","All"])[1]]]
+   .concat(found.sort().map(c=>[c,DB.sexLabels[c]||c]));
+ opt(sexSel,items,true);}
+function isPct(){const l=(DB.measures[lfsSel.value]||"").toLowerCase();
+ return l.includes("rate")||l.includes("ratio")||l.includes("percent");}
+function fmt(v){if(v==null)return"\u2013";
+ return isPct()?v.toFixed(1)+"%":v.toLocaleString("en-US");}
+function ma12(v){const out=new Array(v.length).fill(null);
+ for(let i=11;i<v.length;i++){let s=0,ok=true;
+  for(let j=i-11;j<=i;j++){if(v[j]==null){ok=false;break}s+=v[j];}
+  if(ok)out[i]=s/12;}return out;}
+function draw(){
+ const e=currentEntry();if(!e){svg.innerHTML="";return;}
+ const dim=dimObj(),val=dim.values.find(v=>v.code===valSel.value);
+ const sexOn=!sexWrap.classList.contains("hidden")&&sexSel.value;
+ $("title").textContent=DB.measures[lfsSel.value]+" \u2014 "+val.label+
+   (sexOn?", "+DB.sexLabels[sexSel.value]:"");
+ const note=DB.fixedDefaults.filter(f=>f[0]!==dim.key).map(f=>{
+   if(f[0]==="sexs"&&sexOn)return DB.sexLabels[sexSel.value];
+   // if this dimension has its own age universe, show it in place of 16+
+   if(f[0]==="ages"&&dim.ageUniverse)return dim.ageUniverse;
+   return f[1];});
+ $("subtitle").textContent=note.join(" \u00b7 ")+
+   (isPct()?"":" \u00b7 Thousands of persons")+" \u00b7 Monthly, "+
+   (e.s==="S"?"seasonally adjusted":"not seasonally adjusted");
+ $("sid").textContent=e.id;
+ $("seas").textContent=e.s==="S"?"SA":"NSA";
+ const n=e.v.length,y1=e.y0+Math.floor((e.m0-1+n-1)/12),
+   m1=(e.m0-1+n-1)%12;
+ $("range").textContent=MO[e.m0-1]+" "+e.y0+" \u2013 "+MO[m1]+" "+y1;
+ $("legend").innerHTML=e.s==="S"
+  ?'<span class="lg-sa">Seasonally adjusted monthly value</span>'
+  :'<span class="lg-raw">Monthly (NSA)</span><span class="lg-ma">12-month moving average</span>';
+ // --- geometry (mobile: taller aspect ratio so a narrow chart isn't squashed) ---
+ const W=svg.parentNode.clientWidth-16;
+ const mob=W<500;
+ const H=mob?Math.max(280,Math.min(360,W*0.85)):Math.max(300,Math.min(430,W*.45));
+ svg.setAttribute("viewBox","0 0 "+W+" "+H);
+ svg.setAttribute("width",W);svg.setAttribute("height",H);
+ const L=mob?46:58,R=mob?10:14,T=12,B=30,pw=W-L-R,ph=H-T-B;
+ const vals=e.v.filter(v=>v!=null);
+ let lo=Math.min(...vals),hi=Math.max(...vals);
+ if(lo===hi){lo-=1;hi+=1}
+ const pad=(hi-lo)*.07;lo=Math.max(0,lo-pad);hi+=pad;
+ const X=i=>L+pw*i/(n-1||1),Y=v=>T+ph*(1-(v-lo)/(hi-lo));
+ let g="";
+ const step=niceStep((hi-lo)/5);
+ for(let t=Math.ceil(lo/step)*step;t<=hi;t+=step){
+  g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(t)+'" y2="'+Y(t)+
+   '" stroke="#d8c9a0"/>'+
+   '<text x="'+(L-7)+'" y="'+(Y(t)+4)+'" text-anchor="end">'+
+   (isPct()?t.toFixed(step<1?1:0)+"%":t.toLocaleString())+"</text>";}
+ const yrSpan=y1-e.y0,every=yrSpan>50?10:yrSpan>20?5:yrSpan>8?2:1;
+ for(let yr=Math.ceil(e.y0/every)*every;yr<=y1;yr+=every){
+  const i=(yr-e.y0)*12+(1-e.m0);if(i<0||i>n-1)continue;
+  g+='<text x="'+X(i)+'" y="'+(H-8)+'" text-anchor="middle">'+yr+"</text>";}
+ const path=(arr)=>{let d="",pen=false;
+  for(let i=0;i<n;i++){const v=arr[i];
+   if(v==null){pen=false;continue}
+   d+=(pen?"L":"M")+X(i).toFixed(1)+" "+Y(v).toFixed(1);pen=true;}return d;}
+ if(e.s==="S"){
+  g+='<path d="'+path(e.v)+'" fill="none" stroke="#085041" stroke-width="2.2"/>';
+ }else{
+  g+='<path d="'+path(e.v)+'" fill="none" stroke="#0a3d33" stroke-width="1.1" opacity="0.30"/>';
+  g+='<path d="'+path(ma12(e.v))+'" fill="none" stroke="#0a3d33" stroke-width="2.4"/>';
+ }
+ const series=e.s==="S"?e.v:ma12(e.v);
+ for(let i=n-1;i>=0;i--){if(series[i]!=null){
+  g+='<circle cx="'+X(i)+'" cy="'+Y(series[i])+
+   '" r="4" fill="#712B13"/><text x="'+(X(i)-8)+'" y="'+
+   (Y(series[i])-9)+'" text-anchor="end" style="fill:#712B13;font-weight:700">'+
+   fmt(isPct()?series[i]:Math.round(series[i]))+"</text>";break;}}
+ svg.innerHTML=g;
+ const showAt=(clientX,clientY)=>{
+  const r=svg.getBoundingClientRect();
+  // scale from CSS px to viewBox coords (SVG width may differ from render width)
+  const sx=W/r.width;
+  const i=Math.round(((clientX-r.left)*sx-L)/pw*(n-1));
+  if(i<0||i>n-1||(e.v[i]==null&&ma12(e.v)[i]==null)){tip.style.display="none";return;}
+  const mIdx=(e.m0-1+i)%12,yr=e.y0+Math.floor((e.m0-1+i)/12);
+  const m=ma12(e.v)[i];
+  tip.innerHTML="<b>"+MO[mIdx]+" "+yr+"</b><br>"+fmt(e.v[i])+
+   (e.s==="U"&&m!=null?"<br>12-mo avg: "+fmt(isPct()?m:Math.round(m)):"");
+  tip.style.left=((clientX-r.left))+"px";
+  tip.style.top=((clientY-r.top))+"px";tip.style.display="block";};
+ svg.onmousemove=ev=>showAt(ev.clientX,ev.clientY);
+ svg.onmouseleave=()=>tip.style.display="none";
+ // touch: drag a finger across the chart to scrub the tooltip
+ const touch=ev=>{if(ev.touches&&ev.touches[0]){
+   showAt(ev.touches[0].clientX,ev.touches[0].clientY);ev.preventDefault();}};
+ svg.ontouchstart=touch;svg.ontouchmove=touch;
+ svg.ontouchend=()=>setTimeout(()=>{tip.style.display="none";},1400);
+}
+function niceStep(x){const p=Math.pow(10,Math.floor(Math.log10(x)));
+ const f=x/p;return(f<1.5?1:f<3.5?2:f<7.5?5:10)*p;}
+dimSel.onchange=()=>{fillVals();fillMeasures();fillSex();draw();};
+valSel.onchange=()=>{fillMeasures();fillSex();draw();};
+lfsSel.onchange=()=>{fillSex();draw();};
+sexSel.onchange=draw;
+window.onresize=draw;
+fillDims();fillVals();fillMeasures();fillSex();draw();
+</script></body></html>

@@ -168,6 +168,12 @@ def _write_cache(series_id: str, observations: list[dict], end_year: int,
     )
 
 
+def is_cached(series_id: str) -> bool:
+    """True if this series already has a cache entry, i.e. costs no query.
+    Lets a caller price a large fetch before starting it."""
+    return _read_cache(series_id) is not None
+
+
 def _is_fresh(meta: dict) -> bool:
     """Fresh if fetched today, or if it already holds the newest month the
     most recent monthly release could have delivered (today - 2 months,
