@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CPS Monthly Explorer &mdash; Data 4 The People</title>
+<meta name="description" content="Interactive explorer for monthly BLS Current Population Survey (LN) series.">
+<style>
+:root{--teal:#0a3d33;--coral:#712B13;--paper:#f2e9d0;--gold:#9a7b2e;
+--ink:#2b2317;--line:#cdbb96;--parch:#efe4c6;--parch2:#e7d8b3}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);min-height:100vh;
+background:
+ radial-gradient(120% 80% at 20% 0%, #f4ecd6 0%, #efe4c6 55%, #e7d6ac 100%),
+ repeating-linear-gradient(0deg, rgba(120,90,40,0.020) 0 2px, transparent 2px 4px);
+background-blend-mode:multiply;
+font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:48px 16px 40px}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);
+text-transform:uppercase;font-weight:700;font-family:Georgia,serif}
+h1{font-family:Georgia,'Times New Roman',serif;color:var(--teal);
+font-size:clamp(22px,4vw,32px);margin:.2em 0 .1em;line-height:1.18;
+font-weight:700;letter-spacing:.01em}
+h1::first-letter{color:var(--coral)}
+.sub{color:#6b5d3f;font-size:13px;margin-bottom:26px;font-style:italic;
+font-family:Georgia,serif}
+.card{display:block;text-decoration:none;color:inherit;
+background:linear-gradient(180deg,#faf3df 0%,#f4ead0 100%);
+border:1px solid var(--gold);border-radius:10px;
+padding:22px 20px;position:relative;margin-bottom:14px;
+box-shadow:0 1px 0 rgba(255,255,255,0.6) inset,0 2px 10px rgba(90,70,30,0.12);
+transition:box-shadow .15s ease,transform .15s ease}
+.card::before{content:"";position:absolute;inset:5px;
+border:1px solid rgba(154,123,46,0.4);border-radius:7px;pointer-events:none}
+.card:hover,.card:focus-visible{transform:translateY(-1px);
+box-shadow:0 1px 0 rgba(255,255,255,0.6) inset,0 5px 16px rgba(90,70,30,0.20)}
+.card:focus-visible{outline:3px solid rgba(154,123,46,.45);outline-offset:2px}
+.card h2{font-family:Georgia,serif;color:var(--teal);margin:0 0 5px;
+font-size:19px;font-weight:700}
+.card p{margin:0;font-size:13.5px;color:#5d5238}
+.card .go{display:inline-block;margin-top:12px;font-family:Georgia,serif;
+font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+color:var(--coral)}
+.note{font-size:12.5px;color:#6b5d3f;margin-top:26px;
+border-top:1px solid var(--line);padding-top:16px}
+.note a{color:var(--teal)}
+.note p{margin:.5em 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;
+background:rgba(154,123,46,.12);padding:1px 5px;border-radius:4px}
+</style></head><body>
+<div class="wrap">
+  <div class="eyebrow">Data 4 The People</div>
+  <h1>CPS Monthly Explorer</h1>
+  <div class="sub">Monthly labor-force series from the BLS Current Population Survey.</div>
+
+  <a class="card" href="v2/output/ln_explorer.html">
+    <h2>Open the explorer &rarr;</h2>
+    <p>Browse employment, unemployment, participation and population series by
+       age, sex, race, education, industry, occupation and more. Every chart is
+       exactly one published BLS series &mdash; never a sum, never an average
+       &mdash; and the series ID is shown so any number can be verified at
+       bls.gov.</p>
+    <span class="go">Launch</span>
+  </a>
+
+  <div class="note">
+    <p>Built from the BLS Public Data API by <code>v2/build_explorer.py</code>.
+       Source and methodology:
+       <a href="https://github.com/Data4ThePeople/CPS_monthly_explorer">github.com/Data4ThePeople/CPS_monthly_explorer</a>.</p>
+    <p>Two data hazards the underlying analyses respect: the January 2026
+       population-control break, and the uncollected October 2025 month.</p>
+  </div>
+</div>
+</body></html>
