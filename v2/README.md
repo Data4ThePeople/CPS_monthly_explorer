@@ -1,4 +1,4 @@
- # v2 — API-backed analysis pipeline
+    # v2 — API-backed analysis pipeline
 
 The next generation of this repo's analysis scripts. Instead of streaming the
 389 MB `ln.data.1.AllData` flat file, these pull exactly the series they need
