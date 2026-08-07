@@ -202,8 +202,23 @@ def _is_fresh(meta: dict) -> bool:
 # --------------------------------------------------------------------------
 # HTTP
 
+# A non-success status is only worth retrying when the cause could be
+# momentary. These substrings mark the causes that will still be true on the
+# next attempt, so we fail fast on them instead of burning three queries.
+_PERMANENT_API_ERRORS = (
+    "threshold",        # daily quota exhausted
+    "exceeded",         # ditto, other phrasing
+    "invalid",          # bad registration key / bad series id
+    "unauthoriz",       # key not accepted
+    "not authoriz",
+)
+
+
 def _post(payload: dict) -> dict:
-    """One API query, with retries on transport/5xx errors only."""
+    """One API query. Retries transport errors, 5xx, and non-success statuses
+    that look momentary -- BLS returns a bare REQUEST_FAILED both for genuinely
+    bad requests and for transient load, and release mornings produce the
+    latter. Permanent causes (quota, bad key) still fail immediately."""
     global _queries_made
     last_err = None
     for attempt in range(3):
@@ -222,8 +237,12 @@ def _post(payload: dict) -> dict:
             raise BLSAPIError(f"HTTP {resp.status_code}", [resp.text[:500]])
         body = resp.json()
         if body.get("status") != "REQUEST_SUCCEEDED":
-            # quota exhausted / bad key / malformed request -- retrying won't help
-            raise BLSAPIError(body.get("status"), body.get("message", []))
+            status, messages = body.get("status"), body.get("message", [])
+            blob = " ".join([str(status)] + list(messages)).lower()
+            if any(p in blob for p in _PERMANENT_API_ERRORS):
+                raise BLSAPIError(status, messages)
+            last_err = BLSAPIError(status, messages)
+            continue
         return body
     raise BLSAPIError("TRANSPORT_ERROR", [str(last_err)])
 
