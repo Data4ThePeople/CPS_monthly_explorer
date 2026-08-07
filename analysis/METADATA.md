@@ -117,16 +117,18 @@ platforms may grab whichever image they find first.
 <meta property="og:type"        content="article">
 <meta property="og:title"       content="The Line the BLS Buried: Participation Hits a 1975 Low">
 <meta property="og:description" content="The BLS buried it six paragraphs in: participation has fallen 0.7 points since January — the steepest January-to-July drop in 79 years outside the pandemic.">
-<meta property="og:image"       content="REPLACE_ME_IMAGE_BASE/hero_participation.png">
+<meta property="og:image"       content="REPLACE_ME_PRISMIC_HERO_URL?auto=format,compress">
 <meta property="og:image:alt"   content="U.S. labor force participation rate, 1948 to July 2026, falling to 61.4% — the lowest July reading since 1975.">
-<meta property="og:url"         content="REPLACE_ME_ARTICLE_URL">
+<meta property="og:url"         content="https://www.data4thepeople.com/p/the-line-the-bls-buried">
 <meta property="og:site_name"   content="Data 4 The People">
-<meta property="article:published_time" content="2026-08-07">
+<meta property="article:published_time" content="2026-08-07T10:00:00-04:00">
+<meta property="article:section" content="Data 4 Thought">
+<meta property="article:author"  content="Eric Pachman">
 
 <meta name="twitter:card"        content="summary_large_image">
 <meta name="twitter:title"       content="The Line the BLS Buried: Participation Hits a 1975 Low">
 <meta name="twitter:description" content="Only one year since 1948 has been worse. We paid people to stay home that year.">
-<meta name="twitter:image"       content="REPLACE_ME_IMAGE_BASE/hero_participation.png">
+<meta name="twitter:image"       content="REPLACE_ME_PRISMIC_HERO_URL?auto=format,compress">
 
 <meta name="keywords" content="labor force participation rate, labor force participation, Bureau of Labor Statistics, BLS, Current Population Survey, CPS, prime-age workers, jobs report, labor market, workforce participation, population aging, shift-share analysis, economic data">
 ```
@@ -135,61 +137,82 @@ platforms may grab whichever image they find first.
 
 ## Schema (JSON-LD)
 
+Follows the standard Data 4 Thought post format.
+
+Fill in before publishing: the Prismic image URL (upload the hero first, then
+paste its delivery URL), and the `/p/` slug if it differs from the one below.
+
 ```html
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "NewsArticle",
+  "@type": "Article",
   "headline": "The Line the BLS Buried: Participation Hits a 1975 Low",
-  "description": "The BLS buried it six paragraphs in: participation has fallen 0.7 points since January — the steepest January-to-July drop in 79 years outside the pandemic.",
-  "datePublished": "2026-08-07",
-  "dateModified": "2026-08-07",
-  "inLanguage": "en-US",
-  "isAccessibleForFree": true,
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "REPLACE_ME_ARTICLE_URL" },
+  "description": "The BLS buried it six paragraphs in: participation has fallen 0.7 points since January — the steepest January-to-July drop in 79 years outside the pandemic. Aging explains only 6% of it.",
   "image": [
-    "REPLACE_ME_IMAGE_BASE/hero_participation.png",
-    "REPLACE_ME_IMAGE_BASE/chart_ranking.png",
-    "REPLACE_ME_IMAGE_BASE/table_decomposition.png"
+    "REPLACE_ME_PRISMIC_HERO_URL?auto=format,compress"
   ],
+  "datePublished": "2026-08-07T10:00:00-04:00",
+  "dateModified": "2026-08-07T10:00:00-04:00",
   "author": {
-    "@type": "Organization",
-    "name": "Data 4 The People",
-    "url": "REPLACE_ME_SITE_URL"
+    "@type": "Person",
+    "name": "Eric Pachman",
+    "url": "https://www.data4thepeople.com/authors/eric-pachman"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Data 4 The People",
-    "url": "REPLACE_ME_SITE_URL"
+    "url": "https://data4thepeople.com"
   },
-  "keywords": "labor force participation rate, Current Population Survey, BLS, prime-age workers, labor market, jobs report, population aging",
-  "about": [
-    { "@type": "Thing", "name": "Labor force participation rate" },
-    { "@type": "Thing", "name": "United States labor market" }
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.data4thepeople.com/p/the-line-the-bls-buried"
+  },
+  "keywords": [
+    "labor force participation rate",
+    "prime-age workers",
+    "Current Population Survey",
+    "labor market",
+    "jobs report"
   ],
-  "citation": {
-    "@type": "Dataset",
-    "name": "Current Population Survey (LN database)",
-    "creator": { "@type": "Organization", "name": "U.S. Bureau of Labor Statistics" },
-    "url": "https://www.bls.gov/cps/",
-    "license": "https://www.usa.gov/government-works"
-  },
-  "isBasedOn": "https://github.com/Data4ThePeople/CPS_monthly_explorer"
+  "articleSection": "Data 4 Thought",
+  "inLanguage": "en-US",
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Labor force participation rate, 16 years and over, seasonally adjusted, series LNS11300000",
+      "author": "U.S. Bureau of Labor Statistics",
+      "url": "https://data.bls.gov/timeseries/LNS11300000"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Employment Situation — July 2026",
+      "author": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/news.release/empsit.nr0.htm"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Current Population Survey, LN database",
+      "author": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/cps/"
+    }
+  ]
 }
 </script>
 ```
 
-**Why these choices**
+**Notes**
 
-- `NewsArticle` rather than `Article` — timely reporting tied to a data release.
-- `citation` as a `Dataset` naming BLS as creator. For data journalism this is
-  the highest-value part: it makes provenance machine-readable and reinforces
-  the transparency the piece argues for.
-- `isBasedOn` pointing at the repo. Unusual for a news article, appropriate
-  here, because the reproducibility claim is a real differentiator.
-- `image` lists three, not five. The sources table is a reference exhibit, not a
-  share card — keeping it out stops a methodology table becoming a social
-  preview. Hero first; most consumers take the first entry.
+- `image` carries the hero only, matching the house format. Prismic's delivery
+  URL already ends in `?auto=format,compress` — keep that on.
+- Suggested hero filename, following the convention:
+  `2026-08-07-the-line-the-bls-buried-hero-1680x1080.png`
+- `datePublished` is set to 10:00 ET rather than the usual 06:00, since the BLS
+  release lands at 08:30 ET and a timestamp before it would be wrong. Adjust to
+  the actual publish time.
+- The three citations point at the exact series, the release being critiqued,
+  and the survey — the same granularity as citing CAINC4 and CUUR0000SA0 rather
+  than just "BEA" and "BLS".
 
 ---
 

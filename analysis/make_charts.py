@@ -59,12 +59,13 @@ def style(ax, title, subtitle, xlabel):
             fontsize=10.5, style="italic", family=SERIF, va="bottom")
 
 
-def source(fig, lines):
+def source(fig, lines, fs=1.0):
     """Footnote block. Takes a list of short lines -- a single long string
-    silently runs off the canvas rather than wrapping."""
+    silently runs off the canvas rather than wrapping. `fs` scales type for
+    narrower canvases, where a line that fits at 12in will overflow."""
     for i, line in enumerate(reversed(lines)):
-        fig.text(0.012, 0.010 + i * 0.028, line, color=MUTED,
-                 fontsize=8.5, family=SERIF)
+        fig.text(0.012, 0.010 + i * (0.028 / fs), line, color=MUTED,
+                 fontsize=8.5 * fs, family=SERIF)
 
 
 def series(sid):
@@ -150,12 +151,16 @@ def render_table(path, title, subtitle, colgroups, headers, rows, aligns,
 
 
 # --------------------------------------------------------------------------
-def chart_hero():
+def chart_hero(path=None, figsize=(12, 6.3), fs=1.0):
     """Hero: the whole 1948-2026 sweep of the headline participation rate.
 
     Reindexed to a complete monthly range so the uncollected Oct-2025 month
     becomes NaN and matplotlib breaks the line there instead of drawing a
     straight segment across a month that was never measured.
+
+    `fs` scales type so the same design holds at more than one canvas size --
+    matplotlib sizes fonts in absolute points, so a smaller figure with
+    unchanged sizes comes out looking crowded.
     """
     s = series(LFPR_16)
     full = pd.date_range(s.index.min(), s.index.max(), freq="MS")
@@ -166,7 +171,7 @@ def chart_hero():
     last_at = s.dropna().index[-1]; last = s.dropna().iloc[-1]
     jan26 = s[JAN]
 
-    fig, ax = plt.subplots(figsize=(12, 6.3))
+    fig, ax = plt.subplots(figsize=figsize)
     ax.set_facecolor(PARCH); fig.patch.set_facecolor(PARCH)
 
     ax.plot(s.index, s.values, color=BASE, lw=2.0, zorder=3)
@@ -181,12 +186,12 @@ def chart_hero():
 
     ax.annotate(f"Peak {peak_at.year}\n{peak:.1f}%",
                 xy=(peak_at, peak), xytext=(peak_at - pd.DateOffset(years=13), peak + 0.9),
-                fontsize=11, family=SERIF, color=MUTED, ha="center",
+                fontsize=11*fs, family=SERIF, color=MUTED, ha="center",
                 arrowprops=dict(arrowstyle="-", color=GRID, lw=1))
     # Label sits beside its own dot -- a long leader from the left would cross
     # the 2020 plunge and read as though it pointed there.
     ax.text(last_at + pd.DateOffset(months=8), last - 0.15,
-            f"July 2026\n{last:.1f}%", fontsize=12.5, family=SERIF,
+            f"July 2026\n{last:.1f}%", fontsize=12.5*fs, family=SERIF,
             color=HILITE, fontweight="bold", ha="left", va="center")
     # No January-2026 callout: any leader long enough to reach clear space
     # rakes across the 2010s and reads as pointing at the wrong thing. The
@@ -194,7 +199,7 @@ def chart_hero():
     # post. jan26 is kept for the stdout summary below.
     ax.annotate("COVID-19", xy=(pd.Timestamp(2020, 4, 1), 60.05),
                 xytext=(pd.Timestamp(2011, 6, 1), 59.1),
-                fontsize=10, family=SERIF, color=MUTED, style="italic",
+                fontsize=10*fs, family=SERIF, color=MUTED, style="italic",
                 ha="center",
                 arrowprops=dict(arrowstyle="-", color=GRID, lw=1))
 
@@ -205,21 +210,22 @@ def chart_hero():
     for sp in ("top", "right", "left"):
         ax.spines[sp].set_visible(False)
     ax.spines["bottom"].set_color(GRID)
-    ax.tick_params(colors=MUTED, labelsize=11, length=0)
+    ax.tick_params(colors=MUTED, labelsize=11*fs, length=0)
     ax.yaxis.grid(True, color=GRID, lw=0.8, alpha=0.5)
     ax.set_axisbelow(True)
 
     fig.text(0.055, 0.955, "U.S. LABOR FORCE PARTICIPATION RATE",
-             color="#9a7b2e", fontsize=11, family=SERIF, fontweight="bold",
+             color="#9a7b2e", fontsize=11*fs, family=SERIF, fontweight="bold",
              va="top")
     fig.text(0.055, 0.905, "The lowest July reading since 1975",
-             color="#0a3d33", fontsize=21, family=SERIF, fontweight="bold",
+             color="#0a3d33", fontsize=21*fs, family=SERIF, fontweight="bold",
              va="top")
     source(fig, ["BLS Current Population Survey, series LNS11300000 (seasonally "
-                 "adjusted), January 1948 - July 2026. The break in the line is "
-                 "October 2025, which was never collected. · Data 4 The People"])
-    fig.tight_layout(rect=(0.012, 0.045, 1, 0.86))
-    p = OUT / "hero_participation.png"
+                 "adjusted), January 1948 - July 2026.",
+                 "The break in the line is October 2025, which was never "
+                 "collected. · Data 4 The People"], fs=fs)
+    fig.tight_layout(rect=(0.012, 0.045 + (0.03 if fs < 1 else 0.022), 1, 0.86))
+    p = Path(path) if path else OUT / "hero_participation.png"
     fig.savefig(p, dpi=200, facecolor=PARCH)
     plt.close(fig)
     print(f"wrote {p}  (peak {peak:.1f} in {peak_at:%Y-%m}, "
@@ -405,5 +411,7 @@ def tables():
 
 if __name__ == "__main__":
     chart_hero()
+    chart_hero(OUT / "2026-08-07-the-line-the-bls-buried-hero-1680x1080.png",
+               figsize=(8.4, 5.4), fs=0.78)
     chart_ranking()
     tables()
