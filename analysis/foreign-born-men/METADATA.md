@@ -98,11 +98,12 @@ below is the one that does modern work.
 
 **chart_not_filled.png**
 
-> Grouped bar chart comparing the change in native-born men across the summers of
-> 2025 and 2026 against a typical pair of summers. Population grew 2,895,000
-> against a typical 1,063,000. The labor force grew 3,953,000 against a typical
-> 3,802,000. Employment grew 4,284,000 against a typical 4,867,000 — 583,000
-> slower than normal.
+> Line chart of the employment-population ratio for native-born men, July of each
+> year from 2015 to 2026. The ratio falls from 65.9 percent in July 2019 to 60.1
+> percent in July 2020, recovers to 64.2 percent by 2023, then declines in each of
+> the last three years, from 64.2 percent in 2023 to 62.8 percent in July 2026. A hollow marker at 63.6 percent
+> marks where the ratio would need to sit for native-born men to have absorbed
+> the 971,000 jobs foreign-born men vacated — 0.8 points above the actual figure.
 
 **chart_divergence.png**
 
