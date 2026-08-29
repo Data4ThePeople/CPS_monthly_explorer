@@ -272,6 +272,16 @@ editing:
 If an editor wants a shorter version, cut the labor-force-share section before
 cutting any of those three.
 
+**On "What if nobody was supposed to replace them?"** This is the only section
+of the post that goes beyond what the data shows, and it says so twice in its
+own text. The occupation table is measured and can be defended line by line. The
+consequence — that the work goes undone and prices rise — is a hypothesis, and
+the paragraph beginning "We want to be explicit that we have not measured this"
+is what keeps the section honest. It is not padding and it is not hedging. Cut
+it and the piece is making an economic forecast it has not earned. The promise
+to publish the test "whether or not it agrees with what we have just written" is
+also load-bearing; do not soften it.
+
 **On the framing added in "The story we are being told makes a prediction."**
 That section argues the data refutes a claim about *who* left — the idle versus
 the employed — and that claim genuinely is refuted, on the government's own

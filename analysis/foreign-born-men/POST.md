@@ -235,6 +235,72 @@ seasonal norm.
 
 ---
 
+## What if nobody was supposed to replace them?
+
+Buried inside the replacement story is an assumption nobody says out loud: that
+a job is a fixed thing. That there is a pile of jobs, and if one person stops
+doing one, another person picks it up. Two million men leave, two million
+openings appear, somebody else walks in.
+
+We have just watched that assumption fail in real time. The jobs were vacated.
+Native-born men's employment rate went *down*.
+
+So ask a different question, and use your own eyes to answer it. Think about the
+work you actually see being done around you. The crew framing the house down the
+street. The kitchen at six in the morning. The people who look after somebody's
+parents on the overnight shift. The crates moving through the back of the
+warehouse.
+
+Now ask: **how many people do you know who are waiting to take those jobs?**
+
+That is an anecdote, and we do not want to rest an argument on one. So we
+checked it against the same source as everything else here.
+
+Foreign-born men are **just over one in five** employed men in the United
+States — 20.5%. Here is where they actually are:
+
+| Occupation | Foreign-born share of men doing it |
+|---|---:|
+| Farming, fishing and forestry | **42%** |
+| Construction and extraction | **34%** — 2.8 million men |
+| Building and grounds maintenance | **30%** |
+| Healthcare support | **27%** |
+| Food preparation and serving | **25%** |
+| Transportation and material moving | **24%** |
+| *Management and professional* | *18%* |
+| *Protective service* | *10%* |
+
+Your lived experience is not fooling you. One in three men on American
+construction sites is foreign-born. So is more than a quarter of the men helping
+in healthcare, and a quarter of the men in restaurant kitchens.
+
+Which raises the possibility we think is being ignored, and that we cannot rule
+out: **these jobs may not be transferring to anyone at all. They may simply be
+going away.** The house not framed. The shift not covered. The overnight care
+not given.
+
+If that is what is happening, this stops being a labor market story and becomes
+a price story. Fewer men able to build houses does not produce cheaper houses.
+Fewer people willing to do hard, low-paid, physically punishing work does not
+make that work cheaper — it makes it dearer, and everything it touches dearer
+along with it. That is not a moral claim. It is what happens to a price when
+supply is withdrawn and demand is not.
+
+**We want to be explicit that we have not measured this.** Nothing above
+demonstrates it. It is a hypothesis, and it is testable, and we intend to test
+it against the same public data in the months ahead — housing starts against
+construction employment, wage growth in the occupations most exposed, prices in
+the services that depend on them. We will publish that whether or not it agrees
+with what we have just written.
+
+But we would rather raise it now than explain it afterwards. If this country is
+removing two million working men from an economy that was already short of
+people willing to do this particular work, and telling itself that a burden is
+being lifted, then it is worth considering — seriously, and before the fact —
+that we may be barreling toward precisely the opposite.
+
+---
+
 ## Go look for yourself. Please.
 
 Every series in this post is public, free, and updated monthly. None of it is
@@ -355,6 +421,17 @@ The total labor force figures are unadjusted (LNU01000000), benchmarked the same
 way, so that they are on the same footing as the nativity series. On a
 seasonally adjusted basis the total labor force fell 1,371,000 between January
 and July 2026 alone.
+
+### The occupation table
+
+Occupation detail is published annually by nativity and sex, as each group's
+percentage distribution across occupations — not as the foreign-born share of
+each occupation, which is the number the argument needs. We derive it by
+applying each group's published distribution to its published employment level:
+foreign-born men in an occupation, divided by all men in it. 2025 annual
+averages, the latest available. Men only, since that is the group this post is
+about. Series LNU020735xx (foreign born) and LNU020736xx (native born); the
+script prints every one of them with its identifier.
 
 Reproduce any of it yourself:
 [github.com/Data4ThePeople/CPS_monthly_explorer](https://github.com/Data4ThePeople/CPS_monthly_explorer)
