@@ -9,16 +9,18 @@ for the hero. Confirm the `/p/` slug matches what Prismic assigns.
 
 ## Email
 
-**Subject:** 2.1 million men are missing from the jobs data
+**Subject:** The government's own data contradicts the government's story
 
 **Preview text** (79 chars — first 39 survive mobile truncation):
 
-> They did not stop looking for work. Eighty-eight percent came straight out of jobs.
+> Not the idle. The employed. Eighty-eight percent came straight out of jobs.
 
 Do not lead the preview with "foreign-born." The finding is the mechanism —
 people leaving the count from *employment* rather than drifting into
 not-in-the-labor-force — and a nativity label in the first 39 characters gets the
-post sorted into a political bucket before the mechanism is read.
+post sorted into a political bucket before the mechanism is read. "Not the idle.
+The employed." does the work without naming the group, and it is the sentence the
+whole piece turns on.
 
 ---
 
@@ -44,7 +46,7 @@ the title has to survive a search results page.
 
 **Use this** (156 chars):
 
-> The foreign-born male population has fallen 2.1 million across two summers — the two steepest on record. 88% came straight out of employment, not the sidelines.
+> If the people leaving were a drag on the economy, the decline would show up in unemployment or the sidelines. It doesn't. 88% came straight out of jobs.
 
 Alternative (152 chars), leading with the labor force framing:
 
@@ -159,7 +161,7 @@ Follows the standard Data 4 Thought post format.
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "The Men Who Vanished: 2.1 Million Gone From the Jobs Data",
-  "description": "The foreign-born male population has fallen 2.1 million across two summers — the two steepest January-to-July declines on record. Eighty-eight percent came straight out of employment, and native-born men did not fill the gap.",
+  "description": "The foreign-born male population has fallen 2.1 million across two summers. If those leaving were a drag on the economy, the decline would appear in unemployment or the sidelines; instead 88% came straight out of employment, on the government's own published data.",
   "image": [
     "REPLACE_ME_PRISMIC_HERO_URL?auto=format,compress"
   ],
@@ -268,6 +270,16 @@ editing:
 
 If an editor wants a shorter version, cut the labor-force-share section before
 cutting any of those three.
+
+**On the framing added in "The story we are being told makes a prediction."**
+That section argues the data refutes a claim about *who* left — the idle versus
+the employed — and that claim genuinely is refuted, on the government's own
+series. It does not argue, and must not be edited to argue, that the data shows
+deportation, emigration, or any particular mechanism. The CPS cannot see the
+difference and the post says so twice. Keep the sentence in the closing that
+concedes it: "We cannot tell you from this data why any individual person
+stopped being counted." Losing that line turns a defensible argument into an
+indefensible one.
 
 ---
 
