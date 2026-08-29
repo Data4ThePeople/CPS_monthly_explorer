@@ -221,6 +221,49 @@ data. What we *can* say is narrower and still striking: 2.1 million foreign-born
 men who were counted are not counted now, and they were overwhelmingly employed
 when they were.
 
+**Every number here rests on a model, and models have error.** The CPS
+interviews a sample of about 60,000 households and scales it to the whole
+country using Census Bureau population estimates — which are themselves built
+from assumptions about births, deaths and net migration. That is a model. It is
+wrong by some amount every month, and the January rebases are that error being
+corrected in public. The January 2026 revision moved roughly 1.5 million people
+between men and women in a single month, which should tell you how much room
+there is in these figures.
+
+So do not read 2.1 million as precise to the person. It is not, we cannot make
+it so, and we are not claiming otherwise.
+
+**What survives the model error is comparability.** The same instrument, the
+same questions, the same definitions, the same corrections applied the same way,
+month after month for two decades. The level may be off. The *comparison* is
+what the series is built to support, and it is what every claim in this post
+rests on.
+
+On that comparison, here is the size of what is happening. Measured against the
+seventeen years before it, foreign-born men's January-to-July population change
+was **5.7 standard deviations** below the historical mean in 2025 and **4.6** in
+2026. Taken together the two summers are **6.2 standard deviations** out. Their
+labor force and their employment both sit at 4.6.
+
+We are deliberately not converting that into a probability. To say "a one in *n*
+years event" you would have to characterise the tail of a distribution from
+seventeen observations, and the assumption of normality — not the data — would
+be doing all the work. The number means something simpler and harder to dismiss:
+**nothing in the recorded history of this series looks like this.**
+
+**And the strongest evidence here is the comparison, not the level.** Over the
+identical months, in the identical survey, scaled by the identical model,
+native-born men came in at **+0.8 and +0.1 standard deviations** — statistically
+ordinary. Their employment: −0.2 both years. Whatever error the population model
+carries, both categories carry it at the same time. A shared model error does
+not produce a 4.6-sigma move in one category and a 0.1-sigma move in the other.
+
+Which is why we would ask you not to let the 2.1 million stand on its own. On
+its own it is a level estimate from a model, and it deserves exactly the
+scepticism any such estimate deserves. What gives it force is that it is
+unprecedented against the series' own twenty-year record, and that the
+comparison group standing right beside it did not move at all.
+
 **Nativity is a survey answer, not a population control.** BLS controls the CPS
 to independent population estimates by age, sex, race and ethnicity — but not by
 nativity. The foreign-born and native-born series are shares of a controlled
@@ -421,6 +464,20 @@ The total labor force figures are unadjusted (LNU01000000), benchmarked the same
 way, so that they are on the same footing as the nativity series. On a
 seasonally adjusted basis the total labor force fell 1,371,000 between January
 and July 2026 alone.
+
+### The standard-deviation figures
+
+Each is the January-to-July change for that year, expressed as standard
+deviations from the mean of the same window in the seventeen reference years —
+2007 to 2024, excluding 2020. The two event years are excluded from the
+reference so that the yardstick is not widened by the thing being measured.
+Excluding 2020 as well is the more conservative choice in both directions: it
+removes an enormous outlier that would otherwise inflate the standard deviation
+and make 2025 and 2026 look less unusual than they are.
+
+We report standard deviations and stop there, for the reason given above.
+`make_charts.py` prints the mean, the standard deviation, the reference count
+and every z-score.
 
 ### The occupation table
 

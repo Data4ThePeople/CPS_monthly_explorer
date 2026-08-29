@@ -272,6 +272,20 @@ editing:
 If an editor wants a shorter version, cut the labor-force-share section before
 cutting any of those three.
 
+**On the standard-deviation figures.** Do not convert them into a probability,
+a "one in n years event," or a percentage chance, however tempting the headline.
+With seventeen reference observations the tail of the distribution is not
+characterised, and normality would be carrying the claim rather than the data.
+The post says this explicitly and the sentence must survive editing. "Nothing in
+the recorded history of this series looks like this" is the strongest form the
+claim can honestly take.
+
+Related: the paragraph asking readers not to let the 2.1 million stand on its
+own is not false modesty. The level is a model estimate. Its significance comes
+from the longitudinal record and from native-born men sitting at +0.1 sigma over
+the identical months. An edit that promotes the 2.1 million to the whole story
+strips out exactly what makes it defensible.
+
 **On "What if nobody was supposed to replace them?"** This is the only section
 of the post that goes beyond what the data shows, and it says so twice in its
 own text. The occupation table is measured and can be defended line by line. The

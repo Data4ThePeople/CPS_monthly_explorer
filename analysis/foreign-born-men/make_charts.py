@@ -525,6 +525,52 @@ def tables(t, norm):
 
 
 # --------------------------------------------------------------------------
+def sigma_table(t):
+    """How far each group's January-to-July change sits from its own history.
+
+    The reference excludes 2020 (the shutdown) and the two event years, so the
+    yardstick is not widened by the thing being measured.
+
+    We report standard deviations and deliberately stop there. Converting a
+    z-score this large into a probability would mean characterising the tail of
+    a distribution from seventeen observations, where the normality assumption
+    -- not the data -- would be doing all the work. The number means "nothing in
+    the record looks like this," and nothing more.
+    """
+    ref = [y for y in t.index if y not in (2020, 2025, 2026)]
+    out = {}
+    for col in ("FBM_pop", "FBM_clf", "FBM_emp", "FBW_clf", "NBM_clf", "NBM_emp"):
+        d = t.loc[ref, col]
+        mu, sd = d.mean(), d.std(ddof=1)
+        out[col] = {y: ((t.loc[y, col] - mu) / sd, t.loc[y, col]) for y in (2025, 2026)}
+        out[col]["ref"] = (mu, sd, len(ref))
+    # the two summers taken together, against the distribution of consecutive pairs
+    pairs = {y: t.loc[y, "FBM_pop"] + t.loc[y + 1, "FBM_pop"]
+             for y in t.index if y + 1 in t.index}
+    refp = [v for y, v in pairs.items() if y not in (2019, 2020, 2024, 2025)]
+    mu = sum(refp) / len(refp)
+    sd = (sum((v - mu) ** 2 for v in refp) / (len(refp) - 1)) ** 0.5
+    out["FBM_pop_2yr"] = {"z": (pairs[2025] - mu) / sd, "value": pairs[2025],
+                          "ref": (mu, sd, len(refp))}
+    return out
+
+
+def print_sigma(t):
+    z = sigma_table(t)
+    n = z["FBM_pop"]["ref"][2]
+    print(f"\nDEPARTURE FROM THE SERIES' OWN HISTORY "
+          f"(z, reference n={n}, excludes 2020/2025/2026)")
+    for col in ("FBM_pop", "FBM_clf", "FBM_emp", "FBW_clf", "NBM_clf", "NBM_emp"):
+        mu, sd, _ = z[col]["ref"]
+        print(f"  {col:9s} mean {mu:+7,.0f} sd {sd:6,.0f}   "
+              f"2025 {z[col][2025][1]:+7,.0f} ({z[col][2025][0]:+.1f}z)   "
+              f"2026 {z[col][2026][1]:+7,.0f} ({z[col][2026][0]:+.1f}z)")
+    p = z["FBM_pop_2yr"]
+    print(f"  two summers combined: {p['value']:+,.0f} vs mean {p['ref'][0]:+,.0f} "
+          f"sd {p['ref'][1]:,.0f} -> {p['z']:+.1f}z")
+
+
+# --------------------------------------------------------------------------
 # Occupation detail is published annually, by nativity and sex, as each group's
 # percentage distribution across occupations. Combining those percentages with
 # the groups' employment levels gives the foreign-born share of each occupation
@@ -656,6 +702,7 @@ if __name__ == "__main__":
     t = jan_to_jul(w)
     norm = typical(t)
     findings(w, t, norm)
+    print_sigma(t)
     print_occupations(w)
     chart_hero(w)
     chart_hero(w, OUT / "2026-08-29-the-men-who-vanished-hero-1680x1080.png",
