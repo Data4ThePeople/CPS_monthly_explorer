@@ -42,30 +42,41 @@ Foreign-born men's **labor force** tells the same story. The January-to-July
 
 ---
 
-## They did not stop looking for work
+## The story we are being told makes a prediction. Test it.
 
-Here is the part that should stop you.
+The public argument for what is happening runs roughly like this: the people
+leaving were a drag. Not working. Taking more than they put in. On that account,
+a smaller foreign-born population is a smaller burden.
 
-When people leave the labor force in an ordinary downturn, we can watch them go.
-They move from employed, to unemployed, to *not in the labor force* — the
-category that holds retirees, students, caregivers, and people who have given up
-looking. The population stays the same. The buckets shift.
+That is a claim about the world, and claims about the world can be checked —
+because this one makes a prediction, and the prediction is specific.
 
-That is not what happened here.
+Every person aged 16 and over sits in exactly one of three boxes: **employed**,
+**unemployed** (not working, looking), or **not in the labor force** (not
+working, not looking — retirees, students, caregivers, and people who have given
+up). There is no fourth box. If the men who disappeared were a drag on the
+economy, they were not working, which means they were in one of the last two.
+The decline would have to show up there.
+
+So we went and looked.
 
 ![They did not stop looking for work. They stopped being counted.](chart_where_they_went.png)
 
-Foreign-born male employment normally **rises** across two summers — by about
-835,000. Instead it fell by 971,000. That is a swing of roughly 1.8 million
-against what a normal pair of summers delivers.
+**Unemployment fell 464,000. In a typical pair of summers it falls 475,000.**
+That is a normal summer, to within eleven thousand people. Nothing happened
+here.
 
-Against the same benchmark, the other two categories are unremarkable.
-Unemployment fell by 464,000, which is what it normally does — the typical
-figure is 475,000. The not-in-labor-force count fell by 653,000 against a
-typical 401,000.
+**Not in the labor force fell 653,000, against a typical 401,000.** Somewhat
+more than usual — this box accounts for 12% of the gap. Real, but small.
 
-Line those up and the arithmetic is stark. Of the 2.05 million-person gap
-between these two summers and a typical two summers:
+**Employment fell 971,000 — against a typical *increase* of 835,000.**
+Foreign-born male employment normally climbs across two summers. This time it
+collapsed.
+That is a swing of roughly 1.8 million against what a normal pair of summers
+delivers.
+
+Line them up and the arithmetic is stark. Of the 2.05 million-person gap between
+these two summers and a typical two summers:
 
 | | Gap vs. a typical two summers | Share |
 |---|---:|---:|
@@ -73,16 +84,32 @@ between these two summers and a typical two summers:
 | Not in labor force | −252,000 | 12% |
 | Unemployed | +11,000 | 0% |
 
-**Eighty-eight percent of the missing men came out of employment.** Unemployment
-contributed nothing at all. These men did not lose jobs and start looking. They
-did not give up and move to the sidelines. They were working, and then they were
-not counted.
+**Eighty-eight percent of the missing men came out of jobs.** The two categories
+that would have to carry the story we are being told — the not-working boxes —
+between them contribute twelve percent and zero.
+
+These were not men on the sidelines. They were working and being paid — most of
+them, like most employed people, with payroll taxes taken out at source. They
+rented or owned somewhere. They bought groceries and gas and school clothes, and
+the businesses that sold them those things booked the revenue and hired against
+it. Every one of them was, in the plainest sense, holding up demand somewhere in
+the American economy.
+
+That is not a burden being lifted. That is a workforce being subtracted.
+
+And here is the part we would ask you to sit with: **this is the government's
+own data.** Not an advocacy group's estimate. Not a model. Not our
+reconstruction. These are published Bureau of Labor Statistics series, collected
+by federal employees, released on a federal schedule, free to anyone who goes
+and gets them. The same government telling the public one story is publishing
+the numbers that contradict it — in plain sight, every month, with no one
+obliged to look.
 
 That 88% is a share of the *gap against a normal two summers*. Measured more
 crudely — the raw change across the whole span from January 2025 to July 2026,
 every month counted — employment is 61% of the decline, unemployment 19% and the
 sidelines 20%. Employment is the largest piece on either measure, and on neither
-one do the sidelines absorb the men who left.
+one do the not-working boxes carry the story.
 
 ---
 
@@ -101,8 +128,15 @@ every month in between counted, benchmarked against the same twelve-month
 comparison in earlier years. On that basis the shortfall is 2.9 million and
 foreign-born men are **47%** of it.
 
-Two windows, two methods, the same answer. **Roughly half of the missing labor
-force is foreign-born men — one worker in ten.**
+We then tried to break it. The share depends on what you call "normal growth,"
+so we recomputed it against six different baselines — 2013–24, 2015–24, 2011–19,
+2014–19, 2013–19, and the three years just before this began. The share came
+back **45%, 45%, 45%, 45%, 47% and 48%.**
+
+It does not move. **Roughly half of the missing labor force is foreign-born men
+— one worker in ten, carrying four and a half times their weight in the
+shortfall.** Longer windows push the estimate toward three-quarters; we quote
+the lower number because it is the one that survives every test we ran.
 
 ---
 
@@ -187,20 +221,39 @@ seasonal norm.
 
 ---
 
-## Go look for yourself
+## Go look for yourself. Please.
 
 Every series in this post is public, free, and updated monthly. None of it is
-modeled, smoothed, or estimated by us.
+modeled, smoothed, or estimated by us. Every number here can be checked against
+bls.gov by anyone willing to spend an afternoon on it.
 
 **[Beyond the Unemployment Rate →](https://data4thepeople.github.io/CPS_monthly_explorer/v2/output/ln_explorer.html)**
 
 We said last month that the data was screaming and that people would argue about
-the cause. This is the loudest part of it. Two million men, mostly working, are
-no longer in the count — and the labor force that everyone is worried about is
-short by roughly the same amount.
+the cause. This is the loudest part of it. Two million men, overwhelmingly
+working, are no longer in the count — and about half of the labor force's entire
+shortfall against trend is theirs alone.
 
-You can decide what you think should be done about that. But the argument has to
-start from the number.
+We want to be careful about what we are and are not claiming. We cannot tell you
+from this data why any individual person stopped being counted, and we say so at
+length below. What we can tell you, and what is not in serious doubt, is *who*
+left: not the idle, but the employed.
+
+This is why we do what we do.
+
+The story and the data point in opposite directions, and only one of them is
+audited. We are not asking you to take our word for that either — that is rather
+the point. We build these tools so that the check does not require a
+statistician, an institution, or anyone's permission. So that when someone tells
+you what is happening in the American economy, you can go and see for yourself
+in about ten minutes.
+
+We cannot afford to simply accept what we are told anymore. Not because everyone
+is lying, but because far too little of it is being checked. The numbers are
+sitting there, public and free. The work is doing the looking.
+
+So go look. And when you find something we missed, tell us — we will correct it
+in public, the same way we found this.
 
 ---
 
