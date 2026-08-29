@@ -9,9 +9,8 @@ section: Data 4 Thought
 author: Eric Pachman
 author_url: https://www.data4thepeople.com/authors/eric-pachman
 canonical: https://www.data4thepeople.com/p/the-men-who-vanished
-hero: hero_foreign_born_men.png
-meta_image: 2026-08-29-the-men-who-vanished-hero-1680x1080.png
-meta_image_alt: "The foreign-born male population of the United States, 2007 to July 2026, with the January-to-July declines of 2025 and 2026 highlighted."
+hero: 2026-08-29-the-men-who-vanished-hero-1680x1080.png
+hero_alt: "The foreign-born male population of the United States, 2007 to July 2026, with the January-to-July declines of 2025 and 2026 highlighted."
 ---
 
 # The men who vanished
