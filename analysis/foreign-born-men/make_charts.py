@@ -525,6 +525,70 @@ def tables(t, norm):
 
 
 # --------------------------------------------------------------------------
+# Occupation detail is published annually, by nativity and sex, as each group's
+# percentage distribution across occupations. Combining those percentages with
+# the groups' employment levels gives the foreign-born share of each occupation
+# -- the number the post actually needs, and one BLS does not publish directly.
+
+OCC = {
+    "Farming, fishing and forestry":      ("LNU02073565", "LNU02073652"),
+    "Construction and extraction":        ("LNU02073568", "LNU02073655"),
+    "Building and grounds maintenance":   ("LNU02073547", "LNU02073634"),
+    "Healthcare support":                 ("LNU02073538", "LNU02073625"),
+    "Food preparation and serving":       ("LNU02073544", "LNU02073631"),
+    "Transportation and material moving": ("LNU02073580", "LNU02073667"),
+    "Production":                         ("LNU02073577", "LNU02073664"),
+    "Management, professional, related":  ("LNU02073496", "LNU02073583"),
+    "Protective service":                 ("LNU02073541", "LNU02073628"),
+}
+OCC_YEAR = 2025          # latest annual occupation detail
+
+
+def occupation_shares(w, year=OCC_YEAR):
+    """Foreign-born men's share of each occupation, derived from published parts.
+
+    Fetched directly rather than through bls_client.fetch, which requests from
+    1948: these annual series begin in 2005 and the API returns nothing for a
+    window that far back.
+    """
+    import requests
+    bls_client.load_dotenv()
+    key = bls_client.get_api_key()
+    ids = [i for pair in OCC.values() for i in pair]
+    body = requests.post(bls_client.API_URL,
+                         json={"seriesid": ids, "startyear": str(year),
+                               "endyear": str(year), "registrationkey": key},
+                         timeout=60).json()
+    pct = {s["seriesID"]: float(d["value"])
+           for s in body.get("Results", {}).get("series", [])
+           for d in s["data"] if d["period"] == "A01"}
+    fb = w.loc[str(year), "FBM_emp"].mean()
+    nb = w.loc[str(year), "NBM_emp"].mean()
+    rows = []
+    for name, (f, n) in OCC.items():
+        if f not in pct or n not in pct:
+            continue
+        fw, nw = fb * pct[f] / 100, nb * pct[n] / 100
+        rows.append((name, pct[f], pct[n], fw, 100 * fw / (fw + nw)))
+    return fb, nb, sorted(rows, key=lambda r: -r[4])
+
+
+def print_occupations(w):
+    try:
+        fb, nb, rows = occupation_shares(w)
+    except Exception as e:                       # offline or quota exhausted
+        print(f"\n(occupation table skipped: {e})")
+        return
+    print(f"\nOCCUPATION CONCENTRATION, {OCC_YEAR} annual averages")
+    print(f"  employed men: foreign-born {fb:,.0f}k, native-born {nb:,.0f}k "
+          f"-> foreign-born are {100*fb/(fb+nb):.1f}% of employed men")
+    print(f"  {'occupation':36s} {'FB men%':>8s} {'NB men%':>8s} "
+          f"{'FB men (k)':>11s} {'FB share':>9s}")
+    for name, fp, np_, fw, share in rows:
+        print(f"  {name:36s} {fp:8.1f} {np_:8.1f} {fw:11,.0f} {share:8.1f}%")
+
+
+# --------------------------------------------------------------------------
 def findings(w, t, norm):
     """Print every number the post asserts, so the prose can be checked."""
     C = lambda c: t.loc[list(WINDOWS), c].sum()
@@ -592,6 +656,7 @@ if __name__ == "__main__":
     t = jan_to_jul(w)
     norm = typical(t)
     findings(w, t, norm)
+    print_occupations(w)
     chart_hero(w)
     chart_hero(w, OUT / "2026-08-29-the-men-who-vanished-hero-1680x1080.png",
                figsize=(8.4, 5.4), fs=0.78)
