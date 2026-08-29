@@ -158,38 +158,52 @@ or being counted less well — would pull women down alongside men. Whatever is
 happening here is happening to men and not to women, and any explanation has to
 account for that.
 
-## Native-born men did not fill the gap
+## "They're taking our jobs." Test that one too.
 
-The obvious next question: if roughly a million jobs were vacated, did
-native-born men take them?
+The other half of what we are told is simpler still: immigrants take jobs from
+native-born Americans. Ours. Taken.
 
-This is where the comparison does double duty. Native-born men live through the
-same summers, the same seasons, the same economy. If the seasonal pattern or the
-business cycle were driving the foreign-born numbers, it would show up in the
-native-born numbers too.
+That is testable as well — and it has just been handed the cleanest test it is
+ever going to get. More than two million foreign-born men are gone from the
+count. Roughly a million jobs they were holding went with them. If those jobs
+had been taken from native-born men, they are now sitting there, unheld,
+waiting to be taken back.
 
-It does not.
+So did native-born men step into them?
+
+**No.**
 
 ![Native-born men did not take the jobs](chart_not_filled.png)
 
-Native-born men's population grew by 2,895,000 across these two summers, against
-a typical 1,063,000 — **1.8 million faster than normal.** Their labor force grew
-3,953,000 against a typical 3,802,000, essentially dead on.
+Native-born men's employment-population ratio has fallen in **each of the last
+three Julys**: from 64.2% in 2023 to 63.9%, then 63.4%, and now **62.8%**. To have absorbed the 971,000
+jobs foreign-born men vacated, it would have to be **63.6%**. It is eight-tenths
+of a point below that, and moving the wrong way.
 
-And their employment grew 4,284,000 against a typical 4,867,000 — **583,000
-slower than normal.**
+We are deliberately using a rate here rather than a headcount. The January 2026
+population controls cut the published native-born male labor force by 1,522,000
+in a single month, so their levels cannot be read across that seam. A ratio
+divides most of that out. And the rate says the same thing on every measure we
+tried:
 
-Read those together. Native-born men arrived in the working-age population far
-faster than usual, and got jobs *more slowly* than usual. Their participation
-rate rose 0.9 points from January to July 2026 against a typical 1.5 — the
-smallest January-to-July rise on record except 2020.
+- On a **twelve-month average of the ratio**, which is immune to both
+  seasonality and most of the control revision, native-born men have gone 63.6%
+  → 63.3% → 62.9% → 62.3% across those same four readings, including −0.6 points
+  in the year to July 2026 alone.
+- **Employment is not keeping up with population.** Between July 2024 and July
+  2026 the native-born male population grew 2,556,000. Their employment grew
+  382,000.
+- **Participation is rising more slowly than it ever has**, outside the
+  pandemic. From January to July 2026 the native-born male participation rate
+  rose 0.9 points against a typical 1.5. The two smallest January-to-July rises
+  in twenty years of data are 2025 and 2026.
 
-Whatever absorbed those vacated jobs, it was not native-born men entering work
-at a higher rate. There is no sign of them stepping in at all.
+More native-born men of working age than ever, and a smaller share of them
+working. That is the precise opposite of what "getting our jobs back" would look
+like in the data.
 
-![Two summers, measured without crossing a population-control seam](table_flows.png)
-
----
+The jobs were not transferred. They were subtracted. Nobody took them back,
+because nobody had taken them in the first place.
 
 ## What this does not tell you
 

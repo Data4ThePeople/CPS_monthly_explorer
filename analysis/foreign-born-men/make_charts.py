@@ -315,25 +315,80 @@ def chart_where_they_went(t, norm):
         xlim=(-2100, 1300))
 
 
-def chart_not_filled(t, norm):
-    cats = ["Population", "Labor force", "Employed"]
-    keys = ["NBM_pop", "NBM_clf", "NBM_emp"]
-    a = [t.loc[list(WINDOWS), c].sum() for c in keys]
-    n = [2 * norm[c] for c in keys]
-    _grouped(
-        OUT / "chart_not_filled.png",
-        "Native-born men did not take the jobs",
-        "Change in native-born men, January to July of 2025 and 2026 combined, "
-        "against a typical pair of summers",
-        cats, a, n, "Change in level, thousands of men",
-        ["A typical two summers is twice the mean January-to-July change over "
-         "2013-2024, excluding 2020. Series LNU00073414,",
-         "LNU01073414, LNU02073414 (not seasonally adjusted). "
-         "· Data 4 The People"],
-        note="Population grew 1.8 million\nfaster than normal.\n"
-             "Employment grew 583,000\nslower.",
-        note_xy=None, note_xytext=(5250, 0.0),
-        xlim=(-400, 7900), figsize=(10.2, 5.6), legend_loc="lower right")
+def chart_not_filled(w, t, norm):
+    """Native-born men's employment rate against what filling the gap needed.
+
+    A rate, not a level, and deliberately so. The January 2026 population
+    controls cut the published native-born male labor force by 1,522,000, so
+    their levels cannot be compared across that seam. A ratio divides most of
+    that out -- numerator and denominator move together -- which is why this
+    chart, and the claims that rest on it, use the employment-population ratio.
+
+    July-only, so every point sits on the same seasonal footing: these series
+    are published unadjusted and a summer reading is not comparable to a
+    winter one.
+    """
+    jul = w[w.index.month == 7].loc["2015":]
+    s_ = jul.NBM_epop
+    lost = -t.loc[list(WINDOWS), "FBM_emp"].sum()      # jobs actually vacated
+    need = (w.NBM_emp[LAST] + lost) / w.NBM_pop[LAST] * 100
+
+    fig, ax = plt.subplots(figsize=(10.4, 6.4))
+    ax.set_facecolor(PARCH); fig.patch.set_facecolor(PARCH)
+    ax.plot(s_.index, s_.values, color=BASE, lw=2.4, zorder=3, marker="o", ms=6,
+            markeredgecolor=PARCH, markeredgewidth=1.5)
+    ax.plot([s_.index[-1]], [s_.iloc[-1]], "o", color=HILITE, ms=10, zorder=5,
+            markeredgecolor=PARCH, markeredgewidth=2)
+    ax.plot([s_.index[-1]], [need], "o", color=HILITE, ms=11, zorder=5,
+            markerfacecolor=PARCH, markeredgecolor=HILITE, markeredgewidth=2.2)
+    ax.annotate("", xy=(s_.index[-1], need - 0.05),
+                xytext=(s_.index[-1], s_.iloc[-1] + 0.05),
+                arrowprops=dict(arrowstyle="<->", color=HILITE, lw=1.4))
+    ax.text(s_.index[-1] - pd.DateOffset(months=4), 65.35,
+            f"Needed to absorb the {lost:,.0f}k\nvacated jobs — {need:.1f}%",
+            fontsize=10.5, family=SERIF, color=HILITE, fontweight="bold",
+            ha="right", va="center")
+    ax.text(s_.index[-1] + pd.DateOffset(months=3), s_.iloc[-1],
+            f"Actual\n{s_.iloc[-1]:.1f}%", fontsize=11.5, family=SERIF,
+            color=HILITE, fontweight="bold", ha="left", va="center")
+    ax.text(s_.index[-1] - pd.DateOffset(months=2), (need + s_.iloc[-1]) / 2,
+            f"{need - s_.iloc[-1]:.1f} pp\nshort", fontsize=11, family=SERIF,
+            color=HILITE, fontweight="bold", ha="right", va="center")
+    # The run of declines lives in the subtitle rather than as a
+    # callout: every anchor that reaches clear space here crosses either the
+    # line or the counterfactual label.
+
+    ax.set_ylim(59.4, 66.5)
+    ax.set_xlim(s_.index[0] - pd.DateOffset(months=8),
+                s_.index[-1] + pd.DateOffset(months=15))
+    ax.yaxis.set_major_formatter(lambda v, _: f"{v:.0f}%")
+    for sp in ("top", "right", "left"):
+        ax.spines[sp].set_visible(False)
+    ax.spines["bottom"].set_color(GRID)
+    ax.tick_params(colors=MUTED, labelsize=11, length=0)
+    ax.yaxis.grid(True, color=GRID, lw=0.8, alpha=0.5)
+    ax.set_axisbelow(True)
+    ax.set_title("Native-born men did not take the jobs",
+                 color="#0a3d33", fontsize=16.5, fontweight="bold",
+                 family=SERIF, loc="left", pad=28)
+    ax.text(0, 1.04, "Employment-population ratio, native-born men, July of "
+            "each year — down in each of the last three",
+            transform=ax.transAxes, color=MUTED, fontsize=10.5,
+            style="italic", family=SERIF, va="bottom")
+    source(fig, ["Series LNU02373414 (not seasonally adjusted). July readings "
+                 "only, so every point sits on the same seasonal footing.",
+                 "A ratio rather than a level, because the January 2026 "
+                 "population controls cut the published native-born male",
+                 "labor force by 1,522,000 and a rate divides most of that out. "
+                 "The counterfactual adds the jobs foreign-born",
+                 "men vacated to native-born male employment, holding their "
+                 "population fixed. · Data 4 The People"])
+    fig.tight_layout(rect=(0, 0.115, 1, 1))
+    p = OUT / "chart_not_filled.png"
+    fig.savefig(p, dpi=200, facecolor=PARCH)
+    plt.close(fig)
+    print(f"wrote {p}  (actual {s_.iloc[-1]:.1f}%, needed {need:.2f}%, "
+          f"short {need-s_.iloc[-1]:.2f}pp)")
 
 
 # --------------------------------------------------------------------------
@@ -542,6 +597,6 @@ if __name__ == "__main__":
                figsize=(8.4, 5.4), fs=0.78)
     chart_ranking(t)
     chart_where_they_went(t, norm)
-    chart_not_filled(t, norm)
+    chart_not_filled(w, t, norm)
     chart_divergence(w)
     tables(t, norm)
