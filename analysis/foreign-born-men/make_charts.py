@@ -635,6 +635,69 @@ def print_occupations(w):
 
 
 # --------------------------------------------------------------------------
+def table_gap(t, norm):
+    """The three-box decomposition, as an image.
+
+    Prismic rich text has no table block, so every table in this post is a PNG.
+    This one and table_occupations were Markdown until the post was prepared for
+    the CMS; rendering them here keeps all four consistent and keeps their
+    numbers regenerating from the data like everything else.
+    """
+    tot = t.loc[list(WINDOWS), "FBM_pop"].sum() - 2 * norm["FBM_pop"]
+    rows = []
+    for key, label in (("FBM_emp", "Employed"),
+                       ("FBM_nilf", "Not in labor force"),
+                       ("FBM_une", "Unemployed")):
+        g = t.loc[list(WINDOWS), key].sum() - 2 * norm[key]
+        rows.append([label, f"{g:+,.0f}", f"{100*g/tot:.0f}%"])
+    render_table(
+        OUT / "table_gap.png",
+        "Eighty-eight percent came out of jobs",
+        "Foreign-born men: gap against a typical two summers, January to July "
+        "2025 and 2026 combined, thousands",
+        None,
+        ["", "Gap vs a typical two summers", "Share"],
+        rows, ["l", "r", "r"], [1.6, 1.5, 0.8],
+        ["The three states are exhaustive, so they sum to the "
+         f"{tot:+,.0f} thousand gap in the population.",
+         "A typical two summers is twice the mean January-to-July change over "
+         "2013-2024, excluding 2020.",
+         "Series LNU02073396, LNU03073396, LNU05073396 · Data 4 The People"],
+        hi_rows=(0,))
+
+
+def table_occupations(w):
+    """Foreign-born men's share of each occupation."""
+    try:
+        fb, nb, rows = occupation_shares(w)
+    except Exception as e:
+        print(f"(occupation table image skipped: {e})")
+        return
+    share = 100 * fb / (fb + nb)
+    body, hi = [], []
+    for i, (name, _fp, _np, fw, sh) in enumerate(rows):
+        extra = f"   ({fw/1000:.1f}M men)" if fw > 1000 else ""
+        body.append([name, f"{sh:.0f}%{extra}"])
+        if sh > share + 3:
+            hi.append(i)
+    render_table(
+        OUT / "table_occupations.png",
+        "Where the work actually is",
+        f"Foreign-born men as a share of all men employed in each occupation, "
+        f"{OCC_YEAR}",
+        None,
+        ["Occupation", "Foreign-born share of men doing it"],
+        body, ["l", "r"], [2.0, 1.5],
+        [f"Foreign-born men are {share:.1f}% of all employed men. Highlighted "
+         "rows are the occupations where they are most",
+         "over-represented relative to that share. Derived by applying each "
+         "group's published occupational distribution",
+         "to its published employment level. Series LNU020735xx and "
+         "LNU020736xx · Data 4 The People"],
+        hi_rows=tuple(hi))
+
+
+# --------------------------------------------------------------------------
 def findings(w, t, norm):
     """Print every number the post asserts, so the prose can be checked."""
     C = lambda c: t.loc[list(WINDOWS), c].sum()
@@ -712,3 +775,5 @@ if __name__ == "__main__":
     chart_not_filled(w, t, norm)
     chart_divergence(w)
     tables(t, norm)
+    table_gap(t, norm)
+    table_occupations(w)
