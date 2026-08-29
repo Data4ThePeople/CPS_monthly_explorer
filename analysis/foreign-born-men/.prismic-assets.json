@@ -1,0 +1,50 @@
+{
+  "hero_foreign_born_men.png": {
+    "id": "aRYfJRzOaJyPvqzJ",
+    "width": 2400,
+    "height": 1260,
+    "url": "https://images.prismic.io/data4thepeople/aRYfJRzOaJyPvqzJ_hero_foreign_born_men.png?auto=format,compress"
+  },
+  "chart_ranking.png": {
+    "id": "RyEcrbGEvGLg04M2",
+    "width": 1900,
+    "height": 1440,
+    "url": "https://images.prismic.io/data4thepeople/RyEcrbGEvGLg04M2_chart_ranking.png?auto=format,compress"
+  },
+  "chart_where_they_went.png": {
+    "id": "AAdd0-2HvK2HSUeb",
+    "width": 2040,
+    "height": 1200,
+    "url": "https://images.prismic.io/data4thepeople/AAdd0-2HvK2HSUeb_chart_where_they_went.png?auto=format,compress"
+  },
+  "table_gap.png": {
+    "id": "5z3h4n0s9g7w82dF",
+    "width": 2200,
+    "height": 646,
+    "url": "https://images.prismic.io/data4thepeople/5z3h4n0s9g7w82dF_table_gap.png?auto=format,compress"
+  },
+  "chart_divergence.png": {
+    "id": "wtv-zf3yhkTU794K",
+    "width": 2200,
+    "height": 1280,
+    "url": "https://images.prismic.io/data4thepeople/wtv-zf3yhkTU794K_chart_divergence.png?auto=format,compress"
+  },
+  "chart_not_filled.png": {
+    "id": "LX1wG9w6hWKybU4u",
+    "width": 2080,
+    "height": 1280,
+    "url": "https://images.prismic.io/data4thepeople/LX1wG9w6hWKybU4u_chart_not_filled.png?auto=format,compress"
+  },
+  "table_occupations.png": {
+    "id": "DUWQs_-ZNB1XkD0R",
+    "width": 2200,
+    "height": 1054,
+    "url": "https://images.prismic.io/data4thepeople/DUWQs_-ZNB1XkD0R_table_occupations.png?auto=format,compress"
+  },
+  "table_sources.png": {
+    "id": "dA4U3aOcIrrvf66c",
+    "width": 2200,
+    "height": 874,
+    "url": "https://images.prismic.io/data4thepeople/dA4U3aOcIrrvf66c_table_sources.png?auto=format,compress"
+  }
+}

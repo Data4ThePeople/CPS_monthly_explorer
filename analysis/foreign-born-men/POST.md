@@ -1,3 +1,16 @@
+---
+title: "The Men Who Vanished: 2.1 Million Gone From the Jobs Data"
+subtitle: "2.1 million foreign-born men have gone from the count across two summers. We tested the two stories being told about why — and both fail against the government's own numbers."
+slug: the-men-who-vanished
+date: 2026-08-29
+description: "If the people leaving were a drag on the economy, the decline would show up in unemployment or the sidelines. It doesn't. 88% came straight out of jobs."
+keywords: foreign born labor force, foreign born population, immigration labor market, Bureau of Labor Statistics, Current Population Survey, labor force participation, native born workers, employment population ratio, labor supply, jobs report
+section: Data 4 Thought
+author: Eric Pachman
+author_url: https://www.data4thepeople.com/authors/eric-pachman
+canonical: https://www.data4thepeople.com/p/the-men-who-vanished
+---
+
 # The men who vanished
 
 There is a number in the labor data that nobody put in a press release.
@@ -78,11 +91,7 @@ delivers.
 Line them up and the arithmetic is stark. Of the 2.05 million-person gap between
 these two summers and a typical two summers:
 
-| | Gap vs. a typical two summers | Share |
-|---|---:|---:|
-| **Employed** | **−1,806,000** | **88%** |
-| Not in labor force | −252,000 | 12% |
-| Unemployed | +11,000 | 0% |
+![Eighty-eight percent came out of jobs](table_gap.png)
 
 **Eighty-eight percent of the missing men came out of jobs.** The two categories
 that would have to carry the story we are being told — the not-working boxes —
@@ -302,16 +311,7 @@ checked it against the same source as everything else here.
 Foreign-born men are **just over one in five** employed men in the United
 States — 20.5%. Here is where they actually are:
 
-| Occupation | Foreign-born share of men doing it |
-|---|---:|
-| Farming, fishing and forestry | **42%** |
-| Construction and extraction | **34%** — 2.8 million men |
-| Building and grounds maintenance | **30%** |
-| Healthcare support | **27%** |
-| Food preparation and serving | **25%** |
-| Transportation and material moving | **24%** |
-| *Management and professional* | *18%* |
-| *Protective service* | *10%* |
+![Where the work actually is](table_occupations.png)
 
 Your lived experience is not fooling you. One in three men on American
 construction sites is foreign-born. So is more than a quarter of the men helping
