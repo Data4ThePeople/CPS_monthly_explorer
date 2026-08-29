@@ -48,7 +48,7 @@ the title has to survive a search results page.
 
 Alternative (152 chars), leading with the labor force framing:
 
-> Foreign-born workers are 19% of the labor force and 92% of its shortfall. Native-born men came in above a typical summer, not below. Nobody filled the gap.
+> Foreign-born men are 10% of the labor force and roughly half of its shortfall on two independent measures. Foreign-born women are rising. It is the men, specifically.
 
 ---
 
@@ -102,14 +102,12 @@ below is the one that does modern work.
 > 3,802,000. Employment grew 4,284,000 against a typical 4,867,000 — 583,000
 > slower than normal.
 
-**chart_waterfall.png**
+**chart_divergence.png**
 
-> Waterfall chart showing how the U.S. labor force went from a typical two
-> summers of growth, 6,156,000, to actual growth of 2,455,000 across the summers
-> of 2025 and 2026. Foreign-born men account for 1,796,000 of the 3,701,000
-> shortfall, or 49 percent; foreign-born women 1,606,000, or 43 percent;
-> native-born women 449,000, or 12 percent. Native-born men added 151,000 more
-> than a typical two summers, partly offsetting the shortfall.
+> Line chart of the civilian labor force for foreign-born men and foreign-born
+> women, 2008 to July 2026, on a trailing twelve-month average. Both rise
+> together until 2025. The men's line peaks in June 2025 and falls to 17,954,000
+> by July 2026, while the women's line continues rising to 14,497,000.
 
 **table_flows.png**
 
@@ -260,6 +258,13 @@ editing:
 3. **Every comparison is against the same window in other years.** The
    "typical two summers" column is not decoration — the series are unadjusted
    and January-to-July is seasonal, so a raw change means nothing without it.
+4. **Do not extend any claim to foreign-born women, or to a four-way split.**
+   The methodology section explains why: the two-window method manufactures a
+   decline for women that three other measures contradict, and the January 2026
+   controls moved about 1.5 million between men and women. Foreign-born men are
+   the only group that revision barely touched. If an editor wants "immigrants
+   are leaving," the honest version is "foreign-born men are," and the
+   divergence chart is the evidence.
 
 If an editor wants a shorter version, cut the labor-force-share section before
 cutting any of those three.
@@ -275,7 +280,8 @@ be re-derived, not copied:
 - the 88 / 12 / 0 shares of the gap against a typical two summers
 - "the two steepest January-to-July declines on record"
 - the 49% share of the labor-force shortfall and the 10.2% share of the labor force
-- the four-way waterfall split (49 / 43 / 12 / −4) and the 92% foreign-born total
+- the 47% cross-check on a July-to-July basis
+- the twelve-month-average divergence (men −691,000, women +371,000)
 - the 583,000 native-born employment shortfall
 - `datePublished` / `dateModified`
 
