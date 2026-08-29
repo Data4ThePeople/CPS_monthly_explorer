@@ -48,7 +48,7 @@ the title has to survive a search results page.
 
 Alternative (152 chars), leading with the labor force framing:
 
-> Foreign-born men are 10% of the labor force and half of its shortfall. Native-born men's employment grew slower than normal, not faster. Nobody filled the gap.
+> Foreign-born workers are 19% of the labor force and 92% of its shortfall. Native-born men came in above a typical summer, not below. Nobody filled the gap.
 
 ---
 
@@ -101,6 +101,15 @@ below is the one that does modern work.
 > against a typical 1,063,000. The labor force grew 3,953,000 against a typical
 > 3,802,000. Employment grew 4,284,000 against a typical 4,867,000 — 583,000
 > slower than normal.
+
+**chart_waterfall.png**
+
+> Waterfall chart showing how the U.S. labor force went from a typical two
+> summers of growth, 6,156,000, to actual growth of 2,455,000 across the summers
+> of 2025 and 2026. Foreign-born men account for 1,796,000 of the 3,701,000
+> shortfall, or 49 percent; foreign-born women 1,606,000, or 43 percent;
+> native-born women 449,000, or 12 percent. Native-born men added 151,000 more
+> than a typical two summers, partly offsetting the shortfall.
 
 **table_flows.png**
 
@@ -266,6 +275,7 @@ be re-derived, not copied:
 - the 88 / 12 / 0 shares of the gap against a typical two summers
 - "the two steepest January-to-July declines on record"
 - the 49% share of the labor-force shortfall and the 10.2% share of the labor force
+- the four-way waterfall split (49 / 43 / 12 / −4) and the 92% foreign-born total
 - the 583,000 native-born employment shortfall
 - `datePublished` / `dateModified`
 

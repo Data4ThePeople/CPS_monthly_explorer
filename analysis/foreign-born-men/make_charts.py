@@ -77,8 +77,17 @@ S = {
     "NBM_pop": "LNU00073414", "NBM_clf": "LNU01073414", "NBM_emp": "LNU02073414",
     "NBM_une": "LNU03073414", "NBM_nilf": "LNU05073414",
     "NBM_lfpr": "LNU01373414", "NBM_epop": "LNU02373414",
+    "FBW_clf": "LNU01073397", "NBW_clf": "LNU01073415",
     "CLF_nsa": "LNU01000000", "CLF_sa": "LNS11000000",
 }
+
+# The four nativity-by-sex labor force series partition the published 16+ total
+# exactly (max residual 1,000 over 234 months, from BLS rounding), which is what
+# makes the waterfall legitimate rather than merely suggestive.
+QUAD = (("FBM_clf", "Foreign-born\nmen", True),
+        ("FBW_clf", "Foreign-born\nwomen", True),
+        ("NBW_clf", "Native-born\nwomen", False),
+        ("NBM_clf", "Native-born\nmen", False))
 
 WINDOWS = (2025, 2026)                                  # the two seam-free summers
 REF = tuple(y for y in range(2013, 2025) if y != 2020)  # a typical summer
@@ -335,6 +344,126 @@ def chart_not_filled(t, norm):
 
 
 # --------------------------------------------------------------------------
+def chart_waterfall(w, t, norm):
+    """Waterfall from a typical two summers to the actual one, by group.
+
+    Totals are drawn as outlined bars rather than a third fill colour: the
+    palette carries exactly one validated meaning-bearing pair (foreign-born
+    against native-born), and inventing a third hue for "this bar is a total"
+    would put a colour into the encoding that no check has cleared. An outline
+    reads as structural under any form of colour vision.
+    """
+    start = 2 * norm["CLF_nsa"]
+    end = t.loc[list(WINDOWS), "CLF_nsa"].sum()
+    gaps = [(lbl, t.loc[list(WINDOWS), c].sum() - 2 * norm[c], fb)
+            for c, lbl, fb in QUAD]
+    gaps.sort(key=lambda r: r[1])                      # steepest shortfall first
+    shortfall = end - start
+
+    labels = ["A typical\ntwo summers"] + [g[0] for g in gaps] + ["2025 and\n2026 actual"]
+    fig, ax = plt.subplots(figsize=(11.4, 7.1))
+    ax.set_facecolor(PARCH); fig.patch.set_facecolor(PARCH)
+
+    x = 0
+    ax.bar(x, start, width=0.62, color=PARCH, edgecolor=INK, lw=1.6, zorder=3)
+    ax.text(x, start + 130, f"{start:+,.0f}", ha="center", va="bottom",
+            fontsize=11, family=SERIF, color=INK, fontweight="bold")
+    run = start
+    for lbl, v, fb in gaps:
+        x += 1
+        bottom = run + v if v < 0 else run
+        ax.plot([x - 1 + 0.31, x + 0.31], [run, run], color=MUTED, lw=1.0,
+                ls=(0, (3, 3)), zorder=2)
+        ax.bar(x, abs(v), bottom=bottom, width=0.62,
+               color=HILITE if fb else BASE, zorder=3)
+        run += v
+        ax.text(x, bottom + abs(v) + 130, f"{v:+,.0f}", ha="center", va="bottom",
+                fontsize=11, family=SERIF, color=INK,
+                fontweight="bold" if fb else "normal")
+        # Inside label only where the bar can hold it, and only for groups
+        # that add to the shortfall. A group that offsets it would read as a
+        # negative share of a negative total -- "-4%" on a bar pointing up --
+        # which is arithmetically right and completely unreadable.
+        if v < 0 and abs(v) / 7300 > 0.06:
+            ax.text(x, bottom + abs(v) / 2, f"{100*v/shortfall:.0f}%",
+                    ha="center", va="center", fontsize=11.5, family=SERIF,
+                    color=PARCH, fontweight="bold")
+        elif v > 0:
+            ax.text(x, bottom + abs(v) + 460, "offsetting", ha="center",
+                    va="bottom", fontsize=9.5, family=SERIF, color=MUTED,
+                    style="italic")
+    x += 1
+    ax.plot([x - 1 + 0.31, x + 0.31], [run, run], color=MUTED, lw=1.0,
+            ls=(0, (3, 3)), zorder=2)
+    ax.bar(x, end, width=0.62, color=PARCH, edgecolor=INK, lw=1.6, zorder=3)
+    ax.text(x, end + 130, f"{end:+,.0f}", ha="center", va="bottom",
+            fontsize=11, family=SERIF, color=INK, fontweight="bold")
+
+    fb_share = 100 * sum(v for _, v, fb in gaps if fb) / shortfall
+    ax.annotate(f"Foreign-born men and women are\n"
+                f"{fb_share:.0f}% of the shortfall — and "
+                f"{100*(w.FBM_clf[LAST]+w.FBW_clf[LAST])/w.CLF_nsa[LAST]:.0f}% "
+                f"of the labor force",
+                xy=(1.35, 4300), xytext=(2.05, 6250), ha="left",
+                fontsize=11, family=SERIF, color=HILITE, fontweight="bold",
+                arrowprops=dict(arrowstyle="-", color=HILITE, lw=1.2,
+                                connectionstyle="arc3,rad=0.2"))
+
+    ax.set_xticks(range(len(labels)))
+    ax.set_xticklabels(labels, fontsize=10.5, family=SERIF, color=INK)
+    for i, lbl in enumerate(ax.get_xticklabels()):
+        if 1 <= i <= len(gaps) and gaps[i - 1][2]:
+            lbl.set_color(HILITE); lbl.set_fontweight("bold")
+    ax.set_ylim(0, 7300)
+    ax.yaxis.set_major_formatter(lambda v, _: f"{v/1000:.0f}M" if v else "0")
+    for sp in ("top", "right", "left"):
+        ax.spines[sp].set_visible(False)
+    ax.spines["bottom"].set_color(GRID)
+    ax.tick_params(colors=MUTED, labelsize=10.5, length=0)
+    ax.yaxis.grid(True, color=GRID, lw=0.8, alpha=0.5)
+    ax.set_axisbelow(True)
+    ax.set_ylabel("Growth in the labor force, January to July, two summers "
+                  "combined", color=MUTED, fontsize=10, labelpad=10)
+    ax.set_title("Who is missing from the labor force",
+                 color="#0a3d33", fontsize=16.5, fontweight="bold",
+                 family=SERIF, loc="left", pad=30)
+    ax.text(0, 1.045, "The labor force grew 3.7 million less than a typical two "
+            "summers. This is who did not show up.",
+            transform=ax.transAxes, color=MUTED, fontsize=10.5,
+            style="italic", family=SERIF, va="bottom")
+
+    handles = [plt.Rectangle((0, 0), 1, 1, color=HILITE),
+               plt.Rectangle((0, 0), 1, 1, color=BASE),
+               plt.Rectangle((0, 0), 1, 1, facecolor=PARCH, edgecolor=INK, lw=1.4)]
+    leg = ax.legend(handles, ["Foreign-born", "Native-born", "Total"],
+                    loc="upper right", frameon=False,
+                    prop={"family": SERIF, "size": 10.5}, handlelength=1.1,
+                    handleheight=0.9, borderaxespad=0.4)
+    for txt in leg.get_texts():
+        txt.set_color(MUTED)
+
+    resid = start + sum(v for _, v, _ in gaps) - end
+    source(fig, ["The four groups partition the published 16+ labor force "
+                 "exactly; they differ from the total by "
+                 f"{abs(resid):,.0f},000 here, which is BLS rounding. "
+                 "Native-born men grew slightly",
+                 "faster than a typical two summers, partly offsetting the "
+                 "shortfall rather than adding to it.",
+                 "A typical two summers is twice the mean January-to-July "
+                 "change over 2013-2024, excluding 2020. Series LNU01073396,",
+                 "LNU01073397, LNU01073414, LNU01073415 and LNU01000000 (not "
+                 "seasonally adjusted). · Data 4 The People"])
+    # Four footnote lines plus two-line tick labels: the default bottom margin
+    # runs the footnote into the axis labels.
+    fig.tight_layout(rect=(0, 0.135, 1, 1))
+    p = OUT / "chart_waterfall.png"
+    fig.savefig(p, dpi=200, facecolor=PARCH)
+    plt.close(fig)
+    print(f"wrote {p}  (shortfall {shortfall:+,.0f}k; foreign-born "
+          f"{fb_share:.1f}%; residual {resid:+,.0f}k)")
+
+
+# --------------------------------------------------------------------------
 def tables(t, norm):
     sgn = lambda v: f"{v:+,.0f}"
     rows, hi = [], []
@@ -459,4 +588,5 @@ if __name__ == "__main__":
     chart_ranking(t)
     chart_where_they_went(t, norm)
     chart_not_filled(t, norm)
+    chart_waterfall(w, t, norm)
     tables(t, norm)

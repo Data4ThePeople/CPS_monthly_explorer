@@ -88,12 +88,26 @@ is how much of it is this one group.
 Across these two summers the entire U.S. labor force grew 2.5 million, against a
 typical 6.2 million — a shortfall of **3.7 million**.
 
-Foreign-born men account for **1.8 million of that shortfall — 49% of it.**
+The four nativity-and-sex groups add up to the published total exactly, so we
+can put the whole shortfall on one chart and see who is missing from it.
 
-They are 10.2% of the labor force. They are producing half the shortfall. That
-is a rate of contribution roughly **five times** their size.
+![Who is missing from the labor force](chart_waterfall.png)
 
----
+Foreign-born men are **1.8 million of the shortfall — 49% of it**, while being
+10.2% of the labor force. That alone is a rate of contribution roughly five
+times their size.
+
+But look at the second bar. Foreign-born **women** are another 1.6 million, or
+43%. Together, foreign-born workers account for **92% of the entire shortfall**
+while making up 19% of the labor force.
+
+And look at the fourth bar. Native-born men did not merely fail to fill the gap
+— they came in 151,000 *above* a typical two summers, slightly offsetting it.
+Native-born women came in 449,000 below.
+
+So the honest headline is broader than the one we started with. This is not only
+a story about foreign-born men. It is a story about foreign-born workers, and
+men are a little over half of it.
 
 ## Native-born men did not fill the gap
 
