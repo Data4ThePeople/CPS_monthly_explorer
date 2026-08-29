@@ -78,6 +78,12 @@ contributed nothing at all. These men did not lose jobs and start looking. They
 did not give up and move to the sidelines. They were working, and then they were
 not counted.
 
+That 88% is a share of the *gap against a normal two summers*. Measured more
+crudely — the raw change across the whole span from January 2025 to July 2026,
+every month counted — employment is 61% of the decline, unemployment 19% and the
+sidelines 20%. Employment is the largest piece on either measure, and on neither
+one do the sidelines absorb the men who left.
+
 ---
 
 ## This is the labor force story
@@ -86,28 +92,37 @@ For eighteen months the commentary has been about a shrinking labor force. Here
 is how much of it is this one group.
 
 Across these two summers the entire U.S. labor force grew 2.5 million, against a
-typical 6.2 million — a shortfall of **3.7 million**.
+typical 6.2 million — a shortfall of **3.7 million**. Foreign-born men account
+for **1.8 million of it, or 49%**, while being 10.2% of the labor force.
 
-The four nativity-and-sex groups add up to the published total exactly, so we
-can put the whole shortfall on one chart and see who is missing from it.
+Because that is a big claim resting on one window, we measured it a second way
+that shares none of the first one's assumptions: July 2025 against July 2026,
+every month in between counted, benchmarked against the same twelve-month
+comparison in earlier years. On that basis the shortfall is 2.9 million and
+foreign-born men are **47%** of it.
 
-![Who is missing from the labor force](chart_waterfall.png)
+Two windows, two methods, the same answer. **Roughly half of the missing labor
+force is foreign-born men — one worker in ten.**
 
-Foreign-born men are **1.8 million of the shortfall — 49% of it**, while being
-10.2% of the labor force. That alone is a rate of contribution roughly five
-times their size.
+---
 
-But look at the second bar. Foreign-born **women** are another 1.6 million, or
-43%. Together, foreign-born workers account for **92% of the entire shortfall**
-while making up 19% of the labor force.
+## And it is the men, specifically
 
-And look at the fourth bar. Native-born men did not merely fail to fill the gap
-— they came in 151,000 *above* a typical two summers, slightly offsetting it.
-Native-born women came in 449,000 below.
+We went looking for the rest of the shortfall in foreign-born women, and did not
+find it there.
 
-So the honest headline is broader than the one we started with. This is not only
-a story about foreign-born men. It is a story about foreign-born workers, and
-men are a little over half of it.
+![It is the men, and only the men](chart_divergence.png)
+
+On a trailing twelve-month average — which spans a full seasonal cycle, so it
+needs no benchmark and does not care which month you start counting from —
+foreign-born men's labor force has fallen **691,000** over the year to July
+2026. Foreign-born women's has **risen 371,000**. Compare July to July and the
+same split appears: men down 962,000, women up 412,000.
+
+This matters for what the number can mean. A general story — immigrants leaving,
+or being counted less well — would pull women down alongside men. Whatever is
+happening here is happening to men and not to women, and any explanation has to
+account for that.
 
 ## Native-born men did not fill the gap
 
@@ -228,6 +243,32 @@ seasonality constant two ways, neither of which involves adjusting anything:
    reference period inside a single business cycle.
 2. **Against native-born men.** They experience the same seasons in the same
    economy. A seasonal or cyclical force would move both groups; it did not.
+
+### What we checked and abandoned
+
+We first tried to split the whole 3.7 million shortfall four ways — foreign-born
+and native-born, men and women — as a waterfall. The four series do partition
+the published total exactly, so the arithmetic works. The measurement does not,
+and it is worth saying why.
+
+Adding two January-to-July windows silently drops the July-to-January months in
+between, and that dropped stretch behaved very differently by group. For
+foreign-born men it was −152,000 against a typical +223,000 — close enough to
+normal that dropping it changes little. For foreign-born **women** it was
+**+1,143,000** against a typical +191,000, the largest on record in eighteen
+years. Dropping it manufactured a decline for women that does not exist: the
+method showed −1,606,000, while the full span shows −202,000 and both the
+July-to-July and twelve-month-average measures show them **rising**.
+
+The alternative — one window spanning January 2026 — is no better for a
+four-way split, because that month's population controls moved about 1.5 million
+between men and women. The revision cut the published native-born male labor
+force by 1,522,000 and raised the foreign-born female figure by 655,000.
+
+Foreign-born men are the one group that revision barely touched: −24,000 on the
+labor force, −46,000 on population. That is why their numbers can be measured
+across the seam and checked four different ways, and why we make claims about
+them and not about a four-way split.
 
 ### How the decomposition works
 
