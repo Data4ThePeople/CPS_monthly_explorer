@@ -1,10 +1,10 @@
 ---
-title: "The Men Who Vanished: Testing the Replacement Theory"
+title: "The Men Who Vanished: Testing 'They're Taking Our Jobs'"
 subtitle: "2.1 million foreign-born men have gone from the count across two summers. We tested the two stories being told about why — and both fail against the government's own numbers."
 slug: the-men-who-vanished
 date: 2026-08-30
 description: "If the people leaving were a drag on the economy, the decline would show up in unemployment or the sidelines. It doesn't. 88% came straight out of jobs."
-keywords: foreign born labor force, foreign born population, immigration labor market, Bureau of Labor Statistics, Current Population Survey, labor force participation, native born workers, employment population ratio, labor supply, replacement theory, Springfield Ohio, Temporary Protected Status
+keywords: foreign born labor force, foreign born population, immigration labor market, Bureau of Labor Statistics, Current Population Survey, labor force participation, native born workers, employment population ratio, labor supply, immigrant labor displacement, Springfield Ohio, Temporary Protected Status
 section: Data 4 Thought
 author: Eric Pachman
 author_url: https://www.data4thepeople.com/authors/eric-pachman
@@ -15,21 +15,27 @@ hero_alt: "The foreign-born male population of the United States, 2007 to July 2
 
 # The men who vanished
 
-After an extended battle with the administration, on July 27, 2026, Temporary Protected Status (TPS) was revoked in our country, sending foreign born workers and families back to their dangerous home countries. A disclaimer – this topic is not just a headline for Daytonians like me. You see, Springfield is under 30 minutes north of Dayton, and in many ways feels like it's part of Dayton. We go to Springfield for doctor appointments, to meet people at coffee shops, for festivals.
+After an extended battle with the administration, on July 27, 2026, Temporary Protected Status was revoked for Haitians – stripping work authorization from hundreds of thousands of people and leaving them to choose between going back to a country our own State Department calls dangerous, or staying here without status.
 
-And so maybe I am not the best person to write about what's now going on in Springfield after the vibrant Haitian community lost TPS. Yes, I have a view on this. But that view simply led me to the data. And in this post, I simply plan to present the data that calls into question this entire concept that has been popularized as of late – the replacement theory.
+A disclaimer. This is not just a headline for Daytonians like me. Springfield is half an hour up the road, and in many ways feels like part of Dayton. We go there for doctor appointments, to meet people at coffee shops, for festivals.
 
-## The replacement theory
+So maybe I am not the best person to write about what is happening in Springfield now that the Haitian community has lost TPS. Yes, I have a view. But that view is what sent me to the data, and the data is all I plan to put in front of you here – because it calls into question an idea that has become an article of faith lately: that immigrants are taking jobs that would otherwise go to Americans.
 
-So, what is this replacement theory? In short, it's the view that immigrants are taking jobs that otherwise would go to non-immigrants. Now, the point of this post is not to callout the irony that a country that worships at the altar of capitalism doesn't seem to like capitalism when it doesn't work in their favor (if someone else wants to work harder and for less, well, that's capitalism at work).
+## "They're taking our jobs"
 
-Whoops. I couldn't resist.
+The claim is simple enough: immigrants are taking jobs that would otherwise go to non-immigrants. Every one of those jobs, on this view, is a job an American didn't get.
 
-Rather the point of this post is to test this theory with the data. It's to see who the data agrees with. Does it agree with Springfield's McGregor Metal CEO Jamie McGregor who called replacement theory "hogwash," and said it was, "spoken like a true person that has never made a payroll or tried to run a business." Or does it agree with Senator Bernie Moreno who said, "we are going to see a big, huge, booming bonanza here. And we'll make sure those jobs go to American citizens."
+A note on what this post is *not* about. This claim is often bundled together with the "Great Replacement" – the conspiracy theory, coined by Renaud Camus, that elites are deliberately replacing white populations through immigration. That is a different thing, and I am not going to test it here, because it isn't the kind of claim data can test. It asserts intent. What I am testing is the economic claim, the one you actually hear at the counter and on the Senate floor: that these are our jobs, and immigrants have them.
 
-To be clear, we don't know how the situation will play out in Springfield. Rather, we are using Springfield as a case study to bring the national data to life that, especially recently, has a strong opinion on this debate.
+Now, the point of this post is not to call out the irony that a country which worships at the altar of capitalism doesn't much like capitalism when it stops working in their favor (if someone else will work harder for less, well – that's capitalism at work).
 
-That said, let's dive into the government's own data.
+Whoops. Couldn't resist.
+
+The point is to test the theory against the data, and see who the data agrees with. Does it agree with Springfield's McGregor Metal CEO Jamie McGregor, who called the notion of migrants taking American jobs "hogwash," and said it was "spoken like a true person that has never made a payroll or tried to run a business." Or does it agree with Senator Bernie Moreno who said, "we are going to see a big, huge, booming bonanza here. And we'll make sure those jobs go to American citizens."
+
+To be clear, we don't know how this will play out in Springfield. We are using Springfield as a case study – a way to put a face on national data that has, lately, developed a very strong opinion on this debate.
+
+So let's dive into the government's own numbers.
 
 ## The U.S. has lost 2mm+ foreign born men from the workforce
 
@@ -53,7 +59,7 @@ If you like your surprises quantified: measured against the seventeen years befo
 
 ## Most have come straight from the employed population
 
-This is the strange part. Based on the narrative swirling around the country, we may expect that if 2mm foreign born men disappeared, they would reduce the number of unemployed or the number of people not in the labor force. Both of those things happened, but not out of line with normal seasonality. The vast majority of these men that are now gone came from the ranks of the employed.
+This is the strange part. Given the narrative swirling around the country, you would expect that if 2 million foreign born men disappeared, they would come out of the unemployed, or out of the ranks of people not in the labor force. Both of those did happen – but no more than a normal summer would produce. The vast majority of the men who are now gone came straight out of employment.
 
 ![Change in foreign-born men by labor force status across the summers of 2025 and 2026, against a typical pair of summers. Employment normally rises 835,000 but instead fell 971,000, while unemployment and not-in-labor-force behaved close to normal](chart_where_they_went.png)
 
@@ -87,9 +93,9 @@ More native-born men of working age than ever, and a smaller share of them worki
 
 ## So, what is going on?
 
-We're not sure when this happened, but simple emotionally driven cause and effect arguments are all the rage nowadays. And people buy them, hook line and sinker - even if they come from conflicted interests (e.g., "There are several reasons to be optimistic that there will be an abundance of jobs in the future." – Mark Zuckerberg).
+I'm not sure when it happened, but simple, emotionally driven cause-and-effect arguments are all the rage now. And people buy them, hook, line and sinker – even when they come from obviously conflicted interests ("There are several reasons to be optimistic that there will be an abundance of jobs in the future." – Mark Zuckerberg).
 
-But I'm going to give you some bad news. Societies, economies, environments – the entire world – is not as simple as people want you to believe. In fact, they are so inordinately complex that you should immediately distrust anyone that feeds you a simple cause-and-effect argument. Especially if they are using that to get votes or get you to buy something. This is just good mental hygiene – like brushing your teeth so they don't rot.
+So here is some bad news. Societies, economies, environments – the entire world – are not as simple as people want you to believe. They are complex enough that you should immediately distrust anyone who hands you a tidy cause and effect, especially if they are using it to win your vote or your money. Treat that as basic mental hygiene. Like brushing your teeth so they don't rot.
 
 We can see how complex even the local Springfield economy is from the data.
 
@@ -107,7 +113,7 @@ Those arrivals came with a dependency ratio of roughly **10 retirees per 100 wor
 
 Haitian immigrants took the low-paying, undesirable jobs Springfield's facilities needed filled. And manufacturing employment, which had lost half its base in thirteen years, **stopped falling** — it held between 6,700 and 7,100 from 2013 through 2019.
 
-Now, consider, who is more likely to work as shift supervisors? Managers? Immigrants are not taking those jobs. Those jobs are more likely to be held by native born workers. So, did Haitian workers displace native born workers in Springfield? Sure, maybe some here and there (again, blame capitalism not the immigrants). But they also saved jobs – the higher paying jobs of managers who would be jobless if their employers shut their doors.
+Now consider who is more likely to be the shift supervisor. The plant manager. Immigrants are not taking those jobs; native born workers are. So did Haitian workers displace native born workers in Springfield? Sure – some, here and there (and again, blame capitalism, not the immigrants). But they also saved jobs. The better paid ones, held by the managers who would have been out of work if their employer had shut the doors.
 
 This isn't just my hypothesis. There is an entire body of work on this.
 
@@ -157,9 +163,9 @@ On a trailing twelve-month average, foreign-born men's labor force has fallen **
 
 ## So what are we doing here?
 
-We have seen enough data to hold strong conviction that America is playing with fire. Over 1.5 million workers have been erased from payrolls across this country, taking with them the taxes they pay and the money they spend at the grocery stores, movie theatres, etc. And unless native born workers will step in and take these jobs that they have been saying they wanted (they have not yet) more jobs could be lost as we lose a disproportionate number of people working in the dirty "engine rooms" of America.
+We have seen enough to hold a strong conviction that America is playing with fire. Nearly a million and a half workers have been erased from payrolls across this country, taking with them the taxes they paid and the money they spent at the grocery store and the movie theater. And unless native born workers step in and take the jobs they have been saying they wanted – which, so far, they have not – more jobs will follow them out the door, because we are losing a wildly disproportionate share of the people who work in the dirty engine rooms of America.
 
-But again, I have seen this dynamic with my own eyes in my backyard. I am biased. So, you shouldn't take my word for it. But you should do the work yourself if you care about the direction of this country, and then form your own views on this existential debate.
+But I have watched this dynamic with my own eyes, in my own backyard. I am biased. So don't take my word for it. Do the work yourself, if you care about where this country is heading, and then go form your own view on it.
 
 **[Beyond the Unemployment Rate →](https://data4thepeople.github.io/CPS_monthly_explorer/v2/output/ln_explorer.html)**
 
