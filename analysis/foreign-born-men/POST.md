@@ -55,7 +55,7 @@ Here is how those two summers look against every other summer on record.
 
 They are the two steepest declines in the history of the series. Third place is 2020 — the COVID shutdown — at 336,000. **These past two years dwarf the COVID impact.** In an ordinary year this number barely moves; the typical January-to-July change is about 20,000.
 
-If you like your surprises quantified: measured against the seventeen years before them, these are **5.7 and 4.6 standard deviations** below the mean. I'm not going to translate that into a "one in a million years" statistic, because you cannot characterize a tail like that from seventeen observations, and anyone who tries is selling you something. What it means is simpler, and harder to wave off. **Nothing in the recorded history of this series looks like this.**
+If you like your surprises quantified: measured against the seventeen years before them, these are **5.7 and 4.6 standard deviations** below the mean. I'm not going to translate that into a "one in a million years" statistic, because you cannot characterize a tail like that from seventeen observations. What it means is simpler, and harder to wave off. **Nothing in the recorded history of this series looks like this.**
 
 ## Most have come straight from the employed population
 
@@ -65,7 +65,11 @@ This is the strange part. Given the narrative swirling around the country, you w
 
 ![Of the gap against a typical two summers, employment accounts for negative 1,806,000 or 88 percent, not in labor force negative 252,000 or 12 percent, and unemployment positive 11,000 or zero percent](table_gap.png)
 
-Over the past two years (Jan–July) we have lost **1.4 million workers** from this demographic alone. The whole American labor force grew over that period — but it grew **3.7 million less** than a normal two summers would deliver, and foreign-born men are **1.8 million of that shortfall. Forty-nine percent of it, from a group that is one worker in ten.**
+Over the past two years (Jan–July) foreign-born men's labor force shrank by **1.4 million**. But in a normal pair of summers it would have *grown* by about 360,000 – so measured against trend, the swing is **1.8 million**.
+
+Now do the same arithmetic for the country. The whole American labor force did grow over those two summers, by 2.5 million. A normal two summers delivers 6.2 million. So it came up **3.7 million short**.
+
+Foreign-born men are 1.8 million of that 3.7 million. **Forty-nine percent of the shortfall, from a group that is one worker in ten.**
 
 ## Native-born men are not taking these jobs
 
@@ -91,7 +95,7 @@ More native-born men of working age than ever, and a smaller share of them worki
 
 ## Pesky complexity
 
-I'm not sure when it happened, but simple, emotionally driven cause-and-effect arguments are all the rage now. And people buy them, hook, line and sinker – even when they come from obviously conflicted interests ("There are several reasons to be optimistic that there will be an abundance of jobs in the future." – Mark Zuckerberg).
+I'm not sure when it happened, but simple, emotionally driven cause-and-effect arguments are all the rage now. And people buy them, hook, line and sinker – even when they come from people with obviously conflicted interests ("There are several reasons to be optimistic that there will be an abundance of jobs in the future." – [Mark Zuckerberg](https://www.meta.com/thefutureisforeveryone/)).
 
 So here is some bad news. Societies, economies, environments – the entire world – are not as simple as people want you to believe. Distrust anyone who hands you a tidy cause and effect, especially if they are using it to win your vote or your money.
 
@@ -101,7 +105,7 @@ Treat that as basic mental hygiene. Like brushing your teeth so they don't rot.
 
 Springfield had been shrinking for sixty years before any of this. The city peaked around **83,000 residents in 1960** and was **58,662** by 2020.
 
-It is also old, and getting older. Clark County now carries **36.5 native-born residents over 65 for every 100 of working age, against 29.5 nationally**. And the working-age half of that is still draining: the city's native-born population aged 25 to 54 **fell 9.2%** over the last decade, more than twice as fast as its native-born population overall.
+It is also old, and getting older. Clark County now carries **36.5 native-born residents over 65 for every 100 of working age, against 29.5 nationally**. And the working-age half of that is still draining: the county's native-born population aged 25 to 54 **fell 7.3%** over the last decade, nearly four times as fast as its native-born population overall.
 
 The plants, meanwhile, had already been gutted. Manufacturing employment in the metro went from **12,900 in 2000 to 6,700 by 2013** – nearly half of it gone before a single Haitian arrived, most of it announced by Navistar in November of 2000.
 
@@ -109,7 +113,7 @@ That was the town when the wave hit. Haitians began arriving in numbers in 2021,
 
 They took them. The low-paid, physically hard, undesirable ones.
 
-I am not going to tell you they rescued Springfield manufacturing. Employment there had bottomed out a decade earlier, and the 2021–2023 recovery happened in factory towns that saw no immigration at all. What I will tell you is that it has fallen every year since, to **6,000 in 2026 – the lowest in the whole series**.
+I am not going to tell you they rescued Springfield manufacturing. Employment there had bottomed out a decade earlier, and the 2021–2023 recovery happened in factory towns that saw no immigration at all. What I will tell you is that it peaked in 2023 and has fallen every year since – to **6,000 in 2026, the lowest in the whole series**.
 
 Now consider who is more likely to be the shift supervisor. The plant manager. Immigrants are not taking those jobs; native-born workers are. So did Haitian workers displace native-born workers in Springfield? Sure – some, here and there (and again, blame capitalism, not the immigrants). But they also saved jobs. The better paid ones, held by the managers who would have been out of work if their employer had shut the doors.
 
@@ -143,7 +147,7 @@ The harder, dirtier and worse-paid the work, the more likely the man doing it wa
 
 ## Playing with fire?
 
-We have seen enough to hold a strong conviction that America is playing with fire. Nearly a million and a half workers have been erased from payrolls across this country, taking with them the taxes they paid and the money they spent at the grocery store and the movie theater. And unless native-born workers step in and take the jobs they have been saying they wanted – which, so far, they have not – more jobs will follow them out the door, because we are losing a wildly disproportionate share of the people who work in the dirty engine rooms of America.
+We have seen enough to hold a strong conviction that America is playing with fire. Nearly a million foreign-born men have been erased from American payrolls, taking with them the taxes they paid and the money they spent at the grocery store and the movie theater. And unless native-born workers step in and take the jobs they have been saying they wanted – which, so far, they have not – more jobs will follow them out the door, because we are losing a wildly disproportionate share of the people who work in the dirty engine rooms of America.
 
 But I have watched this dynamic with my own eyes, in my own backyard. I am biased. So don't take my word for it. Do the work yourself, if you care about where this country is heading, and then go form your own view on it.
 
