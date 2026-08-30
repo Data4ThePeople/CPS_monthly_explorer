@@ -1,14 +1,18 @@
 # Teaser email — Mailchimp
 
-A full research piece, so this send follows the Day 7 pattern rather than the
-Days 1–6 one. The post runs about 2,900 words, carries two falsification tests,
-a five-method sizing exercise and a methodology section that exists to survive
-hostile reading. None of that belongs in an inbox. This email carries one
-finding, one chart, and the caveat that keeps the finding honest.
+A full research piece, so this follows the Day 7 pattern rather than the
+Days 1–6 one. The post runs about 3,700 words — roughly 2,200 of argument and
+1,500 of limits and methodology — and carries two falsification tests. None of
+that belongs in an inbox. This email carries one finding, one chart, and the
+caveat that keeps the finding honest.
 
 The thread to pull is the mechanism, not the headline number. "2.1 million are
-gone" invites an argument about immigration. "The ones who left were the ones
-working" invites a question, and the question is the piece.
+gone" starts an argument about immigration. "The ones who left were the ones
+working" starts a question, and the question is the piece.
+
+Springfield stays out of the subject line and out of the first block. It is the
+frame of the post, but in an inbox a place name reads as local news and the list
+is national.
 
 Companion file: `analysis/foreign-born-men/METADATA.md` (page meta, JSON-LD,
 alt text, framing guardrails).
@@ -38,10 +42,10 @@ Nobody took the jobs back
 Two million left. They were not the idle ones.
 ```
 
-The first is the plainest statement of the second half of the piece and reads
-well to anyone following the labor data. The second is the strongest and the
-most likely to be forwarded as a political claim rather than a measurement — if
-you use it, the preheader has to carry "the government's own data."
+The first is the plainest statement of the second half of the piece. The second
+is the strongest and the most likely to be forwarded as a political claim rather
+than a measurement — if you use it, the preheader has to carry "the government's
+own data."
 
 ## Preview text (preheader)
 
@@ -50,10 +54,9 @@ Not the idle. The employed. We tested it against nineteen years of the governmen
 ```
 
 93 characters. It does not repeat the subject: the subject states the finding,
-the preheader says what we did to earn it. "The government's own data" is doing
-real work — it pre-empts the first objection, which is that this is advocacy
-arithmetic. Set it in Mailchimp's preview-text field, **not** as the first line
-of body copy.
+the preheader says what we did to earn it. "The government's own data"
+pre-empts the first objection, which is that this is advocacy arithmetic. Set it
+in Mailchimp's preview-text field, **not** as the first line of body copy.
 
 ---
 
@@ -69,11 +72,8 @@ Beyond the Unemployment Rate · Labor force
 
 ### 2 — Why this one is short
 
-One line, under the headline. This piece is long and the list should know the
-email is a door, not a summary.
-
 ```
-This one is long — two claims tested, a sizing exercise, and the limits of what the data can carry. Here is the finding; the rest is on the page.
+This one is long — two claims tested, a trip to Springfield, and the limits of what the data can carry. Here is the finding; the rest is on the page.
 ```
 
 ### 3 — Headline
@@ -85,7 +85,7 @@ The men who vanished
 ### 4 — Deck
 
 ```
-2.1 million foreign-born men have gone from the count across two summers. We tested the two stories being told about why — and both fail against the government's own numbers.
+2.1 million foreign-born men have gone from the count across two summers. We tested the two things we are being told about why — and both fail against the government's own numbers.
 ```
 
 ### 5 — Hero image, linked
@@ -157,8 +157,8 @@ Foreign-born men, falling. Foreign-born women, still rising. Over the year to Ju
 
 This is the one chart in the set that belongs in an email. It is a shape — two
 lines separating — and the shape survives the downscale even when the type does
-not. It also does real defensive work: a general "immigrants are leaving" story
-would pull both lines down. Only one moves.
+not. It also does defensive work: a general "immigrants are leaving" story would
+pull both lines down. Only one moves.
 
 ### 9 — How big is it
 
@@ -182,7 +182,7 @@ Point it at `[[POST URL]]`.
 ### 11 — What is on the page and not in this email
 
 ```
-On the page: why these two summers are the steepest on record and how we measured them without crossing a population-control seam, what happened to foreign-born women and why it is not what the first cut of the data suggested, which occupations these men actually held, what a four-and-a-half-sigma departure does and does not entitle you to say, and the analysis we tried and threw away.
+On the page: what Springfield, Ohio looked like before the Haitians arrived and what happened to its factories, the economics of why immigrants and native-born workers are not interchangeable, which occupations these men actually held, why these two summers are the steepest on record and how we measured them without crossing a population-control seam, what a four-and-a-half-sigma departure does and does not entitle you to say, and the analysis we tried and threw away.
 ```
 
 ### 12 — The caveat
@@ -203,7 +203,7 @@ What is not in doubt is who left. Not the idle. The employed.
 ### 13 — Footer
 
 ```
-Source: U.S. Bureau of Labor Statistics, Current Population Survey (LN database), series LNU00073396, LNU01073396, LNU02073396, LNU03073396, LNU05073396 and their native-born counterparts. Not seasonally adjusted; BLS publishes no seasonally adjusted series by nativity.
+Source: U.S. Bureau of Labor Statistics, Current Population Survey (LN database), series LNU00073396, LNU01073396, LNU02073396, LNU03073396, LNU05073396 and their native-born counterparts. Not seasonally adjusted; BLS publishes no seasonally adjusted series by nativity. Springfield figures from the Census Bureau's American Community Survey and BLS series SPRI239MFG.
 
 Every figure, the script that builds it, and the verification:
 github.com/Data4ThePeople/CPS_monthly_explorer
@@ -213,34 +213,30 @@ github.com/Data4ThePeople/CPS_monthly_explorer
 
 ## Notes
 
-- **Only two of the seven images belong in an email.** The 1680×1080 hero and
+- **Only two of the eight images belong in an email.** The 1680×1080 hero and
   the divergence chart are shapes and survive a 600px column. The rest do not:
-  `chart_ranking.png` is 1900px wide with twenty year-labels and twenty value
-  labels at 10pt — on a 375px phone that renders near 2px. `table_flows.png` and
-  `table_sources.png` are worse, being type all the way down. Their findings are
-  carried as live text in blocks 6 and 9 instead.
+  `chart_ranking.png` is 1900px wide with forty labels at 10pt — on a 375px
+  phone that renders near 2px. The four tables are worse, being type all the way
+  down. Their findings run as live text in blocks 6 and 9 instead.
 - **Images off is the failure mode to design against.** With images suppressed
-  this email must still say: what happened, what the two stories predicted, that
+  this email must still say: what happened, what the two claims predicted, that
   both failed, how big it is, and what we cannot claim. That is why blocks 2, 6,
   7, 9 and 12 are all live text.
-- **The subject line is doing more work than usual.** Every phrasing that names
-  the group up front tested badly against the guardrail in METADATA.md: a
-  nativity label in the first 39 characters gets the post sorted into a
-  political bucket before the mechanism is read. "The missing men were working"
-  is the finding with the sorting removed.
+- **Springfield is deliberately held back to block 11.** It is the post's
+  opening and its emotional frame, but it is also the part a national list will
+  read as someone else's local news. The email leads with the finding and uses
+  Springfield as a reason to click through.
 - **One number in block 9 will move.** "Roughly half" is 47–49% on current data
   and stable at 45–48% across six baselines, but it is recomputed from the
   latest release. Re-run `make_charts.py` on send morning if the August data has
-  landed; it prints every figure in this email.
+  landed; it prints every national figure in this email.
 - **Do not let an editor promote the 2.1 million to the whole story.** Its force
   comes from being unprecedented against the series' own record *and* from
-  native-born men sitting at +0.1 sigma over the identical months. Alone it is a
-  level estimate from a model. This is the fourth guardrail in METADATA.md and
-  it applies to the email more than the page.
+  native-born men sitting at +0.1 sigma over the identical months. This is
+  guardrail 3 in METADATA.md and it applies to the email more than the page.
 - **Total image payload is about 278 KB** — the hero at 127 KB plus the
-  divergence chart at 151 KB. If you want it lighter, the divergence chart is
-  the one to compress; it is two flat lines on a flat ground and tolerates JPEG
-  at quality 80 without visible loss.
+  divergence chart at 151 KB. If you want it lighter, compress the divergence
+  chart; it is two flat lines on a flat ground and tolerates JPEG at quality 80.
 - **The parchment ground is `#faf3df`.** Both images are drawn on it edge to
   edge, so either set the Mailchimp content background to match or give them
   padding — on white they will read as unintentional cream rectangles.

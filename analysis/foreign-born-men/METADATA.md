@@ -1,41 +1,42 @@
 # Publishing metadata — "The Men Who Vanished"
 
-Everything Prismic needs for this post. Drafted 2026-08-29.
+Everything Prismic needs for this post. Drafted 2026-08-30.
 
-Replace the `REPLACE_ME` value before publishing: the Prismic image delivery URL
-for the hero. Confirm the `/p/` slug matches what Prismic assigns.
+The hero has been uploaded, so the image URLs below are live rather than
+placeholders. Confirm the `/p/` slug matches what Prismic assigns.
+
+Companion files: `POST.md` (the piece), `EMAIL.md` (the Mailchimp teaser).
 
 ---
 
 ## Email
 
-**Subject:** The government's own data contradicts the government's story
+**Subject:** The missing men were working
 
-**Preview text** (79 chars — first 39 survive mobile truncation):
+**Preview text** (93 chars):
 
-> Not the idle. The employed. Eighty-eight percent came straight out of jobs.
+> Not the idle. The employed. We tested it against nineteen years of the government's own data.
 
-Do not lead the preview with "foreign-born." The finding is the mechanism —
-people leaving the count from *employment* rather than drifting into
-not-in-the-labor-force — and a nativity label in the first 39 characters gets the
-post sorted into a political bucket before the mechanism is read. "Not the idle.
-The employed." does the work without naming the group, and it is the sentence the
-whole piece turns on.
+Do not lead the preview with "foreign-born," and do not lead with Springfield.
+A nativity label in the first 39 characters gets the post sorted into a
+political bucket before the mechanism is read; a place name reads as local
+news. "Were working" carries the whole surprise.
 
 ---
 
 ## Title
 
-**Use this** (57 chars — fits Google's ~60 char display):
+**Use this** (58 chars — fits Google's ~60 char display):
 
-> The Men Who Vanished: 2.1 Million Gone From the Jobs Data
+> The Men Who Vanished: Testing Labor Market Displacement
 
-Alternatives:
+Alternates:
 
 | Angle | Title | Chars |
 |---|---|---:|
-| Search-first | Foreign-Born Men Drive the Entire U.S. Labor Force Decline | 58 |
-| Mechanism-first | They Didn't Quit Looking for Work. They Stopped Being Counted. | 62 |
+| Finding-first | The Missing Men Were Working, Not Idle | 38 |
+| Search-first | Do Immigrants Take American Jobs? What the Data Shows | 53 |
+| Place-first | What Springfield Ohio Reveals About the Labor Force | 51 |
 
 The email subject and the SEO title should differ. The subject sells the open;
 the title has to survive a search results page.
@@ -48,83 +49,99 @@ the title has to survive a search results page.
 
 > If the people leaving were a drag on the economy, the decline would show up in unemployment or the sidelines. It doesn't. 88% came straight out of jobs.
 
-Alternative (152 chars), leading with the labor force framing:
+Alternative (152 chars), leading with the second test:
 
-> Foreign-born men are 10% of the labor force and roughly half of its shortfall on two independent measures. Foreign-born women are rising. It is the men, specifically.
+> Foreign-born men are 10% of the labor force and roughly half its shortfall. Native-born men's employment rate has fallen three years running, not risen.
 
 ---
 
 ## Meta keywords
 
 ```
-foreign-born labor force, foreign-born population, immigration labor market,
-Bureau of Labor Statistics, BLS, Current Population Survey, CPS, labor force
-participation, native-born workers, employment population ratio, labor supply,
-jobs report, July 2026 jobs report, labor shortage, economic data
+foreign born labor force, foreign born population, immigration labor market,
+Bureau of Labor Statistics, Current Population Survey, labor force
+participation, native born workers, employment population ratio, labor supply,
+labor market displacement, task specialization, Springfield Ohio, Temporary
+Protected Status, Clark County Ohio, jobs report
 ```
 
-**Worth knowing:** Google has ignored the `<meta name="keywords">` tag since
-2009 and it carries no ranking weight. It is included because Prismic exposes
-the field and because some internal site searches, syndication partners, and
-non-Google engines still read it. The `keywords` property inside the JSON-LD
-below is the one that does modern work.
+Google has ignored `<meta name="keywords">` since 2009. It is filled in because
+Prismic exposes the field; the `keywords` property in the JSON-LD is the one
+that does modern work.
 
 ---
 
 ## Alt text
 
+Each of these is already in `POST.md` — the importer reads them from the
+Markdown, so they only need editing there. Reproduced here for review.
+
 **hero_foreign_born_men.png**
 
-> Line chart of the foreign-born male population of the United States from 2007
-> to July 2026, in millions. The line rises from about 17.3 million in 2007 to
-> about 25.0 million in early 2025, then falls to 22.8 million by July 2026. Two
-> segments are highlighted: January to July 2025, a fall of 1.2 million, and
-> January to July 2026, a fall of 0.9 million.
+> The foreign-born male population of the United States, 2007 to July 2026,
+> falling from about 25 million in early 2025 to 22.8 million, with the
+> January-to-July windows of 2025 and 2026 highlighted.
 
 **chart_ranking.png**
 
-> Bar chart of the change in the foreign-born male population from January to
-> July, for every year from 2007 to 2026. 2025 is the steepest decline at
-> 1,170,000 and 2026 is second at 919,000. The third steepest is 2020 at 336,000.
-> Most other years fall between negative 100,000 and positive 550,000.
+> Change in the foreign-born male population from January to July, every year
+> from 2007 to 2026. 2025 is steepest at negative 1,170,000 and 2026 second at
+> negative 919,000; the third steepest is 2020 at negative 336,000.
 
 **chart_where_they_went.png**
 
-> Grouped bar chart comparing the change in foreign-born men by labor force
-> status across the summers of 2025 and 2026 against a typical pair of summers.
-> Employment normally rises 835,000 but instead fell 971,000. Unemployment fell
-> 464,000 against a typical 475,000, and the number not in the labor force fell
-> 653,000 against a typical 401,000.
+> Change in foreign-born men by labor force status across the summers of 2025
+> and 2026, against a typical pair of summers. Employment normally rises 835,000
+> but instead fell 971,000, while unemployment and not-in-labor-force behaved
+> close to normal.
+
+**table_gap.png**
+
+> Of the gap against a typical two summers, employment accounts for negative
+> 1,806,000 or 88 percent, not in labor force negative 252,000 or 12 percent,
+> and unemployment positive 11,000 or zero percent.
 
 **chart_not_filled.png**
 
-> Line chart of the employment-population ratio for native-born men, July of each
-> year from 2015 to 2026. The ratio falls from 65.9 percent in July 2019 to 60.1
-> percent in July 2020, recovers to 64.2 percent by 2023, then declines in each of
-> the last three years, from 64.2 percent in 2023 to 62.8 percent in July 2026. A hollow marker at 63.6 percent
-> marks where the ratio would need to sit for native-born men to have absorbed
-> the 971,000 jobs foreign-born men vacated — 0.8 points above the actual figure.
+> Employment-population ratio for native-born men, July of each year from 2015
+> to 2026, declining in each of the last three years to 62.8 percent, against a
+> hollow marker at 63.6 percent showing where it would need to sit to absorb the
+> vacated jobs.
+
+**table_occupations.png**
+
+> Foreign-born men as a share of all men employed in each occupation in 2025:
+> 42 percent in farming, fishing and forestry, 34 percent in construction, 30
+> percent in building and grounds maintenance, down to 18 percent in management
+> and professional work and 10 percent in protective service.
 
 **chart_divergence.png**
 
-> Line chart of the civilian labor force for foreign-born men and foreign-born
-> women, 2008 to July 2026, on a trailing twelve-month average. Both rise
-> together until 2025. The men's line peaks in June 2025 and falls to 17,954,000
-> by July 2026, while the women's line continues rising to 14,497,000.
-
-**table_flows.png**
-
-> Table of foreign-born and native-born men by labor force status, showing the
-> January-to-July change for 2025, for 2026, the combined total, and a typical
-> two summers. The foreign-born male population fell 1,170,000 then 919,000, a
-> combined 2,089,000, against a typical 40,000.
+> Civilian labor force for foreign-born men and foreign-born women, 2008 to July
+> 2026, on a trailing twelve-month average. The men's line peaks in mid-2025 and
+> falls while the women's continues rising.
 
 **table_sources.png**
 
-> Table listing the BLS Current Population Survey series identifiers used in this
-> analysis for population, labor force, employment, unemployment, not in labor
-> force, participation rate, and employment-population ratio, for foreign-born and
+> Table listing the BLS Current Population Survey series identifiers used for
+> population, labor force, employment, unemployment, not in labor force,
+> participation rate and employment-population ratio, for foreign-born and
 > native-born men.
+
+---
+
+## Cover images
+
+Both are set in the post's front matter and filled by the importer.
+
+| Field | Tab | File |
+|---|---|---|
+| `featured_image` | Main | `2026-08-29-the-men-who-vanished-hero-1680x1080.png` |
+| `meta_image` | SEO & Metadata | the same file |
+
+The 1680×1080 is drawn at that size with its type scaled for a narrow canvas.
+The 2400px `hero_foreign_born_men.png` is the first figure in the body and is
+too wide to serve as a link preview.
 
 ---
 
@@ -132,42 +149,48 @@ below is the one that does modern work.
 
 ```html
 <meta property="og:type"        content="article">
-<meta property="og:title"       content="The Men Who Vanished: 2.1 Million Gone From the Jobs Data">
-<meta property="og:description" content="The foreign-born male population has fallen 2.1 million across two summers — the two steepest on record. 88% came straight out of employment, not the sidelines.">
-<meta property="og:image"       content="REPLACE_ME_PRISMIC_HERO_URL?auto=format,compress">
+<meta property="og:title"       content="The Men Who Vanished: Testing Labor Market Displacement">
+<meta property="og:description" content="If the people leaving were a drag on the economy, the decline would show up in unemployment or the sidelines. It doesn't. 88% came straight out of jobs.">
+<meta property="og:image"       content="https://images.prismic.io/data4thepeople/pRDE4e92vRAVgXTq_2026-08-29-the-men-who-vanished-hero-1680x1080.png?auto=format,compress">
 <meta property="og:image:alt"   content="The foreign-born male population of the United States, 2007 to July 2026, with the January-to-July declines of 2025 and 2026 highlighted.">
 <meta property="og:url"         content="https://www.data4thepeople.com/p/the-men-who-vanished">
 <meta property="og:site_name"   content="Data 4 The People">
-<meta property="article:published_time" content="2026-08-29T06:00:00-04:00">
+<meta property="article:published_time" content="2026-08-30T06:00:00-04:00">
 <meta property="article:section" content="Data 4 Thought">
 <meta property="article:author"  content="Eric Pachman">
 
 <meta name="twitter:card"        content="summary_large_image">
-<meta name="twitter:title"       content="The Men Who Vanished: 2.1 Million Gone From the Jobs Data">
-<meta name="twitter:description" content="They did not stop looking for work. Eighty-eight percent came straight out of jobs.">
-<meta name="twitter:image"       content="REPLACE_ME_PRISMIC_HERO_URL?auto=format,compress">
-
-<meta name="keywords" content="foreign-born labor force, foreign-born population, immigration labor market, Bureau of Labor Statistics, BLS, Current Population Survey, CPS, labor force participation, native-born workers, employment population ratio, labor supply, jobs report, economic data">
+<meta name="twitter:title"       content="The Men Who Vanished: Testing Labor Market Displacement">
+<meta name="twitter:description" content="Not the idle. The employed. Eighty-eight percent came straight out of jobs.">
+<meta name="twitter:image"       content="https://images.prismic.io/data4thepeople/pRDE4e92vRAVgXTq_2026-08-29-the-men-who-vanished-hero-1680x1080.png?auto=format,compress">
 ```
 
 ---
 
 ## Schema (JSON-LD)
 
-Follows the standard Data 4 Thought post format.
+The importer generates this from the front matter and writes it to the `schema`
+field. Reproduced here so it can be reviewed without opening Prismic.
 
-```html
-<script type="application/ld+json">
+```json
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The Men Who Vanished: 2.1 Million Gone From the Jobs Data",
-  "description": "The foreign-born male population has fallen 2.1 million across two summers. If those leaving were a drag on the economy, the decline would appear in unemployment or the sidelines; instead 88% came straight out of employment, on the government's own published data.",
-  "image": [
-    "REPLACE_ME_PRISMIC_HERO_URL?auto=format,compress"
+  "headline": "The Men Who Vanished: Testing Labor Market Displacement",
+  "description": "If the people leaving were a drag on the economy, the decline would show up in unemployment or the sidelines. It doesn't. 88% came straight out of jobs.",
+  "image": "https://images.prismic.io/data4thepeople/pRDE4e92vRAVgXTq_2026-08-29-the-men-who-vanished-hero-1680x1080.png?auto=format,compress",
+  "datePublished": "2026-08-30T06:00:00-04:00",
+  "dateModified": "2026-08-30T06:00:00-04:00",
+  "articleSection": "Data 4 Thought",
+  "inLanguage": "en-US",
+  "isAccessibleForFree": true,
+  "keywords": [
+    "foreign born labor force",
+    "labor market displacement",
+    "task specialization",
+    "Current Population Survey",
+    "Springfield Ohio"
   ],
-  "datePublished": "2026-08-29T06:00:00-04:00",
-  "dateModified": "2026-08-29T06:00:00-04:00",
   "author": {
     "@type": "Person",
     "name": "Eric Pachman",
@@ -181,130 +204,53 @@ Follows the standard Data 4 Thought post format.
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://www.data4thepeople.com/p/the-men-who-vanished"
-  },
-  "keywords": [
-    "foreign-born labor force",
-    "immigration labor market",
-    "Current Population Survey",
-    "employment population ratio",
-    "labor supply"
-  ],
-  "articleSection": "Data 4 Thought",
-  "inLanguage": "en-US",
-  "citation": [
-    {
-      "@type": "CreativeWork",
-      "name": "Civilian noninstitutional population, foreign-born, men, not seasonally adjusted, series LNU00073396",
-      "author": "U.S. Bureau of Labor Statistics",
-      "url": "https://data.bls.gov/timeseries/LNU00073396"
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "Employment level, foreign-born, men, not seasonally adjusted, series LNU02073396",
-      "author": "U.S. Bureau of Labor Statistics",
-      "url": "https://data.bls.gov/timeseries/LNU02073396"
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "Employment-population ratio, native-born, men, not seasonally adjusted, series LNU02373414",
-      "author": "U.S. Bureau of Labor Statistics",
-      "url": "https://data.bls.gov/timeseries/LNU02373414"
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "The Employment Situation — July 2026",
-      "author": "U.S. Bureau of Labor Statistics",
-      "url": "https://www.bls.gov/news.release/empsit.nr0.htm"
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "Current Population Survey, LN database",
-      "author": "U.S. Bureau of Labor Statistics",
-      "url": "https://www.bls.gov/cps/"
-    }
-  ]
+  }
 }
-</script>
 ```
-
-**Notes**
-
-- `image` carries the hero only, matching the house format. Prismic's delivery
-  URL already ends in `?auto=format,compress` — keep that on.
-- Hero filename, following the convention:
-  `2026-08-29-the-men-who-vanished-hero-1680x1080.png`
-- `datePublished` uses the usual 06:00 ET. This post is not pegged to a release
-  morning, so it does not need the 10:00 treatment the July participation post
-  used.
-- Five citations rather than three: the nativity story rests on three specific
-  series that a reader should be able to pull up individually, plus the release
-  and the survey.
 
 ---
 
-## A note on framing
+## Framing guardrails
 
-This post touches immigration, and it will be read by people who want it to say
-something it does not say. Two guardrails are load-bearing and should survive
-editing:
+These are the places where an edit could quietly turn a defensible piece into
+an indefensible one.
 
-1. **The CPS cannot distinguish emigration from non-response.** The post says
-   this explicitly in "What this does not tell you." Do not let a headline or
-   pull quote upgrade "stopped being counted" to "left the country" or
-   "deported." The data does not support either word.
-2. **The two summers are added, never measured end to end.** The 2.1 million is
-   the sum of two January-to-July windows, each inside one calendar year. The
-   change between July 2025 and January 2026 is deliberately not counted,
-   because it spans a population-control seam. Do not "simplify" this into a
-   single March-2025-to-July-2026 span; that figure is 2.2 million and it
-   crosses the seam.
-3. **Every comparison is against the same window in other years.** The
-   "typical two summers" column is not decoration — the series are unadjusted
-   and January-to-July is seasonal, so a raw change means nothing without it.
-4. **Do not extend any claim to foreign-born women, or to a four-way split.**
-   The methodology section explains why: the two-window method manufactures a
-   decline for women that three other measures contradict, and the January 2026
-   controls moved about 1.5 million between men and women. Foreign-born men are
-   the only group that revision barely touched. If an editor wants "immigrants
-   are leaving," the honest version is "foreign-born men are," and the
-   divergence chart is the evidence.
+**1. Do not reintroduce the phrase "replacement theory."** The post tests
+*labor market displacement* — the ordinary economic claim that immigrants take
+jobs that would otherwise go to non-immigrants. The Great Replacement is Renaud
+Camus's white nationalist conspiracy theory about elites deliberately replacing
+white populations. Moreno made a jobs claim; filing it under replacement theory
+attributes a conspiracy theory to a sitting senator, and that becomes the story
+instead of the data.
 
-If an editor wants a shorter version, cut the labor-force-share section before
-cutting any of those three.
+**2. The CPS cannot distinguish emigration from non-response.** The post says so
+twice. Do not let a headline or pull quote upgrade "stopped being counted" to
+"deported" or "left the country." The data does not support either word.
 
-**On the standard-deviation figures.** Do not convert them into a probability,
-a "one in n years event," or a percentage chance, however tempting the headline.
-With seventeen reference observations the tail of the distribution is not
-characterised, and normality would be carrying the claim rather than the data.
-The post says this explicitly and the sentence must survive editing. "Nothing in
-the recorded history of this series looks like this" is the strongest form the
-claim can honestly take.
+**3. Do not let the 2.1 million stand on its own.** Its force comes from being
+unprecedented against the series' own record *and* from native-born men sitting
+at +0.1 sigma over the identical months. Alone it is a level estimate from a
+model.
 
-Related: the paragraph asking readers not to let the 2.1 million stand on its
-own is not false modesty. The level is a model estimate. Its significance comes
-from the longitudinal record and from native-born men sitting at +0.1 sigma over
-the identical months. An edit that promotes the 2.1 million to the whole story
-strips out exactly what makes it defensible.
+**4. Do not convert the standard deviations into a probability.** No "one in n
+years." Seventeen reference observations cannot characterise a tail; normality
+would be carrying the claim rather than the data.
 
-**On "What if nobody was supposed to replace them?"** This is the only section
-of the post that goes beyond what the data shows, and it says so twice in its
-own text. The occupation table is measured and can be defended line by line. The
-consequence — that the work goes undone and prices rise — is a hypothesis, and
-the paragraph beginning "We want to be explicit that we have not measured this"
-is what keeps the section honest. It is not padding and it is not hedging. Cut
-it and the piece is making an economic forecast it has not earned. The promise
-to publish the test "whether or not it agrees with what we have just written" is
-also load-bearing; do not soften it.
+**5. Do not extend any claim to foreign-born women, or to a four-way split.**
+The methodology explains why. Foreign-born women's labor force is *rising*.
 
-**On the framing added in "The story we are being told makes a prediction."**
-That section argues the data refutes a claim about *who* left — the idle versus
-the employed — and that claim genuinely is refuted, on the government's own
-series. It does not argue, and must not be edited to argue, that the data shows
-deportation, emigration, or any particular mechanism. The CPS cannot see the
-difference and the post says so twice. Keep the sentence in the closing that
-concedes it: "We cannot tell you from this data why any individual person
-stopped being counted." Losing that line turns a defensible argument into an
-indefensible one.
+**6. Springfield is the frame, not the proof.** One metro, small preliminary
+numbers. The national series carries the argument. In particular, do not claim
+Haitian arrivals rescued Springfield manufacturing — the post explicitly refuses
+that claim, because employment there collapsed a decade before they arrived.
+
+**7. Keep the International Motors paragraph.** 1,341 jobs end in Springfield
+in October on a corporate sale. If the local numbers fall this autumn, a reader
+needs that before attributing it to TPS. Naming it first is much stronger than
+having it pointed out.
+
+If an editor wants a shorter version, cut the Springfield history before cutting
+any of the above.
 
 ---
 
@@ -313,17 +259,16 @@ indefensible one.
 The headline figures are specific to the July 2026 data. Anything below has to
 be re-derived, not copied:
 
-- the 2.1 million combined decline and its 1,170,000 / 919,000 split
+- the 2.1 million decline and its 1,170,000 / 919,000 split
 - the 88 / 12 / 0 shares of the gap against a typical two summers
 - "the two steepest January-to-July declines on record"
-- the 49% share of the labor-force shortfall and the 10.2% share of the labor force
-- the 47% cross-check on a July-to-July basis
-- the twelve-month-average divergence (men −691,000, women +371,000)
-- the 583,000 native-born employment shortfall
+- the 49% share of the labor-force shortfall, and its 45–48% stability check
+- the 62.8% native-born employment rate and the 63.6% counterfactual
+- the −5.7 and −4.6 sigma figures
+- the occupation shares, which are annual and update each spring
 - `datePublished` / `dateModified`
 
-Note that the reference period for "a typical two summers" (2013-2024 excluding
-2020) will need revisiting as more years accumulate.
-
-`python analysis/foreign-born-men/make_charts.py` prints the current values and
-regenerates every image.
+`python analysis/foreign-born-men/make_charts.py` prints every national number
+in the post and regenerates all eight images. The Springfield figures come from
+the Census API and FRED and are not in that script; their tables and series IDs
+are named in the post's methodology.
