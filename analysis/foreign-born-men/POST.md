@@ -1,5 +1,5 @@
 ---
-title: "The Men Who Vanished: Testing 'They're Taking Our Jobs'"
+title: "The Men Who Vanished: Testing Labor Market Displacement"
 subtitle: "2.1 million foreign-born men have gone from the count across two summers. We tested the two stories being told about why — and both fail against the government's own numbers."
 slug: the-men-who-vanished
 date: 2026-08-30
@@ -21,17 +21,17 @@ A disclaimer. This is not just a headline for Daytonians like me. Springfield is
 
 So maybe I am not the best person to write about what is happening in Springfield now that the Haitian community has lost TPS. Yes, I have a view. But that view is what sent me to the data, and the data is all I plan to put in front of you here – because it calls into question an idea that has become an article of faith lately: that immigrants are taking jobs that would otherwise go to Americans.
 
-## "They're taking our jobs"
+## Labor market displacement
 
-The claim is simple enough: immigrants are taking jobs that would otherwise go to non-immigrants. Every one of those jobs, on this view, is a job an American didn't get.
+Economists have a name for the idea I want to test: labor market displacement. The claim is simple enough. Immigrants take jobs that would otherwise go to non-immigrants, so every one of those jobs is a job an American didn't get. You hear it at the counter and you hear it on the Senate floor.
 
-A note on what this post is *not* about. This claim is often bundled together with the "Great Replacement" – the conspiracy theory, coined by Renaud Camus, that elites are deliberately replacing white populations through immigration. That is a different thing, and I am not going to test it here, because it isn't the kind of claim data can test. It asserts intent. What I am testing is the economic claim, the one you actually hear at the counter and on the Senate floor: that these are our jobs, and immigrants have them.
+I am picking that claim on purpose, because it is the one that can actually be settled. It makes a prediction about who is working, and the government counts who is working every single month.
 
 Now, the point of this post is not to call out the irony that a country which worships at the altar of capitalism doesn't much like capitalism when it stops working in their favor (if someone else will work harder for less, well – that's capitalism at work).
 
 Whoops. Couldn't resist.
 
-The point is to test the theory against the data, and see who the data agrees with. Does it agree with Springfield's McGregor Metal CEO Jamie McGregor, who called the notion of migrants taking American jobs "hogwash," and said it was "spoken like a true person that has never made a payroll or tried to run a business." Or does it agree with Senator Bernie Moreno who said, "we are going to see a big, huge, booming bonanza here. And we'll make sure those jobs go to American citizens."
+So let's test it against the data, and see who the data agrees with. Does it agree with Springfield's McGregor Metal CEO Jamie McGregor, who called the notion of migrants taking American jobs "hogwash," and said it was "spoken like a true person that has never made a payroll or tried to run a business." Or does it agree with Senator Bernie Moreno who said, "we are going to see a big, huge, booming bonanza here. And we'll make sure those jobs go to American citizens."
 
 To be clear, we don't know how this will play out in Springfield. We are using Springfield as a case study – a way to put a face on national data that has, lately, developed a very strong opinion on this debate.
 
