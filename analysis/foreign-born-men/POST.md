@@ -87,55 +87,67 @@ I'm using a rate rather than a headcount deliberately. That January revision cut
 - **Employment is not keeping up with population.** Between July 2024 and July 2026 the native-born male population grew **2,556,000**. Their employment grew **382,000**.
 - **Participation is rising more slowly than it ever has**, outside the pandemic. From January to July 2026 it rose 0.9 points against a typical 1.5 — and the two smallest such rises in twenty years of data are 2025 and 2026.
 
-More native-born men of working age than ever, and a smaller share of them working. That is the precise opposite of getting your jobs back.
+More native-born men of working age than ever, and a smaller share of them working. That is the precise opposite of accepting jobs vacated by foreign-born men.
 
-## So, what is going on?
+## Pesky complexity
 
 I'm not sure when it happened, but simple, emotionally driven cause-and-effect arguments are all the rage now. And people buy them, hook, line and sinker – even when they come from obviously conflicted interests ("There are several reasons to be optimistic that there will be an abundance of jobs in the future." – Mark Zuckerberg).
 
-So here is some bad news. Societies, economies, environments – the entire world – are not as simple as people want you to believe. They are complex enough that you should immediately distrust anyone who hands you a tidy cause and effect, especially if they are using it to win your vote or your money. Treat that as basic mental hygiene. Like brushing your teeth so they don't rot.
+So here is some bad news. Societies, economies, environments – the entire world – are not as simple as people want you to believe. Distrust anyone who hands you a tidy cause and effect, especially if they are using it to win your vote or your money.
 
-We can see how complex even the local Springfield economy is from the data.
+Treat that as basic mental hygiene. Like brushing your teeth so they don't rot.
 
-Springfield is an aging manufacturing town, and it has been shedding people for sixty years. The city peaked around **83,000 residents in 1960**. By 2020 it was **58,662**. Clark County peaked at **157,115 in 1970** and is down to **136,001**.
+### The town before the wave
 
-But the headcount isn't the interesting part. This is: **Clark County now has 36.5 native-born residents over 65 for every 100 native-born residents of working age. Nationally that figure is 29.5.** Springfield is carrying about a quarter more retirees per worker than the country as a whole.
+Springfield had been shrinking for sixty years before any of this. The city peaked around **83,000 residents in 1960** and was **58,662** by 2020.
 
-And the working-age half of that ratio is still draining. In Springfield city, the native-born population aged 25 to 54 — peak earning years, peak working years — **fell 9.2%** between the 2010–2014 and 2020–2024 American Community Surveys. The city's native-born population overall fell 4.6% over the same span. **The prime-age group is emptying out twice as fast as the town around it.**
+It is also old, and getting older. Clark County now carries **36.5 native-born residents over 65 for every 100 of working age, against 29.5 nationally**. And the working-age half of that is still draining: the city's native-born population aged 25 to 54 **fell 9.2%** over the last decade, more than twice as fast as its native-born population overall.
 
-Meanwhile the plants had already been gutted. Manufacturing employment in the Springfield metro went from **12,900 in 2000 to 6,700 by 2013** — nearly half of it gone before a single Haitian arrived. Navistar announced 1,851 job cuts in November of 2000. Whatever was killing Springfield manufacturing, it finished most of its work a decade before this story starts.
+The plants, meanwhile, had already been gutted. Manufacturing employment in the metro went from **12,900 in 2000 to 6,700 by 2013** – nearly half of it gone before a single Haitian arrived, most of it announced by Navistar in November of 2000.
 
-Then a wave of immigration hit. And here is the number that should stop you.
+That was the town when the wave hit. Haitians began arriving in numbers in 2021, after the assassination of President Moïse, and kept coming through 2023 – into a place that was shrinking, aging, short of working-age people, with jobs on the factory floor nobody was there to take.
 
-Those arrivals came with a dependency ratio of roughly **10 retirees per 100 working-age people — against 36.5 for the native-born**. They weren't retirees. They weren't children. They were, almost entirely, working-age people showing up in a county that had spent a decade running out of them.
+They took them. The low-paid, physically hard, undesirable ones.
 
-Haitian immigrants took the low-paying, undesirable jobs Springfield's facilities needed filled. And manufacturing employment, which had lost half its base in thirteen years, **stopped falling** — it held between 6,700 and 7,100 from 2013 through 2019.
+I am not going to tell you they rescued Springfield manufacturing. Employment there had bottomed out a decade earlier, and the 2021–2023 recovery happened in factory towns that saw no immigration at all. What I will tell you is that it has fallen every year since, to **6,000 in 2026 – the lowest in the whole series**.
 
 Now consider who is more likely to be the shift supervisor. The plant manager. Immigrants are not taking those jobs; native-born workers are. So did Haitian workers displace native-born workers in Springfield? Sure – some, here and there (and again, blame capitalism, not the immigrants). But they also saved jobs. The better paid ones, held by the managers who would have been out of work if their employer had shut the doors.
 
-This isn't just my hypothesis. There is an entire body of work on this.
+### This isn't just my hypothesis
 
-It has a name: **task specialization**. The economists Giovanni Peri and Chad Sparber laid it out in *Task Specialization, Immigration, and Wages*, and the mechanism is exactly what people in Springfield described to me without ever having read the paper.
+It has a name – **task specialization** – and the economists Giovanni Peri and Chad Sparber laid it out in a paper of that title.
 
-The argument runs like this. Foreign-born and native-born workers with similar education aren't interchangeable, because they're good at different things. Immigrants have an edge in manual, physical work. Native-born workers have an edge in anything that runs on language, local knowledge, and knowing how the place works — coordinating, scheduling, supervising, dealing with the customer. So when immigrants arrive and take the manual jobs, native-born workers don't get pushed out of the building. They move up the ladder inside it.
+Workers with similar education aren't interchangeable, because they're good at different things. Immigrants have an edge in manual, physical work. Native-born workers have an edge in anything running on language and knowing how the place works – coordinating, supervising, dealing with the customer. So when immigrants take the manual jobs, natives don't get pushed out of the building. They move up the ladder inside it.
 
-Peri and Sparber's own examples could have been written about Clark County: immigrants become construction workers, food industry workers, cleaning crews — and less-educated natives become **construction site supervisors, restaurant managers, farm managers**.
+Peri and Sparber's own examples could have been written about Clark County: immigrants become construction workers, cleaning crews and food industry workers, while less-educated natives become **construction site supervisors, farm managers and restaurant managers**.
 
-I want to be straight with you that this is contested. George Borjas has spent a career arguing the other side: that immigration does depress wages and employment for the natives competing most directly. This is a live argument among serious people, not settled science, and anyone who tells you otherwise is doing the simple-cause-and-effect thing I just warned you about.
+This is contested. George Borjas has spent a career arguing the other side: that immigration does depress wages and employment for the natives competing most directly. A live argument, not settled science.
 
-But here's what makes it worth your attention right now. Task specialization makes a prediction that we are, unfortunately, in the middle of testing. If immigrants and natives complement each other rather than compete, then removing the immigrants shouldn't free up jobs for natives — **it should cost natives jobs too.** And that is what the last two years show: native-born male employment growing 382,000 while their population grew 2,556,000.
+But it makes a prediction, and this debate is not for scholars anymore – the U.S. is running the experiment in real time. If immigrants and natives complement each other rather than compete, removing the immigrants shouldn't free up jobs for natives — **it should cost natives jobs too.**
 
-And you don't have to take the theory's word for it. The government's own data has the receipts.
+That is what the last two years show: native-born male employment growing 382,000 while their population grew 2,556,000.
 
-Foreign-born men are **20.5% of all employed men** in this country — about one in five. But that average hides everything interesting. Sort occupations by how much of the work foreign-born men are actually doing, and a ladder appears.
+## Where the work actually is
+
+All of this rests on something more basic, and it is worth checking on its own: are immigrants and native-born workers actually doing different work? If they were interchangeable — if one could simply slide into the other's job — none of the rest of it follows.
+
+They are not interchangeable. Foreign-born men are **20.5% of all employed men** — about one in five. Sort occupations by how much of the work they are actually doing, and a ladder appears.
 
 ![Foreign-born men as a share of all men employed in each occupation in 2025: 42 percent in farming, fishing and forestry, 34 percent in construction, 30 percent in building and grounds maintenance, down to 18 percent in management and professional work and 10 percent in protective service](table_occupations.png)
 
-Two in five men in farming, fishing and forestry. **One in three of the men on American construction sites — 2.8 million of them.** Nearly a third of the men cleaning and maintaining buildings and grounds. A quarter of the men in healthcare support, and a quarter in restaurant kitchens.
+Two in five men in farming, fishing and forestry. **One in three of the men on American construction sites — 2.8 million of them.** Nearly a third cleaning and maintaining buildings and grounds; a quarter in healthcare support, and a quarter in restaurant kitchens.
 
-Then it slides. Production, a fifth. Management and professional work, **18%** — below their own average. Protective service — police, fire, security — **10%**.
+Then it slides. Production, a fifth. Management and professional work, **18%**. Protective service — police, fire, security — **10%**.
 
-That's the shape task specialization predicts, drawn straight out of BLS. The harder, dirtier and worse-paid the work, the more likely the man doing it was born somewhere else. The more the job is about running the place, the less likely.
+The harder, dirtier and worse-paid the work, the more likely the man doing it was born somewhere else. The more the job is about running the place, the less likely.
+
+## Playing with fire?
+
+We have seen enough to hold a strong conviction that America is playing with fire. Nearly a million and a half workers have been erased from payrolls across this country, taking with them the taxes they paid and the money they spent at the grocery store and the movie theater. And unless native-born workers step in and take the jobs they have been saying they wanted – which, so far, they have not – more jobs will follow them out the door, because we are losing a wildly disproportionate share of the people who work in the dirty engine rooms of America.
+
+But I have watched this dynamic with my own eyes, in my own backyard. I am biased. So don't take my word for it. Do the work yourself, if you care about where this country is heading, and then go form your own view on it.
+
+**[Beyond the Unemployment Rate →](https://data4thepeople.github.io/CPS_monthly_explorer/v2/output/ln_explorer.html)**
 
 ## What this does not tell you
 
@@ -157,15 +169,7 @@ Which is why we would ask you not to let the 2.1 million stand on its own. On it
 
 On a trailing twelve-month average, foreign-born men's labor force has fallen **691,000** over the year to July 2026. Foreign-born women's has **risen 371,000**. That matters for what the number can mean: a general story — immigrants leaving, or being counted less well — would pull women down alongside men. Whatever is happening here is happening to men and not to women.
 
-**One more thing, about Springfield specifically.** International Motors filed a notice on July 30, 2026 to lay off 1,341 workers at its Springfield Assembly Plant and Truck Specialty Center, effective October, as it sells the site to Roshel, a Canadian armored-vehicle maker. The coverage attributes it entirely to the sale — no mention of immigration or TPS. If Springfield's numbers fall apart this autumn, that is a large part of why, and it has nothing to do with any of the above.
-
-## So what are we doing here?
-
-We have seen enough to hold a strong conviction that America is playing with fire. Nearly a million and a half workers have been erased from payrolls across this country, taking with them the taxes they paid and the money they spent at the grocery store and the movie theater. And unless native-born workers step in and take the jobs they have been saying they wanted – which, so far, they have not – more jobs will follow them out the door, because we are losing a wildly disproportionate share of the people who work in the dirty engine rooms of America.
-
-But I have watched this dynamic with my own eyes, in my own backyard. I am biased. So don't take my word for it. Do the work yourself, if you care about where this country is heading, and then go form your own view on it.
-
-**[Beyond the Unemployment Rate →](https://data4thepeople.github.io/CPS_monthly_explorer/v2/output/ln_explorer.html)**
+**One more thing, about Springfield specifically.** International Motors filed a notice on July 30, 2026 to lay off 1,341 workers at its Springfield Assembly Plant and Truck Specialty Center, effective October, as it sells the site to Roshel, a Canadian armored-vehicle maker. The coverage attributes it entirely to the sale — no mention of immigration or TPS. Whether the two are connected we cannot tell you; a company's stated reason for selling a plant and its actual reasons are not always the same thing. What we can tell you is that 1,341 jobs are ending in Springfield this autumn, that they are being pinned on a corporate transaction, and that anyone reading the local numbers after October should know it before attributing the fall to anything else.
 
 ## Methodology
 
