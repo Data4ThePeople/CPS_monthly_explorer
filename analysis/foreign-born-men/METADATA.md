@@ -57,9 +57,9 @@ Alternative (152 chars), leading with the labor force framing:
 ## Meta keywords
 
 ```
-foreign born labor force, foreign born population, immigration labor market,
+foreign-born labor force, foreign-born population, immigration labor market,
 Bureau of Labor Statistics, BLS, Current Population Survey, CPS, labor force
-participation, native born workers, employment population ratio, labor supply,
+participation, native-born workers, employment population ratio, labor supply,
 jobs report, July 2026 jobs report, labor shortage, economic data
 ```
 
@@ -147,7 +147,7 @@ below is the one that does modern work.
 <meta name="twitter:description" content="They did not stop looking for work. Eighty-eight percent came straight out of jobs.">
 <meta name="twitter:image"       content="REPLACE_ME_PRISMIC_HERO_URL?auto=format,compress">
 
-<meta name="keywords" content="foreign born labor force, foreign born population, immigration labor market, Bureau of Labor Statistics, BLS, Current Population Survey, CPS, labor force participation, native born workers, employment population ratio, labor supply, jobs report, economic data">
+<meta name="keywords" content="foreign-born labor force, foreign-born population, immigration labor market, Bureau of Labor Statistics, BLS, Current Population Survey, CPS, labor force participation, native-born workers, employment population ratio, labor supply, jobs report, economic data">
 ```
 
 ---
@@ -183,7 +183,7 @@ Follows the standard Data 4 Thought post format.
     "@id": "https://www.data4thepeople.com/p/the-men-who-vanished"
   },
   "keywords": [
-    "foreign born labor force",
+    "foreign-born labor force",
     "immigration labor market",
     "Current Population Survey",
     "employment population ratio",
@@ -194,19 +194,19 @@ Follows the standard Data 4 Thought post format.
   "citation": [
     {
       "@type": "CreativeWork",
-      "name": "Civilian noninstitutional population, foreign born, men, not seasonally adjusted, series LNU00073396",
+      "name": "Civilian noninstitutional population, foreign-born, men, not seasonally adjusted, series LNU00073396",
       "author": "U.S. Bureau of Labor Statistics",
       "url": "https://data.bls.gov/timeseries/LNU00073396"
     },
     {
       "@type": "CreativeWork",
-      "name": "Employment level, foreign born, men, not seasonally adjusted, series LNU02073396",
+      "name": "Employment level, foreign-born, men, not seasonally adjusted, series LNU02073396",
       "author": "U.S. Bureau of Labor Statistics",
       "url": "https://data.bls.gov/timeseries/LNU02073396"
     },
     {
       "@type": "CreativeWork",
-      "name": "Employment-population ratio, native born, men, not seasonally adjusted, series LNU02373414",
+      "name": "Employment-population ratio, native-born, men, not seasonally adjusted, series LNU02373414",
       "author": "U.S. Bureau of Labor Statistics",
       "url": "https://data.bls.gov/timeseries/LNU02373414"
     },
