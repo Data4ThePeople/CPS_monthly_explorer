@@ -31,7 +31,7 @@ Now, the point of this post is not to call out the irony that a country which wo
 
 Whoops. Couldn't resist.
 
-Rather, this post's purpose is to test this economic theory against the data, and see which side the data agrees with. Does it agree with Springfield's McGregor Metal CEO Jamie McGregor, who called the notion of migrants taking American jobs "hogwash," and said it was "spoken like a true person that has never made a payroll or tried to run a business." Or does it agree with Senator Bernie Moreno who said, "we are going to see a big, huge, booming bonanza here. And we'll make sure those jobs go to American citizens."
+Rather, this post's purpose is to test this economic theory against the data, and see which side the data agrees with. Does it agree with Springfield's [McGregor Metal CEO Jamie McGregor](https://www.wosu.org/npr-news/2024-08-12/how-springfield-ohio-took-center-stage-in-the-election-immigration-debate), who called the notion of migrants taking American jobs "hogwash," and said it was "spoken like a true person that has never made a payroll or tried to run a business." Or does it agree with [Senator Bernie Moreno](https://www.wyso.org/2026-08-18/husted-moreno-not-worried-about-ohio-citys-economy-with-tps-gone) who said, "we are going to see a big, huge, booming bonanza here. And we'll make sure those jobs go to American citizens."
 
 To be clear, we don't know how this will play out in Springfield. We are using Springfield as a case study – a way to put a face on national data that has, lately, developed a very strong opinion on this debate.
 
@@ -115,13 +115,13 @@ Now consider who is more likely to be the shift supervisor. The plant manager. I
 
 ### This isn't just my hypothesis
 
-It has a name – **task specialization** – and the economists Giovanni Peri and Chad Sparber laid it out in a paper of that title.
+It has a name – **task specialization** – and the economists Giovanni Peri and Chad Sparber [laid it out in a paper of that title](https://www.nber.org/papers/w13389).
 
 Workers with similar education aren't interchangeable, because they're good at different things. Immigrants have an edge in manual, physical work. Native-born workers have an edge in anything running on language and knowing how the place works – coordinating, supervising, dealing with the customer. So when immigrants take the manual jobs, natives don't get pushed out of the building. They move up the ladder inside it.
 
 Peri and Sparber's own examples could have been written about Clark County: immigrants become construction workers, cleaning crews and food industry workers, while less-educated natives become **construction site supervisors, farm managers and restaurant managers**.
 
-This is contested. George Borjas has spent a career arguing the other side: that immigration does depress wages and employment for the natives competing most directly. A live argument, not settled science.
+This is contested. [George Borjas](https://www.nber.org/papers/w9755) has spent a career arguing the other side: that immigration does depress wages and employment for the natives competing most directly. A live argument, not settled science.
 
 But it makes a prediction, and this debate is not for scholars anymore – the U.S. is running the experiment in real time. If immigrants and natives complement each other rather than compete, removing the immigrants shouldn't free up jobs for natives — **it should cost natives jobs too.**
 
