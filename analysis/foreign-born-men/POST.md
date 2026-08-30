@@ -31,13 +31,13 @@ Now, the point of this post is not to call out the irony that a country which wo
 
 Whoops. Couldn't resist.
 
-So let's test it against the data, and see who the data agrees with. Does it agree with Springfield's McGregor Metal CEO Jamie McGregor, who called the notion of migrants taking American jobs "hogwash," and said it was "spoken like a true person that has never made a payroll or tried to run a business." Or does it agree with Senator Bernie Moreno who said, "we are going to see a big, huge, booming bonanza here. And we'll make sure those jobs go to American citizens."
+Rather, this post's purpose is to test this economic theory against the data, and see which side the data agrees with. Does it agree with Springfield's McGregor Metal CEO Jamie McGregor, who called the notion of migrants taking American jobs "hogwash," and said it was "spoken like a true person that has never made a payroll or tried to run a business." Or does it agree with Senator Bernie Moreno who said, "we are going to see a big, huge, booming bonanza here. And we'll make sure those jobs go to American citizens."
 
 To be clear, we don't know how this will play out in Springfield. We are using Springfield as a case study – a way to put a face on national data that has, lately, developed a very strong opinion on this debate.
 
-So let's dive into the government's own numbers.
+Enough talk. Let's dive into the government's own numbers.
 
-## The U.S. has lost 2mm+ foreign born men from the workforce
+## The U.S. has lost 2mm+ foreign-born men from the workforce
 
 Let's start with the raw fact, because everything else follows from it.
 
@@ -53,13 +53,13 @@ Here is how those two summers look against every other summer on record.
 
 ![Change in the foreign-born male population from January to July, every year from 2007 to 2026. 2025 is steepest at negative 1,170,000 and 2026 second at negative 919,000; the third steepest is 2020 at negative 336,000](chart_ranking.png)
 
-They are the two steepest declines in the history of the series. Third place is 2020 — the COVID shutdown — at 336,000. Both of ours are more than triple it. In an ordinary year this number barely moves; the typical January-to-July change is about 20,000.
+They are the two steepest declines in the history of the series. Third place is 2020 — the COVID shutdown — at 336,000. **These past two years dwarf the COVID impact.** In an ordinary year this number barely moves; the typical January-to-July change is about 20,000.
 
 If you like your surprises quantified: measured against the seventeen years before them, these are **5.7 and 4.6 standard deviations** below the mean. I'm not going to translate that into a "one in a million years" statistic, because you cannot characterize a tail like that from seventeen observations, and anyone who tries is selling you something. What it means is simpler, and harder to wave off. **Nothing in the recorded history of this series looks like this.**
 
 ## Most have come straight from the employed population
 
-This is the strange part. Given the narrative swirling around the country, you would expect that if 2 million foreign born men disappeared, they would come out of the unemployed, or out of the ranks of people not in the labor force. Both of those did happen – but no more than a normal summer would produce. The vast majority of the men who are now gone came straight out of employment.
+This is the strange part. Given the narrative swirling around the country, you would expect that if 2 million foreign-born men disappeared, they would come out of the unemployed, or out of the ranks of people not in the labor force. Both of those did happen – but no more than a normal summer would produce. The vast majority of the men who are now gone came straight out of employment.
 
 ![Change in foreign-born men by labor force status across the summers of 2025 and 2026, against a typical pair of summers. Employment normally rises 835,000 but instead fell 971,000, while unemployment and not-in-labor-force behaved close to normal](chart_where_they_went.png)
 
@@ -67,11 +67,9 @@ This is the strange part. Given the narrative swirling around the country, you w
 
 Over the past two years (Jan–July) we have lost **1.4 million workers** from this demographic alone. The whole American labor force grew over that period — but it grew **3.7 million less** than a normal two summers would deliver, and foreign-born men are **1.8 million of that shortfall. Forty-nine percent of it, from a group that is one worker in ten.**
 
-We tried to break that number. Recompute the share against six different definitions of "normal growth" — 2013–24, 2015–24, 2011–19, 2014–19, 2013–19, and just the three years before this started — and it comes back 45, 45, 45, 45, 47 and 48 percent. It doesn't move.
+## Native-born men are not taking these jobs
 
-## Native born men are not taking these jobs
-
-So let's test the other half of the story, the part that says these were our jobs, taken.
+So let's test the other half of the story, the part that says these were jobs that should have gone to "more deserving" native-born Americans.
 
 That claim is testable, and the last two years handed it the cleanest test it will ever get. Roughly a million jobs were vacated. If they had been taken from native-born men, they are now sitting there — unheld, waiting to be taken back.
 
@@ -113,7 +111,7 @@ Those arrivals came with a dependency ratio of roughly **10 retirees per 100 wor
 
 Haitian immigrants took the low-paying, undesirable jobs Springfield's facilities needed filled. And manufacturing employment, which had lost half its base in thirteen years, **stopped falling** — it held between 6,700 and 7,100 from 2013 through 2019.
 
-Now consider who is more likely to be the shift supervisor. The plant manager. Immigrants are not taking those jobs; native born workers are. So did Haitian workers displace native born workers in Springfield? Sure – some, here and there (and again, blame capitalism, not the immigrants). But they also saved jobs. The better paid ones, held by the managers who would have been out of work if their employer had shut the doors.
+Now consider who is more likely to be the shift supervisor. The plant manager. Immigrants are not taking those jobs; native-born workers are. So did Haitian workers displace native-born workers in Springfield? Sure – some, here and there (and again, blame capitalism, not the immigrants). But they also saved jobs. The better paid ones, held by the managers who would have been out of work if their employer had shut the doors.
 
 This isn't just my hypothesis. There is an entire body of work on this.
 
@@ -163,7 +161,7 @@ On a trailing twelve-month average, foreign-born men's labor force has fallen **
 
 ## So what are we doing here?
 
-We have seen enough to hold a strong conviction that America is playing with fire. Nearly a million and a half workers have been erased from payrolls across this country, taking with them the taxes they paid and the money they spent at the grocery store and the movie theater. And unless native born workers step in and take the jobs they have been saying they wanted – which, so far, they have not – more jobs will follow them out the door, because we are losing a wildly disproportionate share of the people who work in the dirty engine rooms of America.
+We have seen enough to hold a strong conviction that America is playing with fire. Nearly a million and a half workers have been erased from payrolls across this country, taking with them the taxes they paid and the money they spent at the grocery store and the movie theater. And unless native-born workers step in and take the jobs they have been saying they wanted – which, so far, they have not – more jobs will follow them out the door, because we are losing a wildly disproportionate share of the people who work in the dirty engine rooms of America.
 
 But I have watched this dynamic with my own eyes, in my own backyard. I am biased. So don't take my word for it. Do the work yourself, if you care about where this country is heading, and then go form your own view on it.
 
@@ -195,6 +193,11 @@ BLS publishes no seasonally adjusted series by nativity, so every series here is
 
 1. **Against the same window in other years.** "A typical two summers" is twice the mean January-to-July change over 2013–2024, excluding 2020.
 2. **Against native-born men.** They experience the same seasons in the same economy. A seasonal or cyclical force would move both groups; it did not.
+
+The 49% share does not depend on which reference period we chose. Recomputed
+against six of them — 2013–24, 2015–24, 2011–19, 2014–19, 2013–19, and the three
+years immediately before this began — it returns 45, 45, 45, 45, 47 and 48
+percent.
 
 ### How the decomposition works
 
