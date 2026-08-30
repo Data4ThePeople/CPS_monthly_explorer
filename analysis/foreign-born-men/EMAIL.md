@@ -85,7 +85,7 @@ The men who vanished
 ### 4 — Deck
 
 ```
-2.1 million foreign-born men have gone from the count across two summers. We tested the two things we are being told about why — and both fail against the government's own numbers.
+2.1 million foreign-born men have gone from the count across two summers. Almost all of them were working, and native-born men have not taken the jobs.
 ```
 
 ### 5 — Hero image, linked

@@ -1,6 +1,6 @@
 ---
 title: "The Men Who Vanished: Testing Labor Market Displacement"
-subtitle: "2.1 million foreign-born men have gone from the count across two summers. We tested the two stories being told about why — and both fail against the government's own numbers."
+subtitle: "2.1 million foreign-born men have gone from the count across two summers. Almost all of them were working, and native-born men have not taken the jobs."
 slug: the-men-who-vanished
 date: 2026-08-30
 description: "If the people leaving were a drag on the economy, the decline would show up in unemployment or the sidelines. It doesn't. 88% came straight out of jobs."
