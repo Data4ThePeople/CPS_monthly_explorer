@@ -59,7 +59,7 @@ If you like your surprises quantified: measured against the seventeen years befo
 
 ## Most have come straight from the employed population
 
-This is the strange part. Given the narrative swirling around the country, you would expect that if 2 million foreign-born men disappeared, they would come out of the unemployed, or out of the ranks of people not in the labor force. Both of those did happen – but no more than a normal summer would produce. The vast majority of the men who are now gone came straight out of employment.
+This is the strange part. Given the narrative swirling around the country, you would expect that if 2 million foreign-born men disappeared, they would come out of the unemployed, or out of the ranks of people not in the labor force. Both of those did happen – but no more than a normal two summers would produce. The vast majority of the men who are now gone came straight out of employment.
 
 ![Change in foreign-born men by labor force status across the summers of 2025 and 2026, against a typical pair of summers. Employment normally rises 835,000 but instead fell 971,000, while unemployment and not-in-labor-force behaved close to normal](chart_where_they_went.png)
 
