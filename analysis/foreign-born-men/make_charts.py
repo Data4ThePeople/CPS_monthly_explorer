@@ -676,18 +676,19 @@ def table_occupations(w):
     share = 100 * fb / (fb + nb)
     body, hi = [], []
     for i, (name, _fp, _np, fw, sh) in enumerate(rows):
-        extra = f"   ({fw/1000:.1f}M men)" if fw > 1000 else ""
-        body.append([name, f"{sh:.0f}%{extra}"])
+        # Every row carries its headcount. A threshold that shows the count on
+        # some rows and not others reads as an oversight rather than a rule.
+        body.append([name, f"{sh:.0f}%", f"{fw/1000:.1f}M"])
         if sh > share + 3:
             hi.append(i)
     render_table(
         OUT / "table_occupations.png",
         "Where the work actually is",
-        f"Foreign-born men as a share of all men employed in each occupation, "
-        f"{OCC_YEAR}",
+        f"{OCC_YEAR} annual averages, men aged 16 and over",
         None,
-        ["Occupation", "Foreign-born share of men doing it"],
-        body, ["l", "r"], [2.0, 1.5],
+        ["Occupation", "Foreign-born men as % of total men",
+         "Number of foreign-born men"],
+        body, ["l", "r", "r"], [1.7, 1.5, 1.2],
         [f"Foreign-born men are {share:.1f}% of all employed men. Highlighted "
          "rows are the occupations where they are most",
          "over-represented relative to that share. Derived by applying each "
