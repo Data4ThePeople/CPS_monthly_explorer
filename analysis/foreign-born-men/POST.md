@@ -115,7 +115,7 @@ They took them. The low-paid, physically hard, undesirable ones.
 
 I am not going to tell you they rescued Springfield manufacturing. Employment there had bottomed out a decade earlier, and the 2021–2023 recovery happened in factory towns that saw no immigration at all. What I will tell you is that it peaked in 2023 and has fallen every year since – to **6,000 in 2026, the lowest in the whole series**.
 
-Now consider who is more likely to be the shift supervisor. The plant manager. Immigrants are not taking those jobs; native-born workers are. So did Haitian workers displace native-born workers in Springfield? Sure – some, here and there (and again, blame capitalism, not the immigrants). But they also saved jobs. The better paid ones, held by the managers who would have been out of work if their employer had shut the doors.
+Now consider who is more likely to be the shift supervisor. The plant manager. Immigrants are not taking those jobs; native-born workers are. So did Haitian workers displace native-born workers in Springfield? Sure – likely some, here and there (and again, blame capitalism, not the immigrants). But they also probably saved jobs. The better paid ones, held by the managers who would have been out of work if their employer had shut the doors.
 
 ### This isn't just my hypothesis
 
