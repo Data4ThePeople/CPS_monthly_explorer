@@ -24,39 +24,37 @@ Fill one placeholder before sending: `[[POST URL]]`.
 ## Subject line
 
 ```
-The missing men were working
+Two million foreign-born men have vanished
 ```
 
-28 characters, well inside the mobile cut. Deliberately no number and no
-nativity label — the finding sorts people into camps the instant it names a
-group, and a subject line has no room for the mechanism that makes it
-interesting. "Were working" carries the whole surprise: whatever you assumed
-about who left, it was not that.
+42 characters. It names the scale and the group up front and lets the preheader
+carry the twist. Longer than the mobile cut, so the words that have to survive
+truncation are "Two million foreign-born men" — which is the story.
 
 Alternates if you want to A/B:
 
 ```
+The missing men were working
+```
+```
 Nobody took the jobs back
 ```
-```
-Two million left. They were not the idle ones.
-```
 
-The first is the plainest statement of the second half of the piece. The second
-is the strongest and the most likely to be forwarded as a political claim rather
-than a measurement — if you use it, the preheader has to carry "the government's
-own data."
+The first withholds the group entirely and leads on the mechanism, which travels
+further with readers who have not been following the story. The second is the
+plainest statement of the second half of the piece.
 
 ## Preview text (preheader)
 
 ```
-Not the idle. The employed. We tested it against nineteen years of the government's own data.
+Most of the missing men were not unemployed or not in the labor force. They were working.
 ```
 
-93 characters. It does not repeat the subject: the subject states the finding,
-the preheader says what we did to earn it. "The government's own data"
-pre-empts the first objection, which is that this is advocacy arithmetic. Set it
-in Mailchimp's preview-text field, **not** as the first line of body copy.
+88 characters. It does not repeat the subject: the subject states the scale, the
+preheader states the finding. Naming both of the not-working boxes is the point
+— it is what makes "they were working" land as a result rather than an
+assertion. Set it in Mailchimp's preview-text field, **not** as the first line
+of body copy.
 
 ---
 
