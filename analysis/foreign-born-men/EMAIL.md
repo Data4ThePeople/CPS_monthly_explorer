@@ -124,7 +124,7 @@ Five short paragraphs. This is the whole argument; the page carries the proof.
 ```
 We are told the people leaving were a drag on the economy. That is checkable, because it makes a prediction. Every person aged 16 and over is employed, unemployed, or not in the labor force. There is no fourth box. If the men who disappeared were not working, the decline has to show up in the last two.
 
-It does not. Unemployment fell by 464,000, against a typical 475,000 — a normal summer to within eleven thousand people. The not-in-the-labor-force count moved a little more than usual, and carries twelve percent of it.
+It does not. Unemployment fell by 464,000, against a typical 475,000 for two summers — normal to within eleven thousand people. The not-in-the-labor-force count moved a little more than usual, and carries twelve percent of it.
 
 Employment fell by 971,000, against a normal increase of 835,000. Eighty-eight percent of the missing men came straight out of jobs.
 
@@ -133,30 +133,31 @@ We are also told these were our jobs, taken. That is checkable too, and the last
 Native-born men's employment rate has fallen in each of the last three Julys, to 62.8%. Absorbing those jobs would have required 63.6%.
 ```
 
-### 8 — The divergence chart
+### 8 — The native-born chart
 
 | | |
 |---|---|
-| file | `analysis/foreign-born-men/chart_divergence.png` |
-| size | 2200×1280, 151 KB |
+| file | `analysis/foreign-born-men/chart_not_filled.png` |
+| size | 2080×1280, 161 KB |
 
 Alt text:
 
 ```
-Line chart of the civilian labor force for foreign-born men and foreign-born women, 2008 to July 2026, on a trailing twelve-month average. Both rise together until 2025, when the men's line peaks and turns down to 17,954,000 while the women's continues rising to 14,497,000.
+Line chart of the employment-population ratio for native-born men, July of each year from 2015 to 2026. It rises to 65.9 percent in 2019, falls to 60.1 percent in 2020, recovers to 64.2 percent by 2023, then declines in each of the last three years to 62.8 percent. A hollow marker at 63.6 percent shows where it would need to sit for native-born men to have absorbed the 971,000 jobs foreign-born men vacated — 0.8 points above the actual figure.
 ```
 
-Then this **as live text underneath**, because the chart's legend will not be
-legible at phone width:
+Then this **as live text underneath**, because the annotations on the chart will
+not be legible at phone width:
 
 ```
-Foreign-born men, falling. Foreign-born women, still rising. Over the year to July 2026: men down 691,000, women up 371,000.
+Native-born men's employment rate, every July. To absorb the vacated jobs it needed to reach 63.6%. It is 62.8%, and has fallen three years running.
 ```
 
-This is the one chart in the set that belongs in an email. It is a shape — two
-lines separating — and the shape survives the downscale even when the type does
-not. It also does defensive work: a general "immigrants are leaving" story would
-pull both lines down. Only one moves.
+This chart earns its place because it is the picture of the paragraph directly
+above it — the body copy ends on 62.8% against 63.6%, and this is that gap drawn.
+Like the hero it survives a 600px column by being a shape: a recovery, a slide,
+and a marked gap at the end. The numbers on it are unreadable at that size, which
+is what the line underneath is for.
 
 ### 9 — How big is it
 
@@ -164,9 +165,11 @@ pull both lines down. Only one moves.
 carries that better than a sentence.
 
 ```
-Foreign-born men are one worker in ten. They are roughly half of the entire shortfall in the American labor force — about four and a half times their weight.
+Foreign-born men are one worker in ten. But over the past two years, they are roughly half of the entire shortfall in the American labor force — about four and a half times their weight.
 
 We recomputed that share against six different definitions of normal growth. It came back 45, 45, 45, 45, 47 and 48 percent.
+
+We are playing with fire.
 ```
 
 ### 10 — Button
@@ -180,7 +183,7 @@ Point it at `[[POST URL]]`.
 ### 11 — What is on the page and not in this email
 
 ```
-On the page: what Springfield, Ohio looked like before the Haitians arrived and what happened to its factories, the economics of why immigrants and native-born workers are not interchangeable, which occupations these men actually held, why these two summers are the steepest on record and how we measured them without crossing a population-control seam, what a four-and-a-half-sigma departure does and does not entitle you to say, and the analysis we tried and threw away.
+On the page: why foreign-born women's labor force is rising while the men's falls — which is how we know this is not simply an undercount, what Springfield, Ohio looked like before the Haitians arrived and what happened to its factories, the economics of why immigrants and native-born workers are not interchangeable, which occupations these men actually held, why these two summers are the steepest on record and how we measured them without crossing a population-control seam, what a four-and-a-half-sigma departure does and does not entitle you to say, and the analysis we tried and threw away.
 ```
 
 ### 12 — The caveat
@@ -212,7 +215,7 @@ github.com/Data4ThePeople/CPS_monthly_explorer
 ## Notes
 
 - **Only two of the eight images belong in an email.** The 1680×1080 hero and
-  the divergence chart are shapes and survive a 600px column. The rest do not:
+  the native-born chart are shapes and survive a 600px column. The rest do not:
   `chart_ranking.png` is 1900px wide with forty labels at 10pt — on a 375px
   phone that renders near 2px. The four tables are worse, being type all the way
   down. Their findings run as live text in blocks 6 and 9 instead.
@@ -232,9 +235,9 @@ github.com/Data4ThePeople/CPS_monthly_explorer
   comes from being unprecedented against the series' own record *and* from
   native-born men sitting at +0.1 sigma over the identical months. This is
   guardrail 3 in METADATA.md and it applies to the email more than the page.
-- **Total image payload is about 278 KB** — the hero at 127 KB plus the
-  divergence chart at 151 KB. If you want it lighter, compress the divergence
-  chart; it is two flat lines on a flat ground and tolerates JPEG at quality 80.
+- **Total image payload is about 288 KB** — the hero at 127 KB plus the
+  native-born chart at 161 KB. If you want it lighter, compress the second one;
+  it is a single line on a flat ground and tolerates JPEG at quality 80.
 - **The parchment ground is `#faf3df`.** Both images are drawn on it edge to
   edge, so either set the Mailchimp content background to match or give them
   padding — on white they will read as unintentional cream rectangles.
