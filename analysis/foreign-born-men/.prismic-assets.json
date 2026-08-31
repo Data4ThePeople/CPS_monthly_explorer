@@ -1,56 +1,65 @@
 {
   "hero_foreign_born_men.png": {
-    "id": "aRYfJRzOaJyPvqzJ",
+    "id": "LoMkILFOIMYb2zRj",
     "width": 2400,
     "height": 1260,
-    "url": "https://images.prismic.io/data4thepeople/aRYfJRzOaJyPvqzJ_hero_foreign_born_men.png?auto=format,compress"
+    "sha": "e88fe28b951b6534",
+    "url": "https://images.prismic.io/data4thepeople/LoMkILFOIMYb2zRj_hero_foreign_born_men.png?auto=format,compress"
   },
   "chart_ranking.png": {
-    "id": "RyEcrbGEvGLg04M2",
+    "id": "d-JRdvbMGajh8Py2",
     "width": 1900,
     "height": 1440,
-    "url": "https://images.prismic.io/data4thepeople/RyEcrbGEvGLg04M2_chart_ranking.png?auto=format,compress"
+    "sha": "50defc3a865a9623",
+    "url": "https://images.prismic.io/data4thepeople/d-JRdvbMGajh8Py2_chart_ranking.png?auto=format,compress"
   },
   "chart_where_they_went.png": {
-    "id": "AAdd0-2HvK2HSUeb",
+    "id": "Wls-kxFvHDbredmn",
     "width": 2040,
     "height": 1200,
-    "url": "https://images.prismic.io/data4thepeople/AAdd0-2HvK2HSUeb_chart_where_they_went.png?auto=format,compress"
+    "sha": "8c04c683454aa9e2",
+    "url": "https://images.prismic.io/data4thepeople/Wls-kxFvHDbredmn_chart_where_they_went.png?auto=format,compress"
   },
   "table_gap.png": {
-    "id": "5z3h4n0s9g7w82dF",
+    "id": "vxxCXrwYK-uNVG_O",
     "width": 2200,
     "height": 646,
-    "url": "https://images.prismic.io/data4thepeople/5z3h4n0s9g7w82dF_table_gap.png?auto=format,compress"
-  },
-  "chart_divergence.png": {
-    "id": "wtv-zf3yhkTU794K",
-    "width": 2200,
-    "height": 1280,
-    "url": "https://images.prismic.io/data4thepeople/wtv-zf3yhkTU794K_chart_divergence.png?auto=format,compress"
+    "sha": "803d66c47c279a1f",
+    "url": "https://images.prismic.io/data4thepeople/vxxCXrwYK-uNVG_O_table_gap.png?auto=format,compress"
   },
   "chart_not_filled.png": {
-    "id": "LX1wG9w6hWKybU4u",
+    "id": "LH5rF58r6R81ujn-",
     "width": 2080,
     "height": 1280,
-    "url": "https://images.prismic.io/data4thepeople/LX1wG9w6hWKybU4u_chart_not_filled.png?auto=format,compress"
+    "sha": "8c6c3f59f018ca48",
+    "url": "https://images.prismic.io/data4thepeople/LH5rF58r6R81ujn-_chart_not_filled.png?auto=format,compress"
   },
   "table_occupations.png": {
-    "id": "DUWQs_-ZNB1XkD0R",
+    "id": "PJltldxbGut-UtKv",
     "width": 2200,
     "height": 1054,
-    "url": "https://images.prismic.io/data4thepeople/DUWQs_-ZNB1XkD0R_table_occupations.png?auto=format,compress"
+    "sha": "eb57542c8bde439f",
+    "url": "https://images.prismic.io/data4thepeople/PJltldxbGut-UtKv_table_occupations.png?auto=format,compress"
+  },
+  "chart_divergence.png": {
+    "id": "4R8bKWTkmQeeo2D-",
+    "width": 2200,
+    "height": 1280,
+    "sha": "5a97aeb8d2047f53",
+    "url": "https://images.prismic.io/data4thepeople/4R8bKWTkmQeeo2D-_chart_divergence.png?auto=format,compress"
   },
   "table_sources.png": {
-    "id": "dA4U3aOcIrrvf66c",
+    "id": "xbx4HOKTiQwb949w",
     "width": 2200,
     "height": 874,
-    "url": "https://images.prismic.io/data4thepeople/dA4U3aOcIrrvf66c_table_sources.png?auto=format,compress"
+    "sha": "cc4f40314390de97",
+    "url": "https://images.prismic.io/data4thepeople/xbx4HOKTiQwb949w_table_sources.png?auto=format,compress"
   },
   "2026-08-29-the-men-who-vanished-hero-1680x1080.png": {
-    "id": "pRDE4e92vRAVgXTq",
+    "id": "E-zWGzKHtti4jwMG",
     "width": 1680,
     "height": 1080,
-    "url": "https://images.prismic.io/data4thepeople/pRDE4e92vRAVgXTq_2026-08-29-the-men-who-vanished-hero-1680x1080.png?auto=format,compress"
+    "sha": "4e600b5de1d2378b",
+    "url": "https://images.prismic.io/data4thepeople/E-zWGzKHtti4jwMG_2026-08-29-the-men-who-vanished-hero-1680x1080.png?auto=format,compress"
   }
 }

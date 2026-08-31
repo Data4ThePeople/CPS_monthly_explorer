@@ -11,16 +11,14 @@ Companion files: `POST.md` (the piece), `EMAIL.md` (the Mailchimp teaser).
 
 ## Email
 
-**Subject:** The missing men were working
+**Subject:** Two million foreign-born men have vanished
 
-**Preview text** (93 chars):
+**Preview text** (88 chars):
 
-> Not the idle. The employed. We tested it against nineteen years of the government's own data.
+> Most of the missing men were not unemployed or not in the labor force. They were working.
 
-Do not lead the preview with "foreign-born," and do not lead with Springfield.
-A nativity label in the first 39 characters gets the post sorted into a
-political bucket before the mechanism is read; a place name reads as local
-news. "Were working" carries the whole surprise.
+The subject carries the scale, the preheader carries the finding. Do not lead
+either with Springfield — a place name reads as local news to a national list.
 
 ---
 
