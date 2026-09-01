@@ -34,12 +34,22 @@ from pathlib import Path
 V2 = Path(__file__).resolve().parent
 EXPLORER = V2 / "output" / "ln_explorer.html"
 OUT = V2 / "output" / "schema.jsonld"
+OUT_INTRO = V2 / "output" / "schema-intro.jsonld"
 
 PAGE = "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/"
 HERO = ("https://images.prismic.io/data4thepeople/"
         "1mDK_WUEazlF23Cd_cps_hero_1680x1080.jpg?auto=format,compress")
 PUBLISHED = "2026-07-06T08:00:00-04:00"
 MODIFIED = "2026-09-01T08:00:00-04:00"   # bump when the page changes
+
+# The launch essay. It links to the explorer rather than redefining it: two
+# Dataset nodes describing one tool would split the authority between two URLs,
+# and the explorer page is the one that should rank for the tool itself.
+INTRO_PAGE = "https://www.data4thepeople.com/p/cps-intro-post"
+INTRO_HERO = ("https://images.prismic.io/data4thepeople/"
+              "I0yRiCk2aR_rtyg6_cps_post_hero_1680x1080.jpg?auto=format,compress")
+INTRO_PUBLISHED = "2026-07-07T10:00:00-04:00"
+INTRO_MODIFIED = "2026-09-01T08:00:00-04:00"
 REPO = "https://github.com/Data4ThePeople/CPS_monthly_explorer"
 PUBLISHER = {"@type": "Organization", "name": "Data 4 The People",
              "url": "https://data4thepeople.com"}
@@ -250,6 +260,66 @@ def build() -> dict:
             "@graph": [article, dataset, app]}
 
 
+def build_intro(keywords: list[str]) -> dict:
+    """Schema for the launch essay.
+
+    Carries the Article plus *stubs* of the Dataset and WebApplication defined
+    on the explorer page -- @id, type, name and url, enough for a crawler to
+    resolve the reference without a second full definition competing with the
+    canonical one.
+    """
+    article = {
+        "@type": "Article",
+        "@id": INTRO_PAGE + "#article",
+        "headline": "We Built the Labor-Market Tool That Didn't Exist",
+        "description": "The unemployment rate can't see millions of people. So "
+                       "we built a free tool to chart every official BLS labor "
+                       "series, and we need your help auditing it.",
+        "image": [INTRO_HERO],
+        "datePublished": INTRO_PUBLISHED,
+        "dateModified": INTRO_MODIFIED,
+        "articleSection": "Labor Markets",
+        "inLanguage": "en-US",
+        "isAccessibleForFree": True,
+        "author": {"@type": "Person", "name": "Eric Pachman",
+                   "url": "https://www.data4thepeople.com/authors/eric-pachman"},
+        "publisher": PUBLISHER,
+        "mainEntityOfPage": {"@type": "WebPage", "@id": INTRO_PAGE},
+        "keywords": keywords,
+        "about": {"@id": PAGE + "#dataset"},
+        "mentions": [{"@id": PAGE + "#app"}, {"@id": PAGE + "#dataset"}],
+        "isBasedOn": {
+            "@type": "Dataset",
+            "name": "Current Population Survey (LN) time series database",
+            "url": "https://www.bls.gov/cps/",
+            "creator": BLS},
+        "citation": [
+            {"@type": "CreativeWork",
+             "name": "Labor Force Statistics from the Current Population "
+                     "Survey (LN database)",
+             "url": "https://download.bls.gov/pub/time.series/ln/"},
+            {"@type": "CreativeWork",
+             "name": "The Employment Situation, U.S. Bureau of Labor Statistics",
+             "url": "https://www.bls.gov/news.release/empsit.nr0.htm"},
+            {"@type": "CreativeWork",
+             "name": "Labor Force Flows, Current Population Survey",
+             "url": "https://www.bls.gov/cps/cps_flows.htm"}],
+    }
+    dataset_stub = {
+        "@type": "Dataset",
+        "@id": PAGE + "#dataset",
+        "name": "CPS Monthly Explorer: Published Current Population Survey "
+                "Series by Dimension, Group, and Measure, 1948 to Present",
+        "url": PAGE}
+    app_stub = {
+        "@type": "WebApplication",
+        "@id": PAGE + "#app",
+        "name": "Beyond the Unemployment Rate: A CPS Data Explorer",
+        "url": PAGE}
+    return {"@context": "https://schema.org",
+            "@graph": [article, dataset_stub, app_stub]}
+
+
 if __name__ == "__main__":
     doc = build()
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -264,3 +334,13 @@ if __name__ == "__main__":
           f"{len(ds['keywords'])} keywords")
     print(f"  WebApplication: {len(app['featureList'])} features")
     print(f"  {len(json.dumps(doc)):,} bytes")
+
+    intro = build_intro(ds["keywords"] + ["labor force flows",
+                                          "employed to not in labor force",
+                                          "hidden unemployment",
+                                          "labor market tool", "data journalism"])
+    OUT_INTRO.write_text(json.dumps(intro, indent=2, ensure_ascii=False))
+    print(f"\nwrote {OUT_INTRO}")
+    print(f"  Article + {len(intro['@graph'])-1} reference stub(s), "
+          f"{len(intro['@graph'][0]['keywords'])} keywords, "
+          f"{len(json.dumps(intro)):,} bytes")
