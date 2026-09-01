@@ -207,7 +207,22 @@ def build() -> dict:
             "The underlying BLS series ID displayed under every chart",
         ],
         "creator": PUBLISHER,
+        "provider": PUBLISHER,
+        "inLanguage": "en-US",
+        "datePublished": PUBLISHED,
+        "dateModified": MODIFIED,
+        "screenshot": HERO,
+        "license": "https://www.data4thepeople.com/terms-of-use",
+        "audience": {"@type": "Audience",
+                     "audienceType": "Journalists, researchers, policy "
+                                     "analysts, students and the general "
+                                     "public"},
         "about": {"@id": PAGE + "#dataset"},
+        # No aggregateRating. Google lists it as an optional field for
+        # SoftwareApplication and will flag its absence, but the field means
+        # real user ratings; inventing one is a structured-data policy
+        # violation and a manual-action risk. The warning is cosmetic, and an
+        # absent rating is the correct state for a tool that collects none.
     }
 
     article = {

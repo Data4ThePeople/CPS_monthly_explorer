@@ -549,6 +549,20 @@
         "name": "Data 4 The People",
         "url": "https://data4thepeople.com"
       },
+      "provider": {
+        "@type": "Organization",
+        "name": "Data 4 The People",
+        "url": "https://data4thepeople.com"
+      },
+      "inLanguage": "en-US",
+      "datePublished": "2026-07-06T08:00:00-04:00",
+      "dateModified": "2026-09-01T08:00:00-04:00",
+      "screenshot": "https://images.prismic.io/data4thepeople/1mDK_WUEazlF23Cd_cps_hero_1680x1080.jpg?auto=format,compress",
+      "license": "https://www.data4thepeople.com/terms-of-use",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Journalists, researchers, policy analysts, students and the general public"
+      },
       "about": {
         "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#dataset"
       }
