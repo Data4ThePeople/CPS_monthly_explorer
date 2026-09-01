@@ -291,7 +291,13 @@ def build_intro(keywords: list[str]) -> dict:
         "isBasedOn": {
             "@type": "Dataset",
             "name": "Current Population Survey (LN) time series database",
+            "description": "The U.S. Bureau of Labor Statistics publishes "
+                           "monthly labor force estimates from the Current "
+                           "Population Survey, a household survey of about "
+                           "60,000 homes, as a public flat-file database known "
+                           "as LN.",
             "url": "https://www.bls.gov/cps/",
+            "license": "https://www.bls.gov/bls/linksite.htm",
             "creator": BLS},
         "citation": [
             {"@type": "CreativeWork",
@@ -305,19 +311,16 @@ def build_intro(keywords: list[str]) -> dict:
              "name": "Labor Force Flows, Current Population Survey",
              "url": "https://www.bls.gov/cps/cps_flows.htm"}],
     }
-    dataset_stub = {
-        "@type": "Dataset",
-        "@id": PAGE + "#dataset",
-        "name": "CPS Monthly Explorer: Published Current Population Survey "
-                "Series by Dimension, Group, and Measure, 1948 to Present",
-        "url": PAGE}
-    app_stub = {
-        "@type": "WebApplication",
-        "@id": PAGE + "#app",
-        "name": "Beyond the Unemployment Rate: A CPS Data Explorer",
-        "url": PAGE}
-    return {"@context": "https://schema.org",
-            "@graph": [article, dataset_stub, app_stub]}
+    # No stub nodes for the Dataset and WebApplication. Anything carrying an
+    # @type is validated by Google as a real entity, so a stub with only a name
+    # and url fails its type's required fields -- a Dataset wants description
+    # and license, a WebApplication wants two of offers, aggregateRating,
+    # applicationCategory and operatingSystem. A bare {"@id": ...} is a
+    # reference rather than a definition and is not validated, while still
+    # recording that this article is about the entity defined on the explorer
+    # page. relatedLink gives a crawler the plain URL to follow.
+    article["relatedLink"] = PAGE
+    return {"@context": "https://schema.org", "@graph": [article]}
 
 
 if __name__ == "__main__":
@@ -341,6 +344,6 @@ if __name__ == "__main__":
                                           "labor market tool", "data journalism"])
     OUT_INTRO.write_text(json.dumps(intro, indent=2, ensure_ascii=False))
     print(f"\nwrote {OUT_INTRO}")
-    print(f"  Article + {len(intro['@graph'])-1} reference stub(s), "
+    print(f"  {len(intro['@graph'])} node(s), "
           f"{len(intro['@graph'][0]['keywords'])} keywords, "
           f"{len(json.dumps(intro)):,} bytes")
