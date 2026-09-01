@@ -95,7 +95,9 @@
       "isBasedOn": {
         "@type": "Dataset",
         "name": "Current Population Survey (LN) time series database",
+        "description": "The U.S. Bureau of Labor Statistics publishes monthly labor force estimates from the Current Population Survey, a household survey of about 60,000 homes, as a public flat-file database known as LN.",
         "url": "https://www.bls.gov/cps/",
+        "license": "https://www.bls.gov/bls/linksite.htm",
         "creator": {
           "@type": "Organization",
           "name": "U.S. Bureau of Labor Statistics",
@@ -118,19 +120,8 @@
           "name": "Labor Force Flows, Current Population Survey",
           "url": "https://www.bls.gov/cps/cps_flows.htm"
         }
-      ]
-    },
-    {
-      "@type": "Dataset",
-      "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#dataset",
-      "name": "CPS Monthly Explorer: Published Current Population Survey Series by Dimension, Group, and Measure, 1948 to Present",
-      "url": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/"
-    },
-    {
-      "@type": "WebApplication",
-      "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#app",
-      "name": "Beyond the Unemployment Rate: A CPS Data Explorer",
-      "url": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/"
+      ],
+      "relatedLink": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/"
     }
   ]
 }
