@@ -1,0 +1,557 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#article",
+      "headline": "Beyond the Unemployment Rate: A CPS Data Explorer",
+      "description": "We built a free tool to chart 80 years of Current Population Survey data, one official BLS series at a time. Explore the labor market, and help us audit it.",
+      "image": "https://images.prismic.io/data4thepeople/1mDK_WUEazlF23Cd_cps_hero_1680x1080.jpg?auto=format,compress",
+      "datePublished": "2026-07-06T08:00:00-04:00",
+      "dateModified": "2026-09-01T08:00:00-04:00",
+      "articleSection": "Visualization",
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,
+      "keywords": [
+        "BLS LN database",
+        "BLS data explorer",
+        "CPS data",
+        "CPS explorer",
+        "Current Population Survey",
+        "civilian labor force",
+        "civilian noninstitutional population",
+        "duration of unemployment",
+        "employment by activity",
+        "employment by age",
+        "employment by class of worker",
+        "employment by disability status",
+        "employment by duration of unemployment",
+        "employment by education",
+        "employment by hispanic origin",
+        "employment by industry",
+        "employment by job seeker status",
+        "employment by labor force entrant",
+        "employment by marital status",
+        "employment by multiple jobholders",
+        "employment by nativity",
+        "employment by occupation",
+        "employment by race",
+        "employment by reason for unemployment",
+        "employment by sex",
+        "employment by veteran status",
+        "employment by want a job",
+        "employment by work experience",
+        "employment by work schedule status",
+        "employment data visualization",
+        "employment-population ratio",
+        "free labor market tool",
+        "household survey",
+        "jobs report data",
+        "labor force flows",
+        "labor force participation rate",
+        "labor market data",
+        "long-term unemployment",
+        "marginally attached workers",
+        "multiple jobholders",
+        "not in labor force",
+        "part-time for economic reasons",
+        "seasonally adjusted",
+        "unemployment rate",
+        "unemployment rate by age",
+        "unemployment rate by race"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Eric Pachman",
+        "url": "https://www.data4thepeople.com/authors/eric-pachman"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Data 4 The People",
+        "url": "https://data4thepeople.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/"
+      },
+      "about": {
+        "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#dataset"
+      },
+      "mainEntity": {
+        "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#app"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#dataset",
+      "name": "CPS Monthly Explorer: Published Current Population Survey Series by Dimension, Group, and Measure, 1948 to Present",
+      "alternateName": [
+        "Beyond the Unemployment Rate",
+        "CPS Data Explorer",
+        "BLS Current Population Survey Explorer"
+      ],
+      "description": "An interactive explorer over 2,151 published series from the U.S. Bureau of Labor Statistics Current Population Survey time series database (LN), covering 33 measures across 21 demographic and labor-market breakdowns and 188 groups, monthly from January 1948. Measures include the civilian labor force, employment, unemployment, the unemployment rate, the labor force participation rate, the employment-population ratio, the number not in the labor force, the civilian noninstitutional population, part-time and full-time employment, duration of unemployment, and the monthly labor force flows between employment, unemployment and not-in-labor-force. Breakdowns include age, activity, class of worker, disability status, duration of unemployment, education, hispanic origin, industry, job seeker status, labor force entrant, marital status, multiple jobholders, nativity, occupation, race, reason for unemployment, sex, veteran status, want a job, work experience, and work schedule status. Every view is a single official BLS series, identified by joining the ln.series catalog to its companion code-mapping files. No values are summed, averaged across series, estimated or modeled, and the underlying BLS series ID is displayed under each chart so any figure can be verified against bls.gov.",
+      "url": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/",
+      "sameAs": "https://github.com/Data4ThePeople/CPS_monthly_explorer",
+      "license": "https://www.data4thepeople.com/terms-of-use",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "1948-01-01/..",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "United States"
+      },
+      "measurementTechnique": "Monthly household survey of about 60,000 addresses (Current Population Survey), tabulated and published by BLS",
+      "creator": {
+        "@type": "Organization",
+        "name": "Data 4 The People",
+        "url": "https://data4thepeople.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Data 4 The People",
+        "url": "https://data4thepeople.com"
+      },
+      "keywords": [
+        "BLS LN database",
+        "BLS data explorer",
+        "CPS data",
+        "CPS explorer",
+        "Current Population Survey",
+        "civilian labor force",
+        "civilian noninstitutional population",
+        "duration of unemployment",
+        "employment by activity",
+        "employment by age",
+        "employment by class of worker",
+        "employment by disability status",
+        "employment by duration of unemployment",
+        "employment by education",
+        "employment by hispanic origin",
+        "employment by industry",
+        "employment by job seeker status",
+        "employment by labor force entrant",
+        "employment by marital status",
+        "employment by multiple jobholders",
+        "employment by nativity",
+        "employment by occupation",
+        "employment by race",
+        "employment by reason for unemployment",
+        "employment by sex",
+        "employment by veteran status",
+        "employment by want a job",
+        "employment by work experience",
+        "employment by work schedule status",
+        "employment data visualization",
+        "employment-population ratio",
+        "free labor market tool",
+        "household survey",
+        "jobs report data",
+        "labor force flows",
+        "labor force participation rate",
+        "labor market data",
+        "long-term unemployment",
+        "marginally attached workers",
+        "multiple jobholders",
+        "not in labor force",
+        "part-time for economic reasons",
+        "seasonally adjusted",
+        "unemployment rate",
+        "unemployment rate by age",
+        "unemployment rate by race"
+      ],
+      "variableMeasured": [
+        {
+          "@type": "StatisticalVariable",
+          "name": "Civilian labor force",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 10"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Civilian labor force participation rate",
+          "unitText": "percent",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 13"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Aggregated totals unemployed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 33"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Employed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 20"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Employed full time (persons who usually work 35 hours or more)",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 25"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Employed part time (by economic/noneconomic reason)",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 22"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Employed part time (persons who usually work less than 35 hours)",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 26"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Employed to other Marginal Outflows",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 82"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Labor Force Flows Employed to Employed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 70"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Labor Force Flows Employed to Not in Labor Force",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 78"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Labor Force Flows Employed to Unemployed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 74"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Labor Force Flows Not in Labor Force to Employed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 72"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Labor Force Flows Not in Labor Force to Unemployed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 76"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Labor Force Flows Unemployed to Employed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 71"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Labor Force Flows Unemployed to Not in Labor Force",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 79"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Labor Force Flows Unemployed to Unemployed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 75"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Marginal Inflows to Employed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 73"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Marginal Inflows to Unemployed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 77"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Unemployed",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 30"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Unemployed looking for full-time work",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 31"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Unemployed looking for part-time work",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 32"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Unemployed to other Marginal Outflows",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 83"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Adjusted employment (CPS employment adjusted to CES concepts)",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 60"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Employment-population ratio",
+          "unitText": "percent",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 23"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Unemployment rate",
+          "unitText": "percent",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 40"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Unemployment rate of the full-time labor force",
+          "unitText": "percent",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 41"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Unemployment rate of the part-time labor force",
+          "unitText": "percent",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 42"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Labor Force Flows Not in Labor Force to Not in Labor Force",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 80"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Marginal Inflows to Not in Labor Force",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 81"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Not in labor force",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 50"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Not in Labor Force to other Marginal Outflows",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 84"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "Civilian noninstitutional population",
+          "unitText": "persons in thousands",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 00"
+        },
+        {
+          "@type": "StatisticalVariable",
+          "name": "CPS (Household Survey) response rate",
+          "unitText": "percent",
+          "measurementTechnique": "U.S. Census Bureau monthly household survey of about 60,000 addresses, tabulated by BLS",
+          "identifier": "BLS CPS lfst code 93"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Age",
+          "description": "28 groups: 16 years and over; 16 to 17 years; 16 to 19 years; 16 to 24 years; 18 to 19 years; 18 years and over; 20 years and over; 20 to 24 years; 25 years and over; 25 to 29 years; 25 to 34 years; 25 to 54 years; 30 to 34 years; 35 to 39 years; 35 to 44 years; 40 to 44 years; 45 years and over; 45 to 49 years; 45 to 54 years; 50 to 54 years; 55 years and over; 55 to 59 years; 55 to 64 years; 60 to 64 years; 65 years and over; 65 to 69 years; 70 to 74 years; 75 years and over"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Activity",
+          "description": "6 groups: Enrolled in School; Enrolled in High School; Enrolled in College; Enrolled in College Full-time; Enrolled in College Part-time; Not Enrolled"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Class of worker",
+          "description": "5 groups: Federal wage and salary workers; State wage and salary workers; Local wage and salary workers; Self-employed workers, unincorporated; Incorporated self-employed"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Disability status",
+          "description": "2 groups: Not disabled; Disabled person"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Duration of unemployment",
+          "description": "10 groups: Less than 5 weeks; 15 weeks and over; 27 weeks and over; 52 weeks and over; 99 weeks and over; 5 to 10 weeks; 5 to 14 weeks; 11 to 14 weeks; 15 to 26 weeks; 27 to 51 weeks"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Education",
+          "description": "9 groups: All educational levels; Less than a High School diploma; High School graduates, no college; Some college or associate degree; Some college, no degree; Associate degree; Bachelor's degree and higher; Bachelor's degree only; Advanced degree"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Hispanic origin",
+          "description": "14 groups: All Origins; Hispanic or Latino; Mexican; Puerto Rican; Cuban; Non-Hispanic; Central or South American; Central American; Salvadoran; Other Central American (excludes Salvadoran); South American; Other Hispanic or Latino; Dominican; Other Hispanic or Latino (excludes Dominican)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Industry",
+          "description": "35 groups: All Industries; Agriculture and related industries; Agriculture, forestry, fishing, and hunting; Nonagriculture industries; Mining, quarrying, and oil and gas extraction; Utilities; Construction; Nondurable goods manufacturing; Manufacturing; Durable goods manufacturing; Wholesale and retail trade; Wholesale trade; Retail trade; Transportation and utilities; Transportation and warehousing; Information; Financial activities; Finance and insurance; Real estate and rental and leasing; Professional and business services; Professional and technical services; Management, administrative, and waste services; Education and health services; Educational services; Health care and social assistance; Health service, except hospitals; Hospitals; Social assistance; Leisure and hospitality; Arts, entertainment, and recreation; Accommodation and food services; Other services; Other services, except private households; Private households; Public administration"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Job seeker status",
+          "description": "1 groups: Job Seeker (Looking for work)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Labor force entrant",
+          "description": "2 groups: Reentrants; New entrants"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Marital status",
+          "description": "3 groups: Never married; Married, spouse present; Widowed, divorced, and separated (including married, spouse absent)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Multiple jobholders",
+          "description": "5 groups: Multiple job holders; Multiple job holders, primary job full time, secondary job part time; Multiple job holders, primary and secondary job both part time; Multiple job holders, primary and secondary job both full time; Multiple job holders, hours vary on primary or secondary job"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Nativity",
+          "description": "2 groups: Native born; Foreign born"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Occupation",
+          "description": "30 groups: All Occupations; Management, professional and related occupations; Management, business, and financial operations occupations; Management occupations; Business and financial operations occupations; Professional and related occupations; Computer and mathematical occupations; Architecture and engineering occupations; Life, physical, and social science occupations; Community and social service occupations; Legal occupations; Education, training, and library occupations; Arts, design, entertainment, sports, and media occupations; Healthcare practitioners and technical occupations; Service occupations; Healthcare support occupations; Protective service occupations; Food preparation and serving related occupations; Building and grounds cleaning and maintenance occupations; Personal care and service occupations; Sales and office occupations; Sales and related occupations; Office and administrative support occupations; Natural resources, construction, and maintenance occupations; Farming, fishing, and forestry occupations; Construction and extraction occupations; Installation, maintenance, and repair occupations; Production, transportation, and material moving occupations; Production occupations; Transportation and material moving occupations"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Race",
+          "description": "14 groups: All Races; White; Black or African American; Asian; American Indian or Alaska Native; Native Hawaiian or Other Pacific Islander; Two or more races; Asian - Asian Indian; Asian - Chinese; Asian - Filipino; Asian - Japanese; Asian - Korean; Asian - Vietnamese; Asian - Other Asian"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Reason for unemployment",
+          "description": "6 groups: Job losers and persons who completed temporary jobs; Total on layoff; All other job losers; Quit job (job leavers); Temporary job completed (nonseasonal); Permanent job losers"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Sex",
+          "description": "3 groups: Both Sexes; Men; Women"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Veteran status",
+          "description": "7 groups: Veteran; Vietnam era and earlier wartime periods; Gulf War Era; Veterans who served in Gulf War Era 2 (whether or not they served in Era 1); Veterans who served in Gulf War Era 1 but not Gulf War Era 2; Other Service Periods (may include peacetime); Nonveteran"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Want a job",
+          "description": "2 groups: Want a job now; Don't want a job now"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Work experience",
+          "description": "2 groups: Experienced; No previous work experience"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Work schedule status",
+          "description": "2 groups: At work; With a job not at work"
+        }
+      ],
+      "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "BLS Current Population Survey (LN) time series database",
+        "url": "https://www.bls.gov/cps/data.htm"
+      },
+      "isBasedOn": [
+        {
+          "@type": "Dataset",
+          "name": "Current Population Survey (LN) time series database",
+          "description": "The U.S. Bureau of Labor Statistics publishes monthly labor force estimates from the Current Population Survey, a household survey of about 60,000 homes, as a public flat-file database known as LN. Values are read as published and are not adjusted.",
+          "url": "https://www.bls.gov/cps/",
+          "license": "https://www.bls.gov/bls/linksite.htm",
+          "creator": {
+            "@type": "Organization",
+            "name": "U.S. Bureau of Labor Statistics",
+            "url": "https://www.bls.gov"
+          }
+        }
+      ],
+      "citation": [
+        "U.S. Bureau of Labor Statistics, Current Population Survey, https://www.bls.gov/cps/",
+        "U.S. Bureau of Labor Statistics, Labor Force Statistics from the Current Population Survey (LN database), https://download.bls.gov/pub/time.series/ln/"
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#app",
+      "name": "Beyond the Unemployment Rate: A CPS Data Explorer",
+      "url": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Data visualization",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Chart any of 2,151 published BLS Current Population Survey series",
+        "33 labor-market measures including the unemployment rate, labor force participation rate and employment-population ratio",
+        "21 breakdowns and 188 groups, including age, activity, class of worker, disability status, duration of unemployment, education",
+        "Monthly data from January 1948 to the latest BLS release",
+        "Seasonal adjustment shown per series, with a twelve-month moving average drawn over not-seasonally-adjusted data",
+        "The underlying BLS series ID displayed under every chart"
+      ],
+      "creator": {
+        "@type": "Organization",
+        "name": "Data 4 The People",
+        "url": "https://data4thepeople.com"
+      },
+      "about": {
+        "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#dataset"
+      }
+    }
+  ]
+}
