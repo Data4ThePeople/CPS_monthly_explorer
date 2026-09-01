@@ -1,0 +1,136 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://www.data4thepeople.com/p/cps-intro-post#article",
+      "headline": "We Built the Labor-Market Tool That Didn't Exist",
+      "description": "The unemployment rate can't see millions of people. So we built a free tool to chart every official BLS labor series, and we need your help auditing it.",
+      "image": [
+        "https://images.prismic.io/data4thepeople/I0yRiCk2aR_rtyg6_cps_post_hero_1680x1080.jpg?auto=format,compress"
+      ],
+      "datePublished": "2026-07-07T10:00:00-04:00",
+      "dateModified": "2026-09-01T08:00:00-04:00",
+      "articleSection": "Labor Markets",
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "name": "Eric Pachman",
+        "url": "https://www.data4thepeople.com/authors/eric-pachman"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Data 4 The People",
+        "url": "https://data4thepeople.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.data4thepeople.com/p/cps-intro-post"
+      },
+      "keywords": [
+        "BLS LN database",
+        "BLS data explorer",
+        "CPS data",
+        "CPS explorer",
+        "Current Population Survey",
+        "civilian labor force",
+        "civilian noninstitutional population",
+        "duration of unemployment",
+        "employment by activity",
+        "employment by age",
+        "employment by class of worker",
+        "employment by disability status",
+        "employment by duration of unemployment",
+        "employment by education",
+        "employment by hispanic origin",
+        "employment by industry",
+        "employment by job seeker status",
+        "employment by labor force entrant",
+        "employment by marital status",
+        "employment by multiple jobholders",
+        "employment by nativity",
+        "employment by occupation",
+        "employment by race",
+        "employment by reason for unemployment",
+        "employment by sex",
+        "employment by veteran status",
+        "employment by want a job",
+        "employment by work experience",
+        "employment by work schedule status",
+        "employment data visualization",
+        "employment-population ratio",
+        "free labor market tool",
+        "household survey",
+        "jobs report data",
+        "labor force flows",
+        "labor force participation rate",
+        "labor market data",
+        "long-term unemployment",
+        "marginally attached workers",
+        "multiple jobholders",
+        "not in labor force",
+        "part-time for economic reasons",
+        "seasonally adjusted",
+        "unemployment rate",
+        "unemployment rate by age",
+        "unemployment rate by race",
+        "labor force flows",
+        "employed to not in labor force",
+        "hidden unemployment",
+        "labor market tool",
+        "data journalism"
+      ],
+      "about": {
+        "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#dataset"
+      },
+      "mentions": [
+        {
+          "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#app"
+        },
+        {
+          "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#dataset"
+        }
+      ],
+      "isBasedOn": {
+        "@type": "Dataset",
+        "name": "Current Population Survey (LN) time series database",
+        "url": "https://www.bls.gov/cps/",
+        "creator": {
+          "@type": "Organization",
+          "name": "U.S. Bureau of Labor Statistics",
+          "url": "https://www.bls.gov"
+        }
+      },
+      "citation": [
+        {
+          "@type": "CreativeWork",
+          "name": "Labor Force Statistics from the Current Population Survey (LN database)",
+          "url": "https://download.bls.gov/pub/time.series/ln/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "The Employment Situation, U.S. Bureau of Labor Statistics",
+          "url": "https://www.bls.gov/news.release/empsit.nr0.htm"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Labor Force Flows, Current Population Survey",
+          "url": "https://www.bls.gov/cps/cps_flows.htm"
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#dataset",
+      "name": "CPS Monthly Explorer: Published Current Population Survey Series by Dimension, Group, and Measure, 1948 to Present",
+      "url": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/#app",
+      "name": "Beyond the Unemployment Rate: A CPS Data Explorer",
+      "url": "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/"
+    }
+  ]
+}
