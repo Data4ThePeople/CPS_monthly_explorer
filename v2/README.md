@@ -19,8 +19,10 @@ because the API has no catalog/search endpoint.
 ```
 
 One command: checks whether BLS has actually published a new month, refreshes
-the catalog, rebuilds the explorer, commits, pushes, deploys GitHub Pages, and
-verifies the live file byte-for-byte. Drop `--publish` to build without
+the catalog, rebuilds the explorer, regenerates the page schema from it,
+commits, pushes, deploys GitHub Pages, and verifies the live file
+byte-for-byte. The schema (`v2/output/schema*.jsonld`) is committed but never
+pushed to the CMS -- paste it in by hand. Drop `--publish` to build without
 shipping. See [Refreshing the explorer](#refreshing-the-explorer) for what it
 guards against and why a plain rebuild is not enough.
 
@@ -63,7 +65,7 @@ Every script runs from any working directory: `python v2/<script>.py`.
 | `crosscheck_legacy.py` | Verifies v2 CSVs match the shipped legacy `../output/*.csv` month-for-month. |
 | `build_explorer.py` | Builds the interactive explorer HTML. Catalog from `../data/ln.series`, values from the API. `--dry-run` prices the fetch before spending quota. |
 | `explorer_template.html` | The themed page the explorer is rendered into; `__DATA__` is replaced with the payload. Edit here to change the look without touching Python. |
-| `refresh.sh` | Monthly refresh: probe → catalog → rebuild → publish → verify. See above. |
+| `refresh.sh` | Monthly refresh: probe → catalog → rebuild → schema → publish → verify. See above. |
 
 Analyses (legacy provenance and the main fixes applied):
 
