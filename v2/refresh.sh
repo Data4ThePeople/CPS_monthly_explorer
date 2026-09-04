@@ -9,7 +9,10 @@
 #      instead of burning a full refresh on data you already have.
 #   2. Downloads a fresh ln.series catalog (new/discontinued series, updated
 #      end dates).
-#   3. Rebuilds the explorer with --refresh.
+#   3. Rebuilds the explorer with --refresh, then regenerates the page
+#      schema (v2/output/schema*.jsonld) from the rebuilt explorer. The
+#      schema is committed alongside the explorer but never pushed anywhere
+#      else -- paste it into the CMS by hand.
 #
 # --refresh is not optional and is the reason this script exists. bls_client
 # treats a cached series as fresh while it holds data through today-minus-two
@@ -30,6 +33,8 @@ PY="$REPO/.venv/bin/python"
 CATALOG="$REPO/data/ln.series.txt"
 CATALOG_URL="https://download.bls.gov/pub/time.series/ln/ln.series"
 BUILT="$REPO/v2/output/ln_explorer.html"
+SCHEMA="$REPO/v2/output/schema.jsonld"
+SCHEMA_INTRO="$REPO/v2/output/schema-intro.jsonld"
 LIVE="https://data4thepeople.github.io/CPS_monthly_explorer/v2/output/ln_explorer.html"
 GH_REPO="Data4ThePeople/CPS_monthly_explorer"
 BELLWETHER="LNS12000000"          # Employment Level, seasonally adjusted
@@ -131,6 +136,13 @@ echo
 echo "  built file runs through: $BUILT_THROUGH"
 [ "$BUILT_THROUGH" = "$AFTER" ] || die "built file ends at $BUILT_THROUGH but the API served $AFTER -- do not publish this"
 
+# The schema is derived from the built explorer (measure list, breakdowns,
+# counts), so it is regenerated after every rebuild. Only after the build has
+# been verified above -- never from a stale explorer.
+echo
+echo "  regenerating page schema ..."
+"$PY" v2/build_schema.py | sed 's/^/  /'
+
 # --------------------------------------------------------------------------
 if [ "$PUBLISH" -eq 0 ]; then
   say "4/4  Done (not published)"
@@ -140,19 +152,24 @@ The rebuilt explorer is at:
 
 To publish it:
   ./v2/refresh.sh --publish     (reruns the whole thing), or by hand:
-  git add v2/output/ln_explorer.html
+  git add v2/output/ln_explorer.html v2/output/schema.jsonld v2/output/schema-intro.jsonld
   git commit -m "Rebuild explorer with $BUILT_THROUGH data"
   git push
   gh api -X POST repos/$GH_REPO/pages/builds
+
+The schema files are not pushed anywhere else -- copy and paste them into the
+CMS by hand:
+  $SCHEMA
+  $SCHEMA_INTRO
 EOF
   exit 0
 fi
 
 say "4/4  Publishing"
-if git diff --quiet -- v2/output/ln_explorer.html; then
-  echo "  explorer HTML is unchanged -- nothing to commit"
+if git diff --quiet -- "$BUILT" "$SCHEMA" "$SCHEMA_INTRO"; then
+  echo "  explorer HTML and schema are unchanged -- nothing to commit"
 else
-  git add v2/output/ln_explorer.html
+  git add "$BUILT" "$SCHEMA" "$SCHEMA_INTRO"
   git commit -q -m "Rebuild explorer with $BUILT_THROUGH data"
   git push -q origin main
   echo "  pushed $(git rev-parse --short HEAD)"
@@ -178,6 +195,10 @@ for i in $(seq 1 20); do
     rm -f "$TMP.live"
     say "Live and verified: $LIVE"
     echo "Serving $BUILT_THROUGH data, byte-identical to the local build."
+    echo
+    echo "Schema regenerated and committed, not pushed to the CMS -- paste by hand:"
+    echo "  $SCHEMA"
+    echo "  $SCHEMA_INTRO"
     exit 0
   fi
   sleep 15
