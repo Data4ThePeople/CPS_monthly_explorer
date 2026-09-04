@@ -214,16 +214,27 @@ _PERMANENT_API_ERRORS = (
 )
 
 
+# Attempts per query. Release mornings serve 503s and bare REQUEST_FAILEDs
+# for a minute or two while the API absorbs the press-release load.
+_MAX_ATTEMPTS = 5
+
+
 def _post(payload: dict) -> dict:
     """One API query. Retries transport errors, 5xx, and non-success statuses
     that look momentary -- BLS returns a bare REQUEST_FAILED both for genuinely
     bad requests and for transient load, and release mornings produce the
-    latter. Permanent causes (quota, bad key) still fail immediately."""
+    latter. Permanent causes (quota, bad key) still fail immediately.
+
+    Worst case one query costs 5 attempts and ~30s of waiting; that is cheap
+    against losing a ~176-query rebuild."""
     global _queries_made
     last_err = None
-    for attempt in range(3):
+    for attempt in range(_MAX_ATTEMPTS):
         if attempt:
-            time.sleep(2 * attempt)
+            # Exponential, not linear: the 8:30 release spike takes tens of
+            # seconds to clear, and a run that gives up after ~6s throws away
+            # a whole rebuild over a blip. 2, 4, 8, 16s.
+            time.sleep(2 ** attempt)
         try:
             _queries_made += 1
             resp = requests.post(API_URL, json=payload, timeout=60)
