@@ -55,7 +55,7 @@ say() { printf '\n\033[1m%s\033[0m\n' "$*"; }
 die() { printf '\nERROR: %s\n' "$*" >&2; exit 1; }
 
 [ -x "$PY" ] || die "no interpreter at $PY -- create the venv and pip install -r requirements.txt"
-[ -f "$REPO/.env" ] || die "no .env at $REPO/.env -- BLS_API_KEY is required"
+[ -f "$REPO/.env" ] || [ -f "$HOME/.claude/d4tp-process/.env" ] || die "no .env at $REPO/.env or ~/.claude/d4tp-process/.env -- BLS_API_KEY is required"
 
 cd "$REPO"
 

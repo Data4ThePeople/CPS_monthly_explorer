@@ -66,19 +66,23 @@ class BLSAPIError(RuntimeError):
         )
 
 
+CENTRAL_ENV = Path.home() / ".claude" / "d4tp-process" / ".env"
+
+
 def load_dotenv(path: Path | None = None) -> None:
-    """Load KEY=VALUE lines from <repo>/.env into os.environ (setdefault)."""
-    path = path or REPO_ROOT / ".env"
-    if not path.is_file():
-        return
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
+    """Load KEY=VALUE lines into os.environ (setdefault): <repo>/.env first,
+    then the central ~/.claude/d4tp-process/.env shared by every project."""
+    for candidate in (path or REPO_ROOT / ".env", CENTRAL_ENV):
+        if not candidate.is_file():
             continue
-        key, _, val = line.partition("=")
-        key, val = key.strip(), val.strip().strip("'\"")
-        if key:
-            os.environ.setdefault(key, val)
+        for line in candidate.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, val = line.partition("=")
+            key, val = key.strip(), val.strip().strip("'\"")
+            if key:
+                os.environ.setdefault(key, val)
 
 
 def get_api_key() -> str:
