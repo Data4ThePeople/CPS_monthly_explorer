@@ -53,7 +53,7 @@ Not tracked, fetch these yourself from
 | File                     | Size   | What it is                                 |
 | ------------------------ | ------ | ------------------------------------------ |
 | `ln.data.1.AllData`      | ~389 MB | Every observation, every LN series         |
-| `ln.series`              | ~15 MB  | The catalog: 68,630 series + dimension codes |
+| `ln.series`              | ~15 MB  | The catalog: 68,626 series + dimension codes |
 
 Save them into `data/`. A trailing `.txt` is fine — every script accepts either
 `ln.series` or `ln.series.txt`.
