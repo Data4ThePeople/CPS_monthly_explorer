@@ -112,7 +112,7 @@ name, and the 15 MB file must not be committed. `.nojekyll` at the repo root
 is required for Pages to serve this repo at all.
 
 Methodology prose for the public page lives in `../METHODOLOGY.md`; the
-figures in it (2,151 series, 68,630 catalog rows, ~176 queries) come from a
+figures in it (2,151 series, 68,626 catalog rows, ~176 queries) come from a
 build and should be re-checked when they change.
 
 ## Conventions (enforced, not assumed)

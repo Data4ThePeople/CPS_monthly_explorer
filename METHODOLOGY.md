@@ -10,7 +10,7 @@ We now pull the monthly values directly from the BLS Public Data API, the agency
 
 The survey's published output is not one file but a catalog of tens of thousands of separate series, and this tool is really just a careful way of stitching them back together. Anyone can rebuild what we built.
 
-The backbone is the **series catalog**, `ln.series`, published as a flat file at `download.bls.gov/pub/time.series/ln`. Each of its 68,630 rows is one published series: a unique series ID, a title, the first and last dates it covers, and a column for each characteristic — age, sex, race, nativity, industry, occupation, and about thirty others. Those characteristic columns hold short codes rather than words. A companion set of small **mapping files**, one per characteristic, translates the codes into plain English: `ln.ages` turns code 65 into "65 years and over," `ln.sexs` turns 1 into "Men," `ln.lfst` turns 40 into "Unemployment rate."
+The backbone is the **series catalog**, `ln.series`, published as a flat file at `download.bls.gov/pub/time.series/ln`. Each of its 68,626 rows is one published series: a unique series ID, a title, the first and last dates it covers, and a column for each characteristic — age, sex, race, nativity, industry, occupation, and about thirty others. Those characteristic columns hold short codes rather than words. A companion set of small **mapping files**, one per characteristic, translates the codes into plain English: `ln.ages` turns code 65 into "65 years and over," `ln.sexs` turns 1 into "Men," `ln.lfst` turns 40 into "Unemployment rate."
 
 The catalog tells us *which* series exist and what each one measures. The API supplies the **monthly values**. We still read the catalog from the flat file for a specific reason: the API has no catalog endpoint. It will return the history of any series ID you name, but it cannot tell you what series exist or what combination of characteristics a given ID represents. Only `ln.series` can. So the catalog comes from the flat file, and every observation comes from the API.
 
@@ -18,7 +18,7 @@ Building the tool is four steps:
 
 1. We read `ln.series` and every mapping file, and join the codes to their labels, so each series carries a human-readable description on every characteristic.
 2. For each characteristic we identify its standard total — the code that means "everyone" — by matching the label text ("Both Sexes," "All Races," "16 years and over").
-3. We work out which combinations are actually published: for a given characteristic and value, we keep the one series where that characteristic is set and every other characteristic sits at its total. That is what guarantees one clean series per view. Of the 68,630 series in the catalog, 2,151 qualify, spanning 21 characteristics and 188 groups.
+3. We work out which combinations are actually published: for a given characteristic and value, we keep the one series where that characteristic is set and every other characteristic sits at its total. That is what guarantees one clean series per view. Of the 68,626 series in the catalog, 2,151 qualify, spanning 21 characteristics and 188 groups.
 4. We request exactly those 2,151 series from the API and hand the results to the chart.
 
 The full build costs about 176 API requests against a daily allowance of 500. Responses are stored locally, so rebuilding the tool afterward costs nothing and returns identical results.
@@ -47,7 +47,7 @@ Many of these series are not seasonally adjusted, which means they carry the reg
 
 ## What we checked, and what we did not
 
-We audited this tool against the full catalog of 68,630 series. We confirmed that it selects the correct single series for the combinations it offers, that it always prefers current data over discontinued data, and that where a total and its parts are both published, the parts add up to the total within normal rounding. Where they do not, the cause is in the source data, not the tool: the government rounds each series independently, revised its industry categories in 2002, and defines a few series such as farm employment on a slightly different basis than their parts.
+We audited this tool against the full catalog of 68,626 series. We confirmed that it selects the correct single series for the combinations it offers, that it always prefers current data over discontinued data, and that where a total and its parts are both published, the parts add up to the total within normal rounding. Where they do not, the cause is in the source data, not the tool: the government rounds each series independently, revised its industry categories in 2002, and defines a few series such as farm employment on a slightly different basis than their parts.
 
 We also checked the move to the API directly against the old method. We rebuilt the entire tool from the API and compared it against the version built from the bulk flat files — all 1,033,903 overlapping monthly observations, across all 2,151 series. Every value matched. The two builds are byte-for-byte identical. The change in how we fetch the data changed nothing about the data.
 
