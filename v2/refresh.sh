@@ -38,7 +38,9 @@ SCHEMA_INTRO="$REPO/v2/output/schema-intro.jsonld"
 LIVE="https://data4thepeople.github.io/CPS_monthly_explorer/v2/output/ln_explorer.html"
 GH_REPO="Data4ThePeople/CPS_monthly_explorer"
 BELLWETHER="LNS12000000"          # Employment Level, seasonally adjusted
-UA="CPS_monthly_explorer (D4TP_CONTACT_EMAIL)"
+# Contact address for the User-Agent: read at run time, never hardcoded in the repo.
+D4TP_CONTACT_EMAIL="${D4TP_CONTACT_EMAIL:-$(grep -s '^D4TP_CONTACT_EMAIL=' "$HOME/.claude/d4tp-process/.env" | cut -d= -f2-)}"
+UA="CPS_monthly_explorer (${D4TP_CONTACT_EMAIL})"
 
 PUBLISH=0
 FORCE=0
