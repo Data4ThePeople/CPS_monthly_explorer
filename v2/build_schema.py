@@ -27,6 +27,7 @@ seen three ways rather than three unrelated blobs on a page.
 """
 from __future__ import annotations
 
+import datetime as dt
 import json
 import re
 from pathlib import Path
@@ -40,7 +41,16 @@ PAGE = "https://www.data4thepeople.com/p/beyond-the-unemployment-rate/"
 HERO = ("https://images.prismic.io/data4thepeople/"
         "1mDK_WUEazlF23Cd_cps_hero_1680x1080.jpg?auto=format,compress")
 PUBLISHED = "2026-07-06T08:00:00-04:00"
-MODIFIED = "2026-09-01T08:00:00-04:00"   # bump when the page changes
+
+
+def data_modified() -> str:
+    """When the explorer was last rebuilt with data: the built file's write
+    time, in local time with its UTC offset. refresh.sh only rebuilds after
+    the API serves a new month, so this moves with each data update, and
+    rerunning this script alone does not move it."""
+    t = dt.datetime.fromtimestamp(EXPLORER.stat().st_mtime).astimezone()
+    return t.replace(microsecond=0).isoformat()
+
 
 # The launch essay. It links to the explorer rather than redefining it: two
 # Dataset nodes describing one tool would split the authority between two URLs,
@@ -108,6 +118,7 @@ def dimensions(cat: dict) -> list[dict]:
 
 def build() -> dict:
     cat = catalog()
+    MODIFIED = data_modified()
     vars_ = variables(cat)
     dims = dimensions(cat)
     n_series = len(cat["series"])
@@ -158,6 +169,7 @@ def build() -> dict:
         "sameAs": REPO,
         "license": "https://www.data4thepeople.com/terms-of-use",
         "isAccessibleForFree": True,
+        "dateModified": MODIFIED,
         "temporalCoverage": "1948-01-01/..",
         "spatialCoverage": {"@type": "Place", "name": "United States"},
         "measurementTechnique": "Monthly household survey of about 60,000 "

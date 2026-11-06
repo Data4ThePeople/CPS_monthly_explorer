@@ -22,7 +22,10 @@ One command: checks whether BLS has actually published a new month, refreshes
 the catalog, rebuilds the explorer, regenerates the page schema from it,
 commits, pushes, deploys GitHub Pages, and verifies the live file
 byte-for-byte. The schema (`v2/output/schema*.jsonld`) is committed but never
-pushed to the CMS -- paste it in by hand. Drop `--publish` to build without
+pushed to the CMS -- paste it in by hand. The explorer page's `dateModified` is set from
+the time the explorer was last rebuilt, so the schema changes with every
+data update and needs a fresh paste each month. The intro post's date is
+fixed in `build_schema.py`. Drop `--publish` to build without
 shipping. See [Refreshing the explorer](#refreshing-the-explorer) for what it
 guards against and why a plain rebuild is not enough.
 
