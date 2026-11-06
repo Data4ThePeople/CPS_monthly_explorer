@@ -190,18 +190,30 @@ function draw(){
   for(let i=0;i<n;i++){const v=arr[i];
    if(v==null){pen=false;continue}
    d+=(pen?"L":"M")+X(i).toFixed(1)+" "+Y(v).toFixed(1);pen=true;}return d;}
+ // A published month with no published neighbor (e.g. between gaps) draws
+ // nothing as a path, so mark it with a small dot or it vanishes.
+ const lone=(arr,r,fill,op)=>{let s="";
+  for(let i=0;i<n;i++){if(arr[i]==null)continue;
+   if((i===0||arr[i-1]==null)&&(i===n-1||arr[i+1]==null))
+    s+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(arr[i]).toFixed(1)+
+     '" r="'+r+'" fill="'+fill+'" opacity="'+op+'"/>';}return s;};
  if(e.s==="S"){
   g+='<path d="'+path(e.v)+'" fill="none" stroke="#085041" stroke-width="2.2"/>';
+  g+=lone(e.v,2.2,"#085041",1);
  }else{
   g+='<path d="'+path(e.v)+'" fill="none" stroke="#0a3d33" stroke-width="1.1" opacity="0.30"/>';
+  g+=lone(e.v,1.8,"#0a3d33",0.45);
+  // The average is drawn only where it forms a line. A single average point
+  // (the first full window after the Oct-2025 gap) stays in the tooltip.
   g+='<path d="'+path(ma12(e.v))+'" fill="none" stroke="#0a3d33" stroke-width="2.4"/>';
  }
- const series=e.s==="S"?e.v:ma12(e.v);
- for(let i=n-1;i>=0;i--){if(series[i]!=null){
-  g+='<circle cx="'+X(i)+'" cy="'+Y(series[i])+
+ // The end marker sits on the latest published monthly value, the figure a
+ // reader can check against BLS, so it always meets the line it labels.
+ for(let i=n-1;i>=0;i--){if(e.v[i]!=null){
+  g+='<circle cx="'+X(i)+'" cy="'+Y(e.v[i])+
    '" r="4" fill="#712B13"/><text x="'+(X(i)-8)+'" y="'+
-   (Y(series[i])-9)+'" text-anchor="end" style="fill:#712B13;font-weight:700">'+
-   fmt(isPct()?series[i]:Math.round(series[i]))+"</text>";break;}}
+   (Y(e.v[i])-9)+'" text-anchor="end" style="fill:#712B13;font-weight:700">'+
+   fmt(e.v[i])+"</text>";break;}}
  svg.innerHTML=g;
  const showAt=(clientX,clientY)=>{
   const r=svg.getBoundingClientRect();

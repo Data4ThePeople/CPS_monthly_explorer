@@ -8,7 +8,7 @@
       "description": "We built a free tool to chart 80 years of Current Population Survey data, one official BLS series at a time. Explore the labor market, and help us audit it.",
       "image": "https://images.prismic.io/data4thepeople/1mDK_WUEazlF23Cd_cps_hero_1680x1080.jpg?auto=format,compress",
       "datePublished": "2026-07-06T08:00:00-04:00",
-      "dateModified": "2026-11-06T08:52:40-05:00",
+      "dateModified": "2026-11-06T15:13:50-05:00",
       "articleSection": "Visualization",
       "inLanguage": "en-US",
       "isAccessibleForFree": true,
@@ -95,7 +95,7 @@
       "sameAs": "https://github.com/Data4ThePeople/CPS_monthly_explorer",
       "license": "https://www.data4thepeople.com/terms-of-use",
       "isAccessibleForFree": true,
-      "dateModified": "2026-11-06T08:52:40-05:00",
+      "dateModified": "2026-11-06T15:13:50-05:00",
       "temporalCoverage": "1948-01-01/..",
       "spatialCoverage": {
         "@type": "Place",
@@ -557,7 +557,7 @@
       },
       "inLanguage": "en-US",
       "datePublished": "2026-07-06T08:00:00-04:00",
-      "dateModified": "2026-11-06T08:52:40-05:00",
+      "dateModified": "2026-11-06T15:13:50-05:00",
       "screenshot": "https://images.prismic.io/data4thepeople/1mDK_WUEazlF23Cd_cps_hero_1680x1080.jpg?auto=format,compress",
       "license": "https://www.data4thepeople.com/terms-of-use",
       "audience": {
